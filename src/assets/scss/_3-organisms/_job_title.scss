@@ -1,0 +1,9 @@
+.job_title {
+  &_wrapper {
+    margin-bottom: rem(70);
+
+    .title {
+      color: $black;
+    }
+  }
+}

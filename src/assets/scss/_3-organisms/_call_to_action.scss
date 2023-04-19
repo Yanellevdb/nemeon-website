@@ -1,0 +1,24 @@
+.call_to_action {
+  &_wrapper {
+    margin-top: rem(150);
+    span,
+    span a {
+      font-size: rem(50);
+      line-height: lh(59, 50);
+      font-weight: 300;
+      padding-bottom: 0;
+    }
+  }
+}
+
+@include below($tablet) {
+  .call_to_action {
+    &_wrapper {
+      span,
+      span a {
+        font-size: rem(40);
+        line-height: lh(48, 40);
+      }
+    }
+  }
+}

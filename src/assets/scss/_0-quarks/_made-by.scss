@@ -1,0 +1,11 @@
+.made-by {
+  img {
+    vertical-align: middle;
+  }
+
+  > a,
+  > img {
+    display: inline-block;
+    margin-left: .5em;
+  }
+}

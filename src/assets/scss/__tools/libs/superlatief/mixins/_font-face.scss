@@ -1,0 +1,35 @@
+@mixin font-face($name, $file: to-lower-case($name), $folder: $file, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+  $src: null;
+
+  $extmods: (
+    eot: "?#iefix",
+    svg: "#" + str-replace($name, " ", "_")
+  );
+
+  $formats: (
+    eot: "embedded-opentype",
+    otf: "opentype",
+    ttf: "truetype"
+  );
+
+
+  @each $ext in $exts {
+    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $path: quote($folder + "/" + $file + "." + $extmod);
+    $fontdecl: font($path) format(quote($format));
+    $src: append($src, $fontdecl, comma);
+  }
+
+  @font-face {
+    font-family: quote($name);
+    font-weight: $weight;
+    font-style: $style;
+    @if(index($exts, eot)){
+      $path: quote($folder + "/" + $file + ".eot");
+      $fontdecl: font($path);
+      src: $fontdecl;
+    }
+    src: $src;
+  }
+}

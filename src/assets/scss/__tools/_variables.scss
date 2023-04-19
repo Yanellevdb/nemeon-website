@@ -1,0 +1,49 @@
+// ==========================================================================
+// Variables
+// ==========================================================================
+
+$root-box-sizing: border-box;
+
+$mobile: 480px;
+$tablet-xs: 600px;
+$tablet: 768px;
+$desktop-sm: 990px;
+$desktop: 1100px;
+$desktop-md: 1250px;
+$desktop-hd: 1440px;
+$hd: 1650px;
+$desktop-xxl: 2000px;
+
+$base-margin: 20px;
+
+// Colors
+$black: #000;
+$white: #fff;
+$red: #e25050;
+$green: #6de250;
+$nucleon-grey: #f2f2f2;
+$nucleon-dark-grey: #b2b2b2;
+$nucleon-green: #d6ff2e;
+
+$text-color: #1f1f1f;
+$error-color: $red;
+$success-color: $green;
+
+// Paths
+$base-path: "../";
+$base-font-path: $base-path + "fonts/";
+$base-img-path: $base-path + "img/";
+
+// Fonts
+$ff-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol";
+$ff-primary: "soleil", sans-serif;
+$ff-secondary: "freight-neo-pro", sans-serif;
+$ff-mono: SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+
+// Transitions
+$base-transition: "all .3s ease";
+
+// Variables for functions
+$vw-base: $desktop-hd;
+$default-font-size: 16;

@@ -1,0 +1,22 @@
+.bg {
+  &-grey {
+    background-color: $nucleon-grey;
+  }
+  &-dark-grey {
+    background-color: $nucleon-dark-grey;
+  }
+  &-green {
+    background-color: $nucleon-green;
+  }
+  &-black {
+    background-color: $black;
+
+    & * {
+      color: $white;
+    }
+
+    & a::after {
+      background-color: $white;
+    }
+  }
+}

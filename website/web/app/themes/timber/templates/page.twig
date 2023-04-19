@@ -1,0 +1,9 @@
+{% extends "_base/base.twig" %}
+
+{% block content %}
+	<div class="content-wrapper">
+		<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+      {% include '_base/flexible.twig' with { items: post.meta('blocks') } %}
+		</article>
+	</div><!-- /content-wrapper -->
+{% endblock %}

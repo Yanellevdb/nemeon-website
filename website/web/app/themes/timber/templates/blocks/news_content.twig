@@ -1,0 +1,17 @@
+{% import 'macros/titles.twig' as title %}
+
+<section class="news_content">
+  <div class="constrict">
+    <div class="news_content_wrapper">
+      {{ title.main(block.title, '', true) }}
+      {% include 'partial/wysiwyg.twig' with { text: block.content } %}
+      {% if block.link.button %}
+        <div class="btn">
+        {% endif %}
+        <a class="underline" href="{{block.link.link.url}}" target="{{block.link.link.target}}">{{block.link.link.title}}</a>
+        {% if block.link.button %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

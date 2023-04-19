@@ -1,0 +1,71 @@
+$t: .2s;
+$h : 2;
+$o: 7;
+
+.icn-menu {
+  width: rem(24);
+  position: relative;
+  display: block;
+  height: rem($h);
+  color: inherit;
+
+  &__inner,
+  &::before,
+  &::after {
+    display: block;
+    width: 100%;
+    height: rem($h);
+    top: 0;
+    background-color: currentColor;
+    border-radius: 2px;
+    position: absolute;
+  }
+
+  &__inner {
+    transform: scale(1,1);
+    transform-origin: top left;
+    transition-property: transform, background-color;
+    transition-duration: $t;
+    transition-timing-function: ease-in-out;
+    transition-delay: ($t * 2), .3s;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    transition-property: transform, top, background-color;
+    transition-duration: $t;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s, $t, .3s;
+  }
+
+  &::before {
+    top: rem(-$o);
+  }
+
+  &::after {
+    top: rem($o);
+  }
+
+  .show-menu & {
+    &__inner {
+      transform-origin: top right;
+      transform: scale(0,1);
+      transition-delay: 0s, 0s, 0s;
+    }
+
+    &::before,
+    &::after {
+      top: 0;
+      transition-delay: ($t * 2), $t, 0s;
+    }
+
+    &::before {
+      transform: rotate(-45deg);
+    }
+
+    &::after {
+      transform: rotate(45deg);
+    }
+  }
+}

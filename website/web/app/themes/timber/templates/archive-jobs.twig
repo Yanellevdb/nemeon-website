@@ -1,0 +1,30 @@
+{# This file demonstrates using most of the index.twig template and modifying
+   just a small part. See `search.twig` for an example of another approach #}
+
+{% extends "_base/base.twig" %}
+
+{% block content %}
+  {% if jobs_title %}
+    {% include 'blocks/hero_small.twig' with { block: {title: {size: 'h1', content: jobs_title}, background:'bg-green'}}%}
+  {% endif %}
+
+  <section class="archive-block">
+    <div class="constrict">
+      <div class="archive-block__wrapper" id="posts">
+        {% for post in posts %}
+          {% include ['partial/tease-post.twig'] with {archive: true} %}
+        {% endfor %}
+      </div>
+      {% if post_count > post_per_page %}
+        <div class="loadmore-btn-wrap">
+          <button class="loadmore-btn btn" id="loadmore">
+            <span>{{ __('Load more', 'timber') }}</span>
+          </button>
+        </div>
+      {% endif %}
+
+    </div>
+  </section>
+  {% include 'blocks/call_to_action.twig' with {block: jobs_cta} %}
+
+{% endblock %}

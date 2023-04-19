@@ -1,0 +1,23 @@
+{% import 'macros/titles.twig' as title %}
+
+<section class="text_block_columns">
+  <div class="constrict">
+    <div class="text_block_columns_wrapper">
+      {{ title.main(block.title, '', true) }}
+      <div class="blocks blocks-{{block.blocks | length}}">
+        {% for item in block.blocks %}
+          <div class="block">
+            {{ title.main(item.title, '', true) }}
+            {% include 'partial/wysiwyg.twig' with { text: item.content } %}
+            {% if item.button.url %}
+              <div class="btn">
+                <a class="underline" href="{{item.button.url}}" target="{{item.button.target}}">{{item.button.title}}</a>
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+
+    </div>
+  </div>
+</section>

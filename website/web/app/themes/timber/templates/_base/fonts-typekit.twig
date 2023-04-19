@@ -1,0 +1,8 @@
+{% if font_url %}
+  <link rel="preconnect" href="https://p.typekit.net" crossorigin />
+  <link rel="preload" as="style" href="{{ font_url }}" />
+  <link rel="stylesheet" href="{{ font_url }}" media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="{{ font_url }}" />
+  </noscript>
+{% endif %}

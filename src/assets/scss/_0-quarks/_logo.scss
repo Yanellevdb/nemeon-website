@@ -1,0 +1,19 @@
+.hdr-logo {
+  width: rem(85);
+
+  &-link {
+    display: block;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+@include above($tablet) {
+  .hdr-logo {
+    width: rem(120);
+  }
+}

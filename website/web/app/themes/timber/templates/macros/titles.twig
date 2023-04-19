@@ -1,0 +1,15 @@
+{% macro main(title, clss = '', h1 = false) %}
+  {% if title.content %}
+    {% set size = title.size %}
+    {% set tag = title.size %}
+
+    {% set classes = [size, 'title'] %}
+
+    {% if clss %}
+      {% set classes = classes|merge([ clss ]) %}
+    {% endif %}
+
+    <{{tag}} class="{{ classes|join(' ') }}">{{ title.content|shortcodes }}</{{tag}}>
+  {% endif %}
+{% endmacro %}
+()

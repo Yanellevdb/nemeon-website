@@ -1,0 +1,80 @@
+#footer {
+  margin-top: rem(160);
+  background-color: $black;
+  padding: rem(60) 0 rem(30);
+
+  h3 {
+    color: $nucleon-dark-grey;
+    margin-bottom: rem(30);
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  & * {
+    color: white;
+  }
+
+  a {
+    font-weight: 300;
+  }
+
+  .footer-main-menu {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(#{rem(200)}, auto)) 3fr;
+    margin-bottom: rem(150);
+
+    .wysiwyg {
+      a {
+        &::after {
+          width: 0;
+          left: unset;
+          right: 0;
+          bottom: 0;
+        }
+
+        &:hover::after,
+        &:focus::after,
+        &:active::after {
+          left: 0;
+          right: auto;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .footer-sub-menu {
+    display: grid;
+    grid-template-columns: minmax(#{rem(200)}, auto) 1fr auto;
+    align-items: end;
+
+    .tagline {
+      font-weight: 400;
+      margin: 0;
+    }
+
+    .part-of {
+      * {
+        color: $nucleon-dark-grey;
+        margin: 0;
+      }
+    }
+  }
+}
+
+@include below($tablet) {
+  #footer {
+    .footer-main-menu {
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: rem(50) 0;
+    }
+
+    .footer-sub-menu {
+      grid-template-columns: 1fr auto;
+      grid-gap: rem(40) 0;
+    }
+  }
+}

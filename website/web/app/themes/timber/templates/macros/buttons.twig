@@ -1,0 +1,62 @@
+{% macro link(link, clss = '', icon = false, position = 'after') %}
+  {% import 'macros/icons.twig' as icn %}
+  {% if link %}
+    {% set props = [] %}
+    {% set rel = [] %}
+
+    {% if clss %}
+      {% set classProp = 'class="' ~ clss ~ '"' %}
+      {% set props = props|merge([classProp]) %}
+    {% endif %}
+
+    {% if link.url %}
+      {% set hrefProp = 'href="' ~ link.url ~ '"' %}
+      {% set props = props|merge([hrefProp]) %}
+    {% endif %}
+
+    {% if link.target %}
+      {% set targetProp = 'target="' ~ link.target ~ '"' %}
+      {% set props = props|merge([targetProp]) %}
+    {% endif %}
+
+    {% if link.target and link.target == '_blank' %}
+      {% set openerProp = 'noopener' %}
+      {% set rel = rel|merge([openerProp]) %}
+    {% endif %}
+
+    {% if link.no_follow %}
+      {% set followProp = 'nofollow' %}
+      {% set rel = rel|merge([followProp]) %}
+    {% endif %}
+
+    {% if rel %}
+      {% set relProp = 'rel="' ~ rel|join(' ') ~'"' %}
+      {% set props = props|merge([relProp]) %}
+    {% endif %}
+
+    <a {{ props|join(' ') }}>
+      {% if icn and position == 'before' %}
+        {{ icn.get(icon) }}
+      {% endif %}
+      <span>{{ link.title }}</span>
+      {% if icn and position == 'after' %}
+        {{ icn.get(icon) }}
+      {% endif %}
+    </a>
+  {% endif %}
+{% endmacro %}
+
+{% macro menuback() %}
+  {% import 'macros/icons.twig' as icn %}
+  <button class="btn-square btn-square--outline sidebar-back" amp-nested-submenu-close>
+    {{ icn.arrowLeft() }}
+  </button>
+{% endmacro %}
+
+
+{% macro close(clss = '', on = '') %}
+  {% import 'macros/icons.twig' as icn %}
+  <button class="{{ clss }}" on="{{ on }}">
+  {{ icn.close() }}
+  </button>
+{% endmacro %}

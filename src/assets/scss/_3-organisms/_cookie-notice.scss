@@ -1,0 +1,35 @@
+#cookie-notice {
+  position: fixed;
+  z-index: 100;
+  bottom: 0;
+  margin-left: rem(30);
+  padding: rem(30) rem(30) rem(10) rem(30);
+  width: calc(100% - #{rem(30)});
+  transition: 200ms;
+
+  .cookie-notice-container {
+    display: grid;
+    grid-gap: rem(10);
+
+    .cn-buttons-container {
+      display: flex;
+      gap: rem(20);
+      flex-direction: row-reverse;
+    }
+  }
+
+  a {
+    color: white;
+  }
+}
+
+body.cookies-accepted.cookies-set #cookie-notice {
+  display: none;
+}
+
+@include below($tablet) {
+  #cookie-notice {
+    margin-left: rem(20);
+    width: calc(100% - #{rem(20)});
+  }
+}

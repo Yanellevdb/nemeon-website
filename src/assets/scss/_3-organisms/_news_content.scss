@@ -1,0 +1,7 @@
+.news_content {
+  &_wrapper {
+    & > * {
+      margin-bottom: rem(30);
+    }
+  }
+}

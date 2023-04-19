@@ -1,0 +1,49 @@
+.icon_block_columns {
+  &_wrapper {
+    margin-top: rem(50);
+
+    & > .title {
+      margin-bottom: rem(31);
+    }
+
+    .blocks {
+      display: grid;
+      grid-auto-flow: column;
+      grid-gap: rem(30);
+
+      .block {
+        padding: rem(40);
+        display: grid;
+        grid-template-rows: minmax(#{rem(100)}, auto) minmax(#{rem(100)}, auto) 1fr;
+
+        &__visual {
+          width: rem(100);
+          height: rem(100);
+          position: relative;
+          margin-bottom: rem(80);
+
+          img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+
+        .title {
+          color: $black;
+        }
+      }
+    }
+  }
+}
+
+@include below($desktop) {
+  .icon_block_columns {
+    &_wrapper {
+      .blocks {
+        grid-auto-flow: row;
+      }
+    }
+  }
+}

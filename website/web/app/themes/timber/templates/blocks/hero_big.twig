@@ -1,0 +1,21 @@
+{% import 'macros/titles.twig' as title %}
+
+<section class="hero_big">
+  {% if block.video %}
+    <video class="video" autoplay muted loop src="{{block.video}}"></video>
+    <picture>
+      {% include 'partial/img.twig' with { img: block.placeholder_image, thumb: 'full' } %}
+    </picture>
+  {% elseif block.placeholder_image %}
+    {% include 'partial/img.twig' with { img: block.placeholder_image, thumb: 'full' } %}
+  {% endif %}
+
+  <div class="constrict">
+    <div class="hero_big_wrapper">
+      {{ title.main(block.title, '', true) }}
+      {% if block.link.url %}
+        <a class="read-more underline" target="{{block.link.target}}" href="{{block.link.url}}">{{block.link.title}}</a>
+      {% endif %}
+    </div>
+  </div>
+</section>

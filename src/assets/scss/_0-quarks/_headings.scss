@@ -1,0 +1,51 @@
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  margin: 0;
+  line-height: var(--lh-default);
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+  font-family: var(--ff-secondary);
+  font-weight: 500;
+  margin: 0 0 .6em;
+}
+
+
+h1, .h1 {
+  font-size: var(--fs-h1);
+  line-height: var(--lh-h1);
+  letter-spacing: var(--ls-h1);
+}
+
+h2, .h2 {
+  font-size: var(--fs-h2);
+  line-height: var(--lh-h2);
+  letter-spacing: var(--ls-h2);
+}
+
+h3, .h3 {
+  font-size: var(--fs-h3);
+  line-height: var(--lh-h3);
+  letter-spacing: var(--ls-h3);
+}
+
+h4, .h4 {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-h4);
+  line-height: var(--lh-h4);
+  font-weight: 600;
+}
+
+
+h5, .h5,
+h6, .h6 {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-h5);
+  font-weight: 700;
+}

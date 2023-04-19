@@ -1,0 +1,15 @@
+<article class="article-teaser" id="post-{{ post.ID }}">
+  <figure class="article-teaser__visual">
+    {% include 'partial/img.twig' with { img: post.thumbnail.id, thumb: 'full' } %}
+  </figure>
+  <div class="article-teaser__content">
+    <h3 class="article-teaser__title title">{{post.title}}</h3>
+    {% if archive %}
+      <p class="excerpt">{{post.post_excerpt|excerpt(100)}}</p>
+    {% else %}
+      <p class="no-excerpt"></p>
+    {% endif %}
+
+    <a class="underline" href="{{post.link}}">{{ __('Read more', 'timber') }}</a>
+  </div>
+</article>

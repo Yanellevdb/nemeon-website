@@ -1,0 +1,23 @@
+.mce-content-body,
+.wysiwyg {
+  table {
+    border-collapse: collapse;
+    border: none;
+  }
+
+  tr {
+    border-bottom: 1px solid var(--light-grey);
+  }
+
+  th,
+  td {
+    padding: 0.5em 1em;
+    text-align: left;
+  }
+
+  tr:nth-child(even) {
+    td {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+  }
+}

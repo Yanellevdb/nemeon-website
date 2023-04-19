@@ -1,0 +1,52 @@
+.text_block_columns {
+  &_wrapper {
+    margin-top: rem(150);
+
+    & > .title {
+      margin-bottom: rem(71);
+    }
+    .blocks {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: rem(30);
+
+      &-1 {
+        grid-template-columns: 1fr;
+      }
+      &-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .block {
+        .title {
+          margin-bottom: rem(23);
+        }
+
+        .btn {
+          margin-top: rem(40);
+        }
+      }
+    }
+  }
+}
+
+@include below($desktop-sm) {
+  .text_block_columns {
+    &_wrapper {
+      .blocks {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+}
+
+@include below($tablet) {
+  .text_block_columns {
+    &_wrapper {
+      margin-top: rem(80);
+      .blocks {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}

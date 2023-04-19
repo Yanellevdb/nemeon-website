@@ -1,0 +1,18 @@
+{% extends "_base/base.twig" %}
+
+{% block content %}
+  <div class="contact">
+    <article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
+      <section class="contact__content">
+        {% include 'blocks/hero_small.twig' with { block: {title: {size: 'h1', content: title}, background:'bg-black'}}%}
+        <div class="constrict-xs">
+          <div class="contact__form">
+            <h2 class="contact__form__text">{{form_text}}</h2>
+            {{ form|shortcodes }}
+          </div>
+        </div>
+        {% include 'blocks/call_to_action.twig' with {block: cta} %}
+      </section>
+    </article>
+  </div>
+{% endblock %}

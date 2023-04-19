@@ -1,0 +1,3 @@
+{% for section in post.dynamic_context %}
+  {% include 'blocks/' ~ section.template ~ '.twig' ignore missing with { block: section } %}
+{% endfor %}

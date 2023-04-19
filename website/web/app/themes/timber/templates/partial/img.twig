@@ -1,0 +1,5 @@
+{% if img %}
+  {% set image = Image(img) %}
+  {% set imageSize = image.sizes[thumb] %}
+  <img src="{{ image.src( thumb ) }}" width="{{ imageSize.width }}" height="{{ imageSize.height }}" alt="{{ image.alt }}">
+{% endif %}

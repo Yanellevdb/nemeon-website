@@ -1,0 +1,33 @@
+{% extends "_base/base.twig" %}
+
+{% block content %}
+  <div class="content-wrapper">
+
+
+    <article class="post-type-{{ single_post.post_type }}" id="post-{{ single_post.ID }}">
+      {% include 'blocks/hero_small.twig' with { block: {title: {size: 'h1', content: title}, background:'bg-dark-grey'}}%}
+      {% if gated_content == true %}
+        <section class="post_download__content">
+          <div class="constrict-xs">
+            <div class="post_download__extra-information">
+              {% include 'partial/wysiwyg.twig' with { text: extra_information } %}
+            </div>
+
+            <div class="contact__form post_download__form">
+              {{ form|shortcodes }}
+            </div>
+
+            <div class="post_download__button"></div>
+          </div>
+        </section>
+      {% else %}
+        <section class="article-content">
+          {% include '_base/flexible.twig' with { items: post.meta('blocks') } %}
+        </section>
+      {% endif %}
+      {% include 'blocks/call_to_action.twig' with {block: cta} %}
+    </article>
+
+  </div>
+  <!-- /content-wrapper -->
+{% endblock %}

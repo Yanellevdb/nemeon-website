@@ -1,0 +1,19 @@
+{% import 'macros/titles.twig' as title %}
+
+<section class="content_grid">
+  <div class="constrict">
+    <div class="content_grid_wrapper">
+      {{ title.main(block.title, '', true) }}
+      <div class="content_grid_blocks">
+        {% for item in block.blocks %}
+          <div class="content_grid_blocks_item {{item.background_color}}">
+            <picture class="content_grid_blocks_item__visual">
+              {% include 'partial/img.twig' with { img: item.image, thumb: 'full' } %}
+            </picture>
+            <p>{{item.text}}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

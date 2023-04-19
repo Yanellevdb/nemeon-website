@@ -1,0 +1,49 @@
+.cta_block {
+  &_wrapper {
+    margin-top: rem(75);
+    padding: rem(73) rem(93) rem(73) rem(63);
+    display: grid;
+    grid-template-columns: 1fr rem(305);
+    align-items: center;
+  }
+
+  &_content {
+    display: flex;
+    flex-direction: column;
+    gap: rem(60);
+
+    .wysiwyg {
+      p,
+      a {
+        font-size: rem(26);
+        line-height: lh(34, 26);
+        margin: 0;
+      }
+
+      a {
+        font-weight: 300;
+      }
+    }
+  }
+
+  &_image {
+    position: relative;
+    width: rem(305);
+    height: rem(305);
+
+    img {
+      object-fit: contain;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@include below($desktop-sm) {
+  .cta_block {
+    &_image {
+      display: none;
+    }
+  }
+}

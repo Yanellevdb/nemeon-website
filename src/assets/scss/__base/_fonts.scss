@@ -1,0 +1,39 @@
+// ==========================================================================
+// Fonts
+// ==========================================================================
+// Font-weights
+// Thin (Hairline): 100
+// Extra Light (Ultra Light): 200
+// Light: 300
+// Normal: 400
+// Medium: 500
+// Semi Bold (Demi Bold): 600
+// Bold: 700
+// Extra Bold (Ultra Bold): 800
+// Black (Heavy): 900
+// ==========================================================================
+
+$base-font-path: "./static/fonts/";
+
+$fonts: (
+  "Riforma LL": (
+    (300, normal, "riforma-ll/riforma-ll-light"),
+    // (300, italic, "riforma-ll/riforma-ll-lightitalic"),
+    (400, normal, "riforma-ll/riforma-ll-regular"),
+    // (400, italic, "riforma-ll/riforma-ll-italic"),
+  ),
+);
+
+@if (variable-exists(fonts)) {
+  @each $name, $properties in $fonts {
+    @each $weight, $style, $path in $properties {
+      @font-face {
+        font-family: $name;
+        font-weight: $weight;
+        font-style: $style;
+        src: url($base-font-path + $path + ".woff2") format("woff2"),
+          url($base-font-path + $path + ".woff") format("woff");
+      }
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.experts {
+  &_wrapper {
+    margin-top: rem(150);
+    text-align: center;
+  }
+
+  &_collection {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: rem(50);
+    gap: rem(20);
+
+    @include below($tablet) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .expert {
+    &_name {
+      color: $black;
+      margin-top: rem(10);
+    }
+  }
+
+  .btn {
+    margin: rem(50) auto 0;
+  }
+}

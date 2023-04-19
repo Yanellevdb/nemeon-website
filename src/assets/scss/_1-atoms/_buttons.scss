@@ -1,0 +1,42 @@
+.btn {
+  background-color: $nucleon-green;
+  padding: rem(17) rem(20);
+  font-weight: 400;
+  transition: 200ms;
+  width: fit-content;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+    color: $white;
+    background-color: $black;
+  }
+
+  &.black {
+    background-color: $black;
+    color: $nucleon-green;
+
+    &:hover {
+      color: $black;
+      background-color: $nucleon-dark-grey;
+    }
+  }
+
+  a {
+    padding-bottom: 0;
+    color: currentColor;
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.loadmore-btn {
+  margin-top: rem(80);
+
+  &-wrap {
+    display: flex;
+    justify-content: center;
+  }
+}

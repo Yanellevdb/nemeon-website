@@ -1,0 +1,11 @@
+@mixin fntSize($fs, $lh: null, $ls: null) {
+  font-size: rem($fs);
+  line-height: if($lh, ($lh/$fs), null);
+  letter-spacing: if($ls, em($ls, $fs), null);
+}
+
+@mixin fnt($font-family, $fs, $fw:400, $lh: null, $ls: null) {
+  font-family: $font-family;
+  font-weight: $fw;
+  @include fntSize($fs, $lh, $ls);
+}

@@ -1,0 +1,20 @@
+{% import 'macros/titles.twig' as title %}
+
+<section class="icon_block_columns">
+  <div class="constrict">
+    <div class="icon_block_columns_wrapper">
+      {{ title.main(block.title, '', true) }}
+      <div class="blocks">
+        {% for item in block.blocks %}
+          <div class="block {{item.background_color}}">
+            <figure class="block__visual">
+              {% include 'partial/img.twig' with { img: item.icon, thumb: 'full' } %}
+            </figure>
+            {{ title.main(item.title, '', true) }}
+            {% include 'partial/wysiwyg.twig' with { text: item.content } %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

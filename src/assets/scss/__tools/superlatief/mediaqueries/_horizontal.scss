@@ -1,0 +1,12 @@
+// Horizontal Mediaqueries
+@mixin above($min, $type: $screen) {
+  @include bp($min, min-width, $type) {
+    @content;
+  }
+}
+
+@mixin below($max, $type: $screen) {
+  @include bp($max, max-width, $type) {
+    @content;
+  }
+}

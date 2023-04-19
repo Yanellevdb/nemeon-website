@@ -1,0 +1,148 @@
+.header {
+  position: fixed;
+  width: 100%;
+  height: rem(30);
+  display: block;
+  padding: rem(30) rem(30) rem(30) rem(60);
+  z-index: 9999;
+  transition: 200ms;
+
+  .wrapper {
+    height: rem(30);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: rem(-15);
+  }
+}
+
+.header-text-color-white {
+  .header {
+    a {
+      color: $white;
+    }
+
+    .btn {
+      a {
+        color: $black;
+      }
+
+      &:hover {
+        a {
+          color: $white;
+        }
+      }
+    }
+
+    .nav-main-mobile {
+      .hamburger-icon .icon {
+        background: $white;
+        &::after,
+        &::before {
+          background: $white;
+        }
+      }
+    }
+  }
+}
+
+html.scroll {
+  .header {
+    background: $black;
+
+    a {
+      color: $white;
+    }
+
+    .btn {
+      a {
+        color: $black;
+      }
+
+      &:hover {
+        a {
+          color: $white;
+        }
+      }
+    }
+
+    .nav-main-mobile {
+      .hamburger-icon .icon {
+        background: $white;
+        &::after,
+        &::before {
+          background: $white;
+        }
+      }
+    }
+  }
+
+  .header-text-color-white {
+    .header {
+      background: $white;
+
+      a {
+        color: $black;
+      }
+
+      .btn {
+        a {
+          color: $black;
+        }
+
+        &:hover {
+          a {
+            color: $white;
+          }
+        }
+      }
+
+      .nav-main-mobile {
+        a {
+          color: $white;
+        }
+
+        .btn {
+          a {
+            color: $black;
+          }
+
+          &:hover {
+            a {
+              color: $white;
+            }
+          }
+        }
+        .hamburger-icon .icon {
+          background: $black;
+          &::after,
+          &::before {
+            background: $black;
+          }
+        }
+      }
+
+      &.open {
+        .nav-main-mobile {
+          .hamburger-icon .icon {
+            background: $white;
+            &::after,
+            &::before {
+              background: $white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include below($tablet) {
+  .header {
+    height: rem(20);
+
+    .wrapper {
+      height: rem(20);
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{% import 'macros/titles.twig' as title %}
+
+<section class="experts">
+  <div class="constrict">
+    <div class="experts_wrapper">
+      {{ title.main(block.title, '', true) }}
+      <p>{{block.text}}</p>
+      <div class="experts_collection">
+        {% for expert in block.experts %}
+          <div class="expert">
+            <picture class="expert_image">
+              {% include 'partial/img.twig' with { img: expert.image, thumb: 'full' } %}
+            </picture>
+            <h3 class="expert_name">{{expert.name}}</h3>
+            <p class="expert_details">{{expert.details}}</p>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="btn">
+        <a href="{{block.button.url}}" target="{{block.button.target}}">{{block.button.title}}</a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,16 @@
+{% import 'macros/titles.twig' as title %}
+
+<section class="job_content">
+  <div class="constrict">
+    <div class="job_content_wrapper">
+      {% for item in block.content %}
+        <div class="job_content__item">
+          {{ title.main(item.title, '', true) }}
+          <div class="description">
+            {% include 'partial/wysiwyg.twig' with { text: item.description } %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

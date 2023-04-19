@@ -1,0 +1,72 @@
+a {
+  color: $black;
+  width: fit-content;
+  font-size: rem(16);
+  line-height: lh(19, 16);
+  font-weight: 400;
+  text-decoration: none;
+  position: relative;
+
+  &::after {
+    display: block;
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    bottom: 0;
+    background: currentColor;
+    height: rem(1);
+    transition-property: width;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+  }
+
+  &:hover::after,
+  &:focus::after,
+  &:active::after {
+    right: 0;
+    left: auto;
+    width: 0%;
+  }
+
+  &.underline {
+    &:after {
+      bottom: rem(-10);
+    }
+  }
+
+  &.no-underline {
+    &::after {
+      width: 0;
+      left: unset;
+      right: 0;
+    }
+
+    &:hover::after,
+    &:focus::after,
+    &:active::after {
+      left: 0;
+      right: auto;
+      width: 100%;
+    }
+  }
+}
+
+// .wysiwyg {
+//   a {
+//     &::after {
+//       width: 0;
+//       left: unset;
+//       right: 0;
+//       bottom: 0;
+//     }
+
+//     &:hover::after,
+//     &:focus::after,
+//     &:active::after {
+//       left: 0;
+//       right: auto;
+//       width: 100%;
+//     }
+//   }
+// }

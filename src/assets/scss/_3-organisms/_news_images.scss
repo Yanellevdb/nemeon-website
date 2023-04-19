@@ -1,0 +1,21 @@
+.news_images {
+  &_wrapper {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: rem(30);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+@include below($tablet-xs) {
+  .news_images {
+    &_wrapper {
+      grid-auto-flow: row;
+    }
+  }
+}

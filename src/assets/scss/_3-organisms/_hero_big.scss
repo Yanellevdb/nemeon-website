@@ -1,0 +1,43 @@
+.hero_big {
+  height: rem(900);
+  position: relative;
+
+  .title {
+    margin-bottom: rem(28);
+  }
+
+  img,
+  video {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+  }
+
+  picture {
+    display: none;
+  }
+
+  .constrict {
+    height: 100%;
+  }
+  &_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+  }
+}
+
+@include below($tablet) {
+  .hero_big {
+    video {
+      display: none;
+    }
+    picture {
+      display: block;
+    }
+  }
+}

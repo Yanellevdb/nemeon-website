@@ -1,0 +1,20 @@
+{% import 'macros/titles.twig' as title %}
+
+<section class="hero_small {{block.background}}{% if block.hero_with_image %} hero_with_image{% endif %}">
+  <div class="constrict">
+    <div class="hero_small_wrapper">
+      <div class="hero_small_content">
+        {{ title.main(block.title, '', true) }}
+        {% if block.hero_with_image %}
+          <p class="small">{{block.subtext}}</p>
+        {% endif %}
+      </div>
+      <a class="hero_small_link" href="{{block.link.url}}" target="{{block.link.target}}">{{block.link.title}}</a>
+      {% if block.hero_with_image %}
+        <picture class="hero_small_image">
+          {% include 'partial/img.twig' with { img: block.image, thumb: 'full' } %}
+        </picture>
+      {% endif %}
+    </div>
+  </div>
+</section>

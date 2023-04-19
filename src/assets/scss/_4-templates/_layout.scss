@@ -1,0 +1,25 @@
+// ==========================================================================
+// Layout
+// Layout rules divide the page into sections. Layouts hold one or more
+// modules together.
+// ==========================================================================
+
+.constrict {
+  max-width: rem($desktop-hd);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 rem(30) 0 rem(60);
+
+  &-xs {
+    max-width: rem($desktop-sm);
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 rem(30);
+  }
+}
+
+@include below($tablet) {
+  .constrict {
+    padding: 0 rem(30) 0 rem(50);
+  }
+}

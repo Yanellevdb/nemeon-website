@@ -1,0 +1,25 @@
+.job_content {
+  &_wrapper {
+    display: grid;
+    grid-gap: rem(50);
+    margin-bottom: rem(70);
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    grid-gap: rem(30);
+
+    .description * {
+      margin-top: 0;
+    }
+  }
+}
+
+@include below($tablet) {
+  .job_content {
+    &__item {
+      grid-template-columns: 1fr;
+    }
+  }
+}

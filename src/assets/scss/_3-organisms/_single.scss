@@ -1,0 +1,21 @@
+.single {
+  .article-content {
+    .constrict {
+      max-width: $desktop-md;
+    }
+  }
+}
+
+.single-post {
+  .article-content {
+    & > *:not(.news_big_image) {
+      .constrict {
+        max-width: $desktop-sm;
+      }
+    }
+  }
+
+  section {
+    margin-bottom: rem(80);
+  }
+}

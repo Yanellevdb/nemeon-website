@@ -1,0 +1,11 @@
+<section class="news_images">
+  <div class="constrict">
+    <div class="news_images_wrapper">
+      {% for image in block.images %}
+        <picture>
+          {% include 'partial/img.twig' with { img: image.image, thumb: 'full' } %}
+        </picture>
+      {% endfor %}
+    </div>
+  </div>
+</section>

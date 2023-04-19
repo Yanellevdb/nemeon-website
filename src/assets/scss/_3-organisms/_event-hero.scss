@@ -1,0 +1,65 @@
+.event_hero {
+  position: relative;
+  z-index: 0;
+
+  &.text_light {
+    color: $white;
+  }
+
+  &_wrapper {
+    height: rem(488);
+    display: flex;
+    align-items: center;
+    margin-bottom: rem(160);
+  }
+
+  &_content {
+    display: flex;
+    flex-direction: column;
+    max-width: rem(790);
+    z-index: 1;
+
+    h3 {
+      color: inherit;
+    }
+  }
+
+  &_subtitle {
+    margin-bottom: rem(10);
+  }
+
+  &_extra_info {
+    font-weight: 600;
+    p {
+      font-size: rem(20);
+    }
+  }
+
+  &_image {
+    position: absolute;
+    left: rem(10);
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 150%;
+      object-fit: cover;
+      object-position: top;
+
+      @include above($mobile) {
+        height: 135%;
+      }
+
+      @include above($desktop-hd) {
+        object-position: 50% 30%;
+      }
+    }
+  }
+
+  &_link {
+    position: absolute;
+    bottom: rem(50);
+  }
+}

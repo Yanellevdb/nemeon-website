@@ -1,0 +1,20 @@
+{% import 'macros/titles.twig' as title %}
+
+<section class="event_hero text_{{block.text_color}}{% if block.text_color == 'light' %} bg-black{% endif %}">
+  <picture class="event_hero_image">
+    {% include 'partial/img.twig' with { img: block.image, thumb: 'full' } %}
+  </picture>
+  <div class="constrict">
+    <div class="event_hero_wrapper">
+      <div class="event_hero_content">
+        {{ title.main(block.subtitle, 'event_hero_subtitle', true) }}
+        {{ title.main(block.title, 'event_hero_title', true) }}
+
+        <div class="event_hero_extra_info">
+          {{block.extra_info}}
+        </div>
+      </div>
+      <a class="event_hero_link" href="{{block.link.url}}" target="{{block.link.target}}">{{block.link.title}}</a>
+    </div>
+  </div>
+</section>

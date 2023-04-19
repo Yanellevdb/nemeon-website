@@ -1,0 +1,26 @@
+{% import 'macros/titles.twig' as title %}
+{% import 'macros/buttons.twig' as btn %}
+
+<section class="posts">
+  <div class="constrict">
+    <div class="posts_wrapper">
+      {% for item in block.post_column %}
+        <div class="post_column">
+          {{ title.main(item.title, 'post_column__title') }}
+          <div class="latest-posts__grid posts-grid {{item.show}}">
+            {% if item.post_type.name == 'jobs' %}
+              {% for post in item.jobs %}
+                {% include ['partial/tease-post.twig', 'partial/tease.twig'] %}
+              {% endfor %}
+            {% elseif item.post_type.name == 'post' %}
+              {% for post in item.posts %}
+                {% include ['partial/tease-post.twig', 'partial/tease.twig'] %}
+              {% endfor %}
+            {% endif %}
+          </div>
+          <a class="post-archive-link underline" href="{{item.archive_link.url}}">{{item.archive_link.title}}</a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

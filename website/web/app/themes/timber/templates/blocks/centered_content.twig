@@ -1,0 +1,15 @@
+{% import 'macros/titles.twig' as title %}
+
+<section class="centered_content">
+  <div class="constrict">
+    <div class="centered_content_wrapper {{block.background}}">
+      <picture class="centered_content_image centered_content_image__left">
+        {% include 'partial/img.twig' with { img: block.image_left, thumb: 'full' } %}
+      </picture>
+      {{ title.main(block.title, 'centered_content_title', true) }}
+      <picture class="centered_content_image centered_content_image__right">
+        {% include 'partial/img.twig' with { img: block.image_right, thumb: 'full' } %}
+      </picture>
+    </div>
+  </div>
+</section>

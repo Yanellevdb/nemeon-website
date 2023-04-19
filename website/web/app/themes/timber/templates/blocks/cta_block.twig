@@ -1,0 +1,19 @@
+{% import 'macros/titles.twig' as title %}
+
+<section class="cta_block">
+  <div class="constrict">
+    <div class="cta_block_wrapper {{block.background}}">
+      <div class="cta_block_content">
+        {{ title.main(block.title, '', true) }}
+        {% include 'partial/wysiwyg.twig' with { text: block.text } %}
+        <div class="cta_block_link btn black">
+          <a href="{{block.link.url}}" target="{{block.link.target}}">{{block.link.title}}</a>
+        </div>
+      </div>
+
+      <picture class="cta_block_image">
+        <img src="{{block.image}}" alt="">
+      </picture>
+    </div>
+  </div>
+</section>

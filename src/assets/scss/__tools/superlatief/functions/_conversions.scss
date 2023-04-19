@@ -1,0 +1,66 @@
+$em-base: if(variable-exists(default-font-size), $default-font-size, 16px);
+$vw-base: if(variable-exists(vw-base), $vw-base, 1440px);
+
+// return vw value (% based on max-width)
+@function vw($number, $base: $vw-base) {
+  @if not unitless($number) {
+    $number: strip-units($number);
+  }
+
+  @if not unitless($base) {
+    $base: strip-units($base);
+  }
+
+  $value: percentage($number/$base);
+
+  $value: strip-units($value) * 1vw;
+
+  @return $value;
+}
+
+
+// return rem value
+@function rem($pxval) {
+  @if not unitless($pxval) {
+    $pxval: strip-units($pxval);
+  }
+
+  $base: $em-base;
+  @if not unitless($base) {
+    $base: strip-units($base);
+  }
+
+  @return ($pxval / $base) * 1rem;
+}
+
+// return em value
+@function em($pxval, $base: $em-base) {
+  @if not unitless($pxval) {
+    $pxval: strip-units($pxval);
+  }
+
+  @if not unitless($base) {
+    $base: strip-units($base);
+  }
+
+  @return ($pxval / $base) * 1em;
+}
+
+
+// return line-height value (unitless)
+@function lh($lh, $fs) {
+  @if not unitless($lh) {
+    $lh: strip-units($lh);
+  }
+
+  @if not unitless($fs) {
+    $fs: strip-units($fs);
+  }
+
+  @return ($lh/$fs);
+}
+
+// return letter-spacing value (em)
+@function ls($ls, $fs) {
+  @return em($ls, $fs);
+}

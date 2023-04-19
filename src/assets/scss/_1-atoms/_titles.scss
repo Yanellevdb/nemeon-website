@@ -1,0 +1,32 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 300;
+}
+
+h1 {
+  font-size: rem(50);
+  line-height: lh(61, 50);
+}
+
+h2 {
+  font-size: rem(34);
+  line-height: lh(41, 34);
+}
+
+h3 {
+  font-size: rem(26);
+  line-height: lh(31, 26);
+  color: $nucleon-dark-grey;
+}
+
+@include below($tablet) {
+  h1 {
+    font-size: rem(40);
+    line-height: lh(48, 40);
+  }
+}

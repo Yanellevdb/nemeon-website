@@ -1,0 +1,22 @@
+<article class="search-teaser" id="post-{{ article.ID }}">
+  <a class="search-teaser__inner" href="{{ article.link }}" title="{{ article.title }}">
+    {% if article.thumbnail.id %}
+      <figure class="search-teaser__visual">
+        <img class="responsive" src="{{ Image(article.thumbnail.id).src( thumb ) }}" alt="{{ Image(article.thumbnail.id).alt }}">
+      </figure>
+    {% endif %}
+
+    <div class="search-teaser__content">
+      <h3 class="h4 search-teaser__title">
+        {{ article.title }}
+      </h3>
+      <div class="search-teaser__excerpt">
+        {% if article.post_excerpt %}
+          {{ article.post_excerpt|excerpt(30) }}
+        {% else %}
+          {{ article.post_content|excerpt(30) }}
+        {% endif %}
+      </div>
+    </div>
+  </a>
+</article>

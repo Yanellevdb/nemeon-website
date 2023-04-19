@@ -1,0 +1,105 @@
+// [attr^="string"] => starts with string                 => use: start or '^'
+// [attr="string"]  => ends with string                   => use: end or '$'
+// [attr*="string"] => contains string anywhere           => use: contains or '*'
+// [attr|="string"] => contains string, followed by dash  => use: dash, '-' or '|'
+// [attr~="string"] => contains string, followed by space => use: in-list, '~' or ' '
+
+// div {
+//   @include hasAttr(class, 'className', start) {
+//     foo: bar;
+//   };
+// }
+
+@mixin hasAttr($attr: 'class', $string:null, $o:null, $children:false) {
+  $eq: '';
+
+  @if $string {
+    $eq: '=';
+    $string: '"' + $string + '"';
+  }
+
+  @if $o == start or $o == '^' {
+    $o: '^' + $eq;
+  } @else if $o == end or $o == '$' {
+    $o: '$' + $eq;
+  } @else if $o == contains or $o == '*' {
+    $o: '*' + $eq;
+  } @else if $o == in-list or $o == ' ' or $o == '~' {
+    $o: '~' + $eq;
+  } @else if $o == dash or $o == '-' or $o == '|' {
+    $o: '|' + $eq;
+  } @else {
+    $o: '' + $eq;
+  }
+
+  @if $children == true {
+    [#{$attr + $o + $string}] {
+      @content;
+    }
+  } @else {
+    @include optional-at-root('[#{$attr + $o + $string}]') {
+      @content;
+    }
+  }
+
+}
+
+@mixin idStartsWith($string, $children:false) {
+  @include hasAttr('id', $string, '^', $children) {
+    @content;
+  }
+}
+
+@mixin idEndsWith($string, $children:false) {
+  @include hasAttr('id', $string, '$', $children) {
+    @content;
+  }
+}
+
+@mixin idContains($string, $children:false) {
+   @include hasAttr('id', $string, '*', $children) {
+    @content;
+  }
+}
+
+@mixin hrefStartsWith($string, $children:false) {
+  @include hasAttr('href', $string, '^', $children) {
+    @content;
+  }
+}
+
+@mixin hrefEndsWith($string, $children:false) {
+  @include hasAttr('href', $string, '$', $children) {
+    @content;
+  }
+}
+
+@mixin hrefContains($string, $children:false) {
+  @include hasAttr('href', $string, '*', $children) {
+    @content;
+  }
+}
+
+@mixin classStartsWith($string, $children:false) {
+  @include hasAttr('class', $string, '^', $children) {
+    @content;
+  }
+}
+
+@mixin classEndsWith($string, $children:false) {
+  @include hasAttr('class', $string, '$', $children) {
+    @content;
+  }
+}
+
+@mixin classContains($string, $children:false) {
+  @include hasAttr('class', $string, '*', $children) {
+    @content;
+  }
+}
+
+@mixin classInList($string, $children:false) {
+  @include hasAttr('class', $string, '~', $children) {
+    @content;
+  }
+}

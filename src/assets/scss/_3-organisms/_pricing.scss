@@ -1,0 +1,59 @@
+.pricing {
+  &_wrapper {
+    margin-top: rem(50);
+
+    & > .title {
+      margin-bottom: rem(31);
+    }
+  }
+
+  &_blocks {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: rem(30);
+    grid-auto-columns: 1fr;
+
+    &_item {
+      padding: rem(40);
+      display: grid;
+      grid-template-rows: minmax(#{rem(100)}, auto) minmax(#{rem(100)}, auto) 1fr;
+
+      p {
+        margin: 0;
+      }
+
+      &__visual {
+        width: rem(40);
+        height: rem(40);
+        position: relative;
+        margin-bottom: rem(30);
+
+        img {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+
+      &_prices {
+        &_item {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+
+      .title {
+        color: $black;
+      }
+    }
+  }
+}
+
+@include below($desktop) {
+  .pricing {
+    &_blocks {
+      grid-auto-flow: row;
+    }
+  }
+}

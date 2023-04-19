@@ -1,0 +1,39 @@
+{% block html_head_container %}
+
+  {% include '_base/html-header.twig'  %}
+  {% block head %}{% endblock %}
+</head>{% endblock %}<body class="{{body_class}}" data-template="base.twig">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MVGKQX9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+{{ function('wp_body_open') }}
+
+{% block header %}
+  {% include 'partial/header.twig' %}
+{% endblock %}
+
+
+<section
+  id="content" role="main" class="content-wrapper">
+  {# {% if title %}<h1>{{title}}</h1>{% endif %} #}
+  <div class="wrapper {{sidebar_class}}">
+    {% block content %}
+      Sorry, no content
+    {% endblock %}
+    <div class="scrollbar-wrapper">
+      <div class="scrollbar"></div>
+    </div>
+  </div>
+  {% if sidebar %}
+    <aside class="layout-sidebar">
+      {{sidebar}}
+    </aside>
+  {% endif %}
+</section>
+
+{% block footer %}
+  {% include 'partial/footer.twig' %}
+  {{ function('wp_footer') }}
+{% endblock %}</body></html>

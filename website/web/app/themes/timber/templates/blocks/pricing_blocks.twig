@@ -1,0 +1,30 @@
+{% import 'macros/titles.twig' as title %}
+
+<section class="pricing">
+  <div class="constrict">
+    <div class="pricing_wrapper">
+      {{ title.main(block.title, '', true) }}
+      <div class="pricing_blocks">
+        {% for item in block.blocks %}
+          <div class="pricing_blocks_item {{item.background}}">
+            <figure class="pricing_blocks_item__visual">
+              {% include 'partial/img.twig' with { img: item.image, thumb: 'full' } %}
+            </figure>
+            <h3 class="title">{{item.title}}</h3>
+            <div class="pricing_blocks_item_prices">
+              {% for price in item.prices %}
+                <div class="pricing_blocks_item_prices_item">
+                  {% if price.text %}
+                    <p>{{price.text}}</p>
+                  {% endif %}
+                  <p>{{price.price}}</p>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <p>{{block.subtext}}</p>
+    </div>
+  </div>
+</section>

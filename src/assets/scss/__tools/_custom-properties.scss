@@ -1,0 +1,55 @@
+:root {
+  // fonts
+  --ff-systeem: -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, helvetica,
+    arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  --ff-mono: sfmono-regular, consolas, 'Liberation Mono', menlo, courier,
+    monospace;
+
+  --ff-primary: var(--ff-systeem);
+  --ff-secondary: var(--ff-systeem);
+
+  // headings
+  --fs-h1: clamp(2.25rem, 2.06rem + 0.97vw, 2.81rem); // 36 - 45
+  --fs-h2: clamp(1.88rem, 1.7rem + 0.86vw, 2.38rem); // 30 - 38
+  --fs-h3: clamp(1.5rem, 1.37rem + 0.65vw, 1.88rem); // 24 - 30
+  --fs-h4: #{rem(20)};
+  --fs-h5: 1rem;
+
+  --lh-default: 1.7;
+  --lh-h1: #{lh(54, 45)};
+  --lh-h2: #{lh(50, 38)};
+  --lh-h3: #{lh(40, 30)};
+  --lh-h4: #{lh(26, 20)};
+
+  --ls-h1: #{ls(-0.5, 45)};
+  --ls-h2: #{ls(-0.5, 38)};
+  --ls-h3: #{ls(-0.5, 30)};
+
+  // colors
+  --black: rgb(0, 0, 0);
+  --white: rgb(255, 255, 255);
+  --text-color: rgb(59, 59, 55);
+
+  // margins - paddings
+  --grid-gap: #{rem(25)};
+  --section-margin: clamp(var(--grid-gap), #{vw(50, 1440)}, #{rem(50)});
+  --site-padding: var(--grid-gap);
+  --site-width: #{rem($desktop-hd)};
+
+  // Misc
+  --wp-admin-bar: 0;
+
+  @include above(768px) {
+    --wp-admin-bar: 46px;
+  }
+
+  @include above(783px) {
+    --wp-admin-bar: 32px;
+  }
+
+  @include above($desktop) {
+    // margins - paddings
+    --grid-gap: 2rem;
+    --site-padding: var(--grid-gap);
+  }
+}

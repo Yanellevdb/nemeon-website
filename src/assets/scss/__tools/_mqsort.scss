@@ -1,0 +1,26 @@
+// ==========================================================================
+// MQSort
+// Mediaqueries sorting for MQPacker postCSS
+// ==========================================================================
+
+$mq: (
+  desktop-hd: $desktop-hd,
+  desktop-md: $desktop-md,
+  desktop: $desktop,
+  desktop-sm: $desktop-sm,
+  tablet: $tablet,
+  tablet-xs: $tablet-xs,
+  mobile: $mobile
+);
+
+$mq_rev: mapReverse($mq);
+
+@each $n, $q in $mq {
+  @include below($q)     { .foo { bar: 'below'; } };
+  @include below($q - 1) { .foo { bar: 'below -1'; } };
+}
+
+@each $n, $q in $mq_rev {
+  @include above($q - 1) { .foo { bar: 'above -1'; } };
+  @include above($q)     { .foo { bar: 'above'; } };
+}

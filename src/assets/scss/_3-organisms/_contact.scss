@@ -1,0 +1,140 @@
+.contact {
+  &__form {
+    &__text {
+      margin-bottom: rem(100);
+    }
+
+    .wpcf7 {
+      &__inputs {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: rem(60) rem(30);
+
+        .wpcf7-form-control-wrap:not(.acceptance) {
+          border-bottom: rem(1) solid black;
+        }
+
+        .wpcf7-form-control-wrap > input,
+        .wpcf7-form-control-wrap > select {
+          width: 100%;
+          border: none;
+          padding-bottom: rem(10);
+        }
+
+        .wpcf7-form-control-wrap > input {
+          &:focus {
+            outline: none;
+          }
+        }
+
+        .wpcf7-list-item {
+          margin-left: rem(35);
+
+          input[type="checkbox"] {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+          }
+
+          .wpcf7-list-item-label {
+            position: relative;
+            // padding-left: rem(35);
+            cursor: pointer;
+
+            &::before {
+              display: block;
+              content: "";
+              position: absolute;
+              top: rem(-2);
+              left: rem(-35);
+              height: rem(25);
+              width: rem(25);
+              background-color: $white;
+              cursor: pointer;
+              transition: 200ms;
+              border: rem(1) solid black;
+            }
+
+            &::after {
+              display: none;
+              content: "";
+              position: absolute;
+              left: rem(-27);
+              top: rem(0);
+              width: rem(10);
+              height: rem(15);
+              border: solid $black;
+              border-width: 0 rem(2) rem(2) 0;
+              transform: rotate(45deg);
+            }
+          }
+
+          label input:hover ~ .wpcf7-list-item-label::before {
+            background-color: $nucleon-grey;
+          }
+
+          label input:checked ~ .wpcf7-list-item-label::after {
+            display: block;
+          }
+        }
+
+        .acceptance,
+        .message {
+          grid-column: span 2;
+        }
+
+        .message textarea {
+          width: 100%;
+          border: none;
+
+          &:focus {
+            outline: none;
+          }
+        }
+      }
+
+      &-submit {
+        border: none;
+        outline: none;
+        margin-top: rem(60);
+        border-radius: 0;
+
+        &[disabled] {
+          background: $nucleon-dark-grey;
+
+          &:hover {
+            color: rgba(16, 16, 16, 0.3);
+          }
+        }
+      }
+
+      &-not-valid-tip {
+        padding-bottom: rem(10);
+      }
+
+      form .wpcf7-response-output {
+        margin-left: 0;
+        margin-right: 0;
+        padding: rem(10);
+        background: $black;
+        border: none;
+        color: $white;
+      }
+    }
+  }
+}
+
+@include below($tablet) {
+  .contact__form {
+    .wpcf7__inputs {
+      grid-template-columns: 1fr;
+
+      .acceptance,
+      .menu {
+        grid-column: span 1;
+      }
+    }
+  }
+}

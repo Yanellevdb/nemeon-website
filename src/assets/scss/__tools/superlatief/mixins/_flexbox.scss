@@ -1,0 +1,72 @@
+// $flex: flex | inline-flex
+// $direction: row | row-reverse | column | column-reverse
+// $wrap: wrap | no-wrap | wrap-reverse
+// $justify: flex-start | flex-end | center | space-between | space-around
+// $items: flex-start | flex-end | center | baseline | stretch
+// $content: flex-start | flex-end | center | space-between | space-around | stretch
+
+@mixin flex(
+            $flex: flex,
+            $direction: null,
+            $wrap: null,
+            $justify: null,
+            $items: null,
+            $content: null) {
+
+
+  @if $wrap == nowrap      { $wrap: no-wrap; }
+  @if $wrap == reverse     { $wrap: wrap-reverse; }
+
+  @if $justify == start    { $justify: flex-start; }
+  @if $justify == end      { $justify: flex-end; }
+  @if $justify == between  { $justify: space-between; }
+  @if $justify == around   { $justify: space-around; }
+
+  @if $items == start      { $items: flex-start; }
+  @if $items == end        { $items: flex-end; }
+
+  @if $content == start    { $content: flex-start; }
+  @if $content == end      { $content: flex-end; }
+  @if $content == between  { $content: space-between; }
+  @if $content == around   { $content: space-around; }
+
+  display: $flex;
+  justify-content: $justify;
+  flex: {
+    direction: $direction;
+    wrap: $wrap;
+  }
+  align: {
+    items: $items;
+    content: $content;
+  }
+}
+
+
+
+
+// $order: <number>
+// $grow: <number>
+// $shrink: <number>
+// $basis: <length> | auto
+// $justify: flex-start | flex-end | center | space-between | space-around
+// $align: auto | flex-start | flex-end | center | baseline | stretch
+
+@mixin flex-item(
+                  $order: null,
+                  $grow: null,
+                  $shrink: null,
+                  $basis: null,
+                  $align: null) {
+
+  @if $align == start { $align: flex-start; }
+  @if $align == end   { $align: flex-end; }
+
+  order: $order;
+  align-self: $align;
+  flex: {
+    grow: $grow;
+    shrink: $shrink;
+    basis: $basis;
+  }
+}

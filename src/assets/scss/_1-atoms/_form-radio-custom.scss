@@ -1,0 +1,23 @@
+.radio {
+  display: inline-block;
+
+  &__input {
+    // visually hide the input
+    @include visually-hidden();
+  }
+
+  &__label {
+    // text styles
+
+    &::before {
+      content: '';
+      // radio-button styles for default state
+    }
+  }
+
+  &__input:checked + &__label {
+    &::before {
+      // radio-button styles for checked state
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{% extends "_base/base.twig" %}
+
+{% block content %}
+  <div class="content-wrapper">
+
+    <article class="post-type-{{ single_post.post_type }}" id="post-{{ single_post.ID }}">
+      {% include 'blocks/hero_small.twig' with { block: {title: {size: 'h1', content: title}, background:'bg-green'}}%}
+
+      <section class="article-content">
+        {% include '_base/flexible.twig' with { items: post.meta('blocks') } %}
+      </section>
+
+      {% set mailToLink = (cta.link.url.url) ? cta.link.url.url : 'jobs@nemeon.io' %}
+      {% set mailTo = 'mailto:' ~ mailToLink ~ '?subject=' ~ post.title %}
+
+      {% include 'blocks/call_to_action.twig' with {
+        block: {
+        link: {
+          url: {
+            title: '',
+            url: mailTo,
+            target: 0
+            },
+            label: cta.link.label
+            },
+          text: cta.text
+          }
+        }
+        %}
+    </article>
+
+  </div>
+  <!-- /content-wrapper -->
+{% endblock %}
