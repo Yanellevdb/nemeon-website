@@ -23,7 +23,7 @@
 
   .footer-main-menu {
     display: grid;
-    grid-template-columns: repeat(3, minmax(#{rem(200)}, auto)) 3fr;
+    grid-template-columns: repeat(4, minmax(#{rem(200)}, auto)) 4fr;
     margin-bottom: rem(150);
 
     .wysiwyg {

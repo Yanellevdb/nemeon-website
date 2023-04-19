@@ -892,7 +892,7 @@ body.cookies-accepted.cookies-set #cookie-notice {
     font-weight: 300; }
   #footer .footer-main-menu {
     display: grid;
-    grid-template-columns: repeat(3, minmax(12.5rem, auto)) 3fr;
+    grid-template-columns: repeat(4, minmax(12.5rem, auto)) 4fr;
     margin-bottom: 9.375rem; }
     #footer .footer-main-menu .wysiwyg a::after {
       width: 0;

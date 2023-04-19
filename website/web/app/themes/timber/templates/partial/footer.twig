@@ -3,17 +3,45 @@
 <footer id="footer">
   <div class="constrict">
     <div class="footer-main-menu">
+
+     <div class="logo">
+        <h3>Logo</h3>
+        <a class="hdr-logo-link" href="{{site.url}}" rel="home">
+          <img src="./static/assets/img/logo-nemeon-white.svg" alt="logo" />
+        </a>      
+        {% include "partial/wysiwyg.twig" with {'text': contact_cta } %}
+      <a href="{{ site.url }}">Neem contact op</a>
+      {% include 'blocks/call_to_action.twig' with {block: cta} %}
+    </div>
+    <div class="kantoren">
+        <h3>Offices</h3>
+        {% include "partial/wysiwyg.twig" with {'text': offices } %}
+    </div>
+    <div>
+      <div class="insights">
+        <h3>Insights</h3>
+        {% include "partial/menu.twig" with {'menu': insights_menu, 'items': insights_menu.get_items, 'class': 'insights-menu'} %}
+      </div>
+      <div class="general">
+        <h3>General</h3>
+        {% include "partial/wysiwyg.twig" with {'text': offices } %}
+      </div>
+    </div>
+    <div>
+      <div class="about">
+        <h3>About us</h3>
+        {% include "partial/menu.twig" with {'menu': about_menu, 'items': about_menu.get_items, 'class': 'about-menu'} %}
+      </div>
+      <div class="services">
+        <h3>What we do</h3>
+        {% include "partial/menu.twig" with {'menu': services_menu, 'items': services_menu.get_items, 'class': 'services-menu'} %}
+      </div>
+    </div>
+
       <div class="contact">
         <h3>Contact</h3>
         {% include "partial/wysiwyg.twig" with {'text': contact_info } %}
-      </div>
-      <div class="footer-menu">
-        <h3>General</h3>
-        {% include "partial/menu.twig" with {'menu': footer_menu, 'items': footer_menu.get_items, 'class': 'footer-menu'} %}
-      </div>
       {% if socials %}
-        <div class="socials">
-          <h3>Follow us</h3>
           <ul>
             {% for social in socials %}
               <li>
@@ -21,9 +49,10 @@
               </li>
             {% endfor %}
           </ul>
-        </div>
       {% endif %}
-    </div>
+</div>
+
+
     <div class="footer-sub-menu">
       <div class="hdr-logo" role="banner">
         <a class="hdr-logo-link" href="{{site.url}}" rel="home">
