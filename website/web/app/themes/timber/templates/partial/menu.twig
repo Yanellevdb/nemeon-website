@@ -1,10 +1,31 @@
 {% if menu %}
-  <ul>
-    {% for item in items %}
-      <li class="{{ item.classes | join(' ') }}">
-        <a class="no-underline" target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
-        {% include "partial/menu.twig" with {'items': item.children} %}
-      </li>
-    {% endfor %}
-  </ul>
+	<ul class="nav navbar-nav">
+	{% for item in menu %}
+
+		{% if item.get_children is not empty %}
+			{% set submenu = true %}
+		{% else %}
+			{% set submenu = false %}
+		{% endif %}
+
+		<li class="{{item.classes | join(' ')}}{% if submenu %} dropdown{% endif %}">
+			<a
+				href="{{item.get_link}}"
+				{% if submenu %}
+					class="dropdown-toggle"
+					data-toggle="dropdown"
+					role="button"
+					aria-haspopup="true"
+					aria-expanded="false"
+				{% endif %}
+			>
+				{{item.title}}
+				{% if submenu %}<span class="caret"></span>{% endif %}
+			</a>
+			{% if submenu %}
+				{% include "dropdown-menu.twig" with {'menu': item.get_children} %}
+			{% endif %}
+		</li>
+	{% endfor %}
+	</ul>
 {% endif %}

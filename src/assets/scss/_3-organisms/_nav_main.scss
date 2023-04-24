@@ -16,6 +16,14 @@
       width: rem(160);
       text-align: center;
     }
+
+    li {
+      display: none;
+    }
+  }
+
+  ul.dropdown {
+    display: none;
   }
 
   &-mobile {
@@ -41,7 +49,7 @@
           &::after,
           &::before {
             display: block;
-            content: "";
+            content: '';
             position: absolute;
             width: rem(30);
             height: rem(2);

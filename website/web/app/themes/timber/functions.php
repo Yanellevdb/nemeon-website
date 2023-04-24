@@ -117,7 +117,11 @@ class StarterSite extends Timber\Site
    */
   public function add_to_context($context)
   {
-    $context['menu']  = new Timber\Menu('primary-menu');
+    $args = array(
+      'depth' => 2,
+      'menu_class' => 'nav navbar-nav',
+    );
+    $context['menu'] = new Timber\Menu('primary-menu', $args);
     $context['footer_menu']  = new Timber\Menu('footer-menu');
     $context['foo']   = 'bar';
     $context['stuff'] = 'I am a value set in your functions.php file';
@@ -201,6 +205,9 @@ class StarterSite extends Timber\Site
         'legal-menu' => __('Legal Menu')
       )
     );
+
+    add_action('init', 'register_nav_menus');
+
 
     // add_image_size( 'square_medium', 430, 430, true );
   }
