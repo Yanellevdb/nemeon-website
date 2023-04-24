@@ -1,0 +1,17 @@
+/* Error: 6px and 0 are incompatible.
+ *     ,
+ * 201 |   padding: calc(8px - 2px - 0) 8px calc(8px - 2px - 3px - 0);
+ *     |                 ^^^^^^^^^^^^^
+ *     '
+ *   src\assets\scss\__tools\libs\tomselect\tomselect.scss 201:17  root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: 6px and 0 are incompatible.\a     \2577 \a 201 \2502    padding: calc(8px - 2px - 0) 8px calc(8px - 2px - 3px - 0);\a     \2502                  ^^^^^^^^^^^^^\a     \2575 \a   src\\assets\\scss\\__tools\\libs\\tomselect\\tomselect.scss 201:17  root stylesheet";
+}

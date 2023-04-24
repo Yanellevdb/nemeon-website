@@ -5,13 +5,18 @@
     <div class="footer-main-menu">
 
      <div class="logo">
-        <h3>Logo</h3>
-        <a class="hdr-logo-link" href="{{site.url}}" rel="home">
-          <img src="./static/assets/img/logo-nemeon-white.svg" alt="logo" />
-        </a>      
+      <div>
+        {% if custom_logo_url %}
+          <a class="hdr-logo-link logo-footer" href="{{site.url}}" rel="home">
+            <img src="{{ custom_logo_url }}" class="logo-footer" alt="{{ site.name }}" width="185px" />
+          </a> 
+        {% else %}
+          <a class="hdr-logo-link logo-footer" href="{{site.url}}" rel="home">
+            {{ site.name }}
+          </a>
+        {% endif %}
         {% include "partial/wysiwyg.twig" with {'text': contact_cta } %}
-      <a href="{{ site.url }}">Neem contact op</a>
-      {% include 'blocks/call_to_action.twig' with {block: cta} %}
+      </div>
     </div>
     <div class="kantoren">
         <h3>Offices</h3>
@@ -24,7 +29,7 @@
       </div>
       <div class="general">
         <h3>General</h3>
-        {% include "partial/wysiwyg.twig" with {'text': offices } %}
+        {% include "partial/menu.twig" with {'menu': general_menu, 'items': general_menu.get_items, 'class': 'general-menu'} %}
       </div>
     </div>
     <div>
@@ -50,20 +55,18 @@
             {% endfor %}
           </ul>
       {% endif %}
-</div>
-
+    </div>
+    </div>
 
     <div class="footer-sub-menu">
-      <div class="hdr-logo" role="banner">
-        <a class="hdr-logo-link" href="{{site.url}}" rel="home">
-          <span class="site-name">{{site.name}}</span>
-          <span class="logo"></span>
-        </a>
-      </div>
-      <p class="tagline">{{tagline}}</p>
       <div class="part-of">
         {% include "partial/wysiwyg.twig" with {'text': part_of } %}
       </div>
+      <div>
+        <p class="splitter">|</p>
+      </div>
+      <div>
+      <a href="/privacy-policy" target="/privacy-policy">Privacy Policy</a>
+      </div>
     </div>
-  </div>
 </footer>

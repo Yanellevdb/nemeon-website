@@ -131,10 +131,13 @@ class StarterSite extends Timber\Site
         $context['part_of'] = get_field('part_of', 'options');
         $context['part_of'] = get_field('part_of', 'options');
         $context['contact_cta'] = get_field('contact_cta', 'options');
+        $context['contact_cta_link'] = get_field('contact_cta_link', 'options');
         $context['offices'] = get_field('offices', 'options');
         $context['insights_menu']  = new Timber\Menu('insights-menu');
         $context['services_menu']  = new Timber\Menu('services-menu');
         $context['about_menu']  = new Timber\Menu('about-menu');
+        $context['general_menu']  = new Timber\Menu('general-menu');
+        $context['custom_logo_url'] = wp_get_attachment_image_url(get_theme_mod('custom_logo'), 'full');
 
 
 
@@ -167,6 +170,16 @@ class StarterSite extends Timber\Site
              * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
              */
         add_theme_support('post-thumbnails');
+
+        $defaults= array(
+            'height' => 230,
+            'width' => 1620,
+            'flex-height' => false,
+            'flex-width' => false,
+            'unlink-homepage-logo' => true,
+        );
+
+        add_theme_support('custom-logo', $defaults);
 
         /*
              * Switch default core markup for search form, comment form, and comments
@@ -205,7 +218,12 @@ class StarterSite extends Timber\Site
             array(
             'primary-menu' => __('Primary Menu'),
             'footer-menu' => __('Footer Menu'),
-            'legal-menu' => __('Legal Menu')
+            'legal-menu' => __('Legal Menu'),
+            'insights-menu' => __('Insights Menu'),
+            'about-menu' => __('About Menu'),
+            'services-menu' => __('Services Menu'),
+            'general-menu' => __('General Menu'),
+
       )
         );
 
