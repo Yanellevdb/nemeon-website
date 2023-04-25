@@ -111,19 +111,23 @@ class StarterSite extends Timber\Site
     }
     return $classes;
   }
+}
 
   /** This is where you add some context
    *
    * @param string $context context['this'] Being the Twig's {{ this }}.
    */
+
+
   public function add_to_context($context)
   {
     $args = array(
       'depth' => 2,
-      'menu_class' => 'nav navbar-nav',
     );
+
     $context['menu'] = new Timber\Menu('primary-menu', $args);
     $context['footer_menu']  = new Timber\Menu('footer-menu');
+    $context['topbar_menu']  = new Timber\Menu('topbar-menu');
     $context['foo']   = 'bar';
     $context['stuff'] = 'I am a value set in your functions.php file';
     $context['notes'] = 'These values are available everytime you call Timber::context();';
@@ -135,6 +139,7 @@ class StarterSite extends Timber\Site
     $context['tagline'] = get_field('tagline', 'options');
     $context['part_of'] = get_field('part_of', 'options');
     $context['part_of'] = get_field('part_of', 'options');
+  
 
     if (function_exists('icl_object_id')) {
       $context['language'] = apply_filters('wpml_current_language', NULL);
@@ -199,19 +204,16 @@ class StarterSite extends Timber\Site
     // );
 
     add_theme_support('menus');
+
     register_nav_menus(
       array(
         'primary-menu' => __('Primary Menu'),
         'footer-menu' => __('Footer Menu'),
-        'legal-menu' => __('Legal Menu')
+        'legal-menu' => __('Legal Menu'),
+        'topbar-menu' => __('Top Bar Menu')
       )
     );
 
-    function register_topbar_menu()
-    {
-      register_nav_menu('topbar-menu', ('Topbar Menu'));
-    }
-    add_action('init', 'register_topbar_menu');
     add_action('init', 'register_nav_menus');
 
 
