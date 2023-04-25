@@ -1,0 +1,17 @@
+.topbar-menu ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  gap: 20px;
+  padding-right: rem(40);
+}
+
+.topbar-menu {
+  height: 55px;
+  background-color: $black;
+}
+
+.topbar-menu a {
+  color: $nucleon-green;
+}
