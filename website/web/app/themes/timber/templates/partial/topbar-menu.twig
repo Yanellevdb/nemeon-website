@@ -1,5 +1,5 @@
-{% if has_nav_menu('topbar-menu') %}
-  <nav class="topbar-menu">
-    {{ wp_nav_menu({ 'theme_location': 'topbar-menu', 'menu_class': 'menu' }) }}
-  </nav>
+{% if function('has_nav_menu', 'topbar-menu') %}
+<nav class="topbar-menu">
+    {{ function('wp_nav_menu', { 'theme_location': 'topbar-menu', 'container': false }) }}
+</nav>
 {% endif %}

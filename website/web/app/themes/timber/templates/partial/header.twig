@@ -1,7 +1,7 @@
 <header class="header">
   <div class="wrapper">
+  {% include 'partial/topbar-menu.twig' with {'menu': topbar_menu 'items': topbar-menu.get_items, 'class': 'topbar-menu} %}
     <nav class="topbar-navigation">
-      {{ menu('topbar-menu') }}
     </nav>
     <h1 class="hdr-logo" role="banner">
       <a class="hdr-logo-link" href="{{site.url}}" rel="home">
@@ -11,9 +11,6 @@
     </h1>
     <nav id="nav-main" class="nav-main" role="navigation">
       {% include "partial/menu.twig" with {'menu': menu, 'items': menu.get_items, 'class': 'primary-menu'} %}
-      <div class="topbar-menu">
-        {{ langSwitch() }}
-      </div>
     </nav>
     <nav id="nav-main-mobile" class="nav-main-mobile" role="navigation">
       <div class="hamburger-icon">

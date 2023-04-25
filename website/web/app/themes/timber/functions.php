@@ -15,7 +15,6 @@
  * plug-in, you can safely delete this block.
  */
 $composer_autoload = __DIR__ . '/vendor/autoload.php';
-
 if (file_exists($composer_autoload)) {
   require_once $composer_autoload;
   $timber = new Timber\Timber();
@@ -111,23 +110,17 @@ class StarterSite extends Timber\Site
     }
     return $classes;
   }
-}
 
   /** This is where you add some context
    *
    * @param string $context context['this'] Being the Twig's {{ this }}.
    */
-
-
   public function add_to_context($context)
   {
-    $args = array(
-      'depth' => 2,
-    );
-
-    $context['menu'] = new Timber\Menu('primary-menu', $args);
+    $context['menu']  = new Timber\Menu('primary-menu');
     $context['footer_menu']  = new Timber\Menu('footer-menu');
     $context['topbar_menu']  = new Timber\Menu('topbar-menu');
+    var_dump($context['topbar_menu']  = new Timber\Menu('topbar-menu'));
     $context['foo']   = 'bar';
     $context['stuff'] = 'I am a value set in your functions.php file';
     $context['notes'] = 'These values are available everytime you call Timber::context();';
@@ -139,7 +132,6 @@ class StarterSite extends Timber\Site
     $context['tagline'] = get_field('tagline', 'options');
     $context['part_of'] = get_field('part_of', 'options');
     $context['part_of'] = get_field('part_of', 'options');
-  
 
     if (function_exists('icl_object_id')) {
       $context['language'] = apply_filters('wpml_current_language', NULL);
@@ -204,18 +196,15 @@ class StarterSite extends Timber\Site
     // );
 
     add_theme_support('menus');
-
     register_nav_menus(
       array(
         'primary-menu' => __('Primary Menu'),
         'footer-menu' => __('Footer Menu'),
-        'legal-menu' => __('Legal Menu'),
-        'topbar-menu' => __('Top Bar Menu')
+        'topbar-menu' => __('TopBar Menu'),
+        'legal-menu' => __('Legal Menu')
+
       )
     );
-
-    add_action('init', 'register_nav_menus');
-
 
     // add_image_size( 'square_medium', 430, 430, true );
   }
