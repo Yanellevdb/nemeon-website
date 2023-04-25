@@ -1029,6 +1029,13 @@ html.scroll .header-text-color-white .header {
     justify-content: center;
     height: 100%; }
 
+.hero_big_btns {
+  display: flex;
+  flex-direction: row; }
+
+.cta_block_link.btn {
+  margin-right: 15px; }
+
 @media screen and (max-width: 768px) {
   .hero_big video {
     display: none; }
