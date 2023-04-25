@@ -1,0 +1,12 @@
+<nav class="topbar-menu">
+  <ul class="menu">
+    {% for item in menu.get_items %}
+      <li class="menu-item{% if item.current %} current-menu-item{% endif %}{% if item.classes %} {{ item.classes|join(' ') }}{% endif %}">
+        <a href="{{ item.get_link }}" title="{{ item.title }}">
+          {{ item.title }}
+        </a>
+      </li>
+    {% endfor %}
+    {{ langSwitch() }}
+  </ul>
+</nav>

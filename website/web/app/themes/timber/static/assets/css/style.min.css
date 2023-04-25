@@ -1147,6 +1147,10 @@ html.scroll .header-text-color-white .header {
     .nav-main ul .btn {
       width: 10rem;
       text-align: center; }
+    .nav-main ul li {
+      display: none; }
+  .nav-main ul.dropdown {
+    display: none; }
   .nav-main-mobile {
     display: none;
     height: 1.25rem; }
@@ -1165,7 +1169,7 @@ html.scroll .header-text-color-white .header {
         transform-origin: 50% 50%; }
         .nav-main-mobile .hamburger-icon .icon::after, .nav-main-mobile .hamburger-icon .icon::before {
           display: block;
-          content: "";
+          content: '';
           position: absolute;
           width: 1.875rem;
           height: 0.125rem;

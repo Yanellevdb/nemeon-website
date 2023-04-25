@@ -15,6 +15,7 @@
  * plug-in, you can safely delete this block.
  */
 $composer_autoload = __DIR__ . '/vendor/autoload.php';
+
 if (file_exists($composer_autoload)) {
   require_once $composer_autoload;
   $timber = new Timber\Timber();
@@ -206,6 +207,11 @@ class StarterSite extends Timber\Site
       )
     );
 
+    function register_topbar_menu()
+    {
+      register_nav_menu('topbar-menu', ('Topbar Menu'));
+    }
+    add_action('init', 'register_topbar_menu');
     add_action('init', 'register_nav_menus');
 
 

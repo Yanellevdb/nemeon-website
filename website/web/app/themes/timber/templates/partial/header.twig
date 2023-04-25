@@ -8,10 +8,10 @@
     </h1>
     <nav id="nav-main" class="nav-main" role="navigation">
       {% include "partial/menu.twig" with {'menu': menu, 'items': menu.get_items, 'class': 'primary-menu'} %}
+      <div class="topbar-menu">
+        {{ langSwitch() }}
+      </div>
     </nav>
-    <div class="lang-witch">
-      {{ langSwitch() }}
-    </div>
     <nav id="nav-main-mobile" class="nav-main-mobile" role="navigation">
       <div class="hamburger-icon">
         <div class="icon"></div>
