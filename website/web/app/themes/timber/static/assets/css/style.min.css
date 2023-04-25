@@ -898,7 +898,8 @@ body.cookies-accepted.cookies-set #cookie-notice {
     #footer .footer-main-menu .logo-footer {
       padding-bottom: 14px; }
     #footer .footer-main-menu .cta-footer {
-      padding-top: 10px; }
+      padding-top: 10px;
+      font-size: large; }
     #footer .footer-main-menu .wysiwyg a::after {
       width: 0;
       left: unset;
