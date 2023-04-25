@@ -26,7 +26,7 @@
             "key": "field_61307cc6020b2",
             "label": "Socials",
             "name": "socials",
-            "type": "repeater",
+            "type": "url",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -35,35 +35,9 @@
                 "class": "",
                 "id": ""
             },
-            "wpml_cf_preferences": 3,
-            "acfe_repeater_stylised_button": 0,
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "table",
-            "button_label": "",
-            "sub_fields": [
-                {
-                    "key": "field_61308175020b3",
-                    "label": "Link",
-                    "name": "link",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": "",
-                    "wpml_cf_preferences": 1
-                }
-            ]
+            "default_value": "",
+            "placeholder": "",
+            "wpml_cf_preferences": 1
         },
         {
             "key": "field_613081d1020b4",
@@ -211,5 +185,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1682417938
+    "modified": 1682425432
 }

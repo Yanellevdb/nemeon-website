@@ -14,6 +14,8 @@
  * to load your dependencies and initialize Timber. If you are using Timber via the WordPress.org
  * plug-in, you can safely delete this block.
  */
+
+
 $composer_autoload = __DIR__ . '/vendor/autoload.php';
 if (file_exists($composer_autoload)) {
     require_once $composer_autoload;
@@ -128,7 +130,6 @@ class StarterSite extends Timber\Site
         $context['contact_info'] = get_field('contact_information', 'options');
         $context['socials'] = get_field('socials', 'options');
         $context['tagline'] = get_field('tagline', 'options');
-        $context['part_of'] = get_field('part_of', 'options');
         $context['part_of'] = get_field('part_of', 'options');
         $context['contact_cta'] = get_field('contact_cta', 'options');
         $context['contact_cta_link'] = get_field('contact_cta_link', 'options');
