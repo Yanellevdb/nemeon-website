@@ -1148,7 +1148,8 @@ html.scroll .header-text-color-white .header {
 .nav-main {
   height: 1.875rem;
   display: flex;
-  align-items: center; }
+  align-items: center;
+  background-color: aqua; }
   .nav-main ul {
     display: flex;
     align-items: center;
@@ -1176,7 +1177,7 @@ html.scroll .header-text-color-white .header {
         transform-origin: 50% 50%; }
         .nav-main-mobile .hamburger-icon .icon::after, .nav-main-mobile .hamburger-icon .icon::before {
           display: block;
-          content: "";
+          content: '';
           position: absolute;
           width: 1.875rem;
           height: 0.125rem;
