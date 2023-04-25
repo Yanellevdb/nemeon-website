@@ -131,7 +131,6 @@ class StarterSite extends Timber\Site
         $context['socials'] = get_field('socials', 'options');
         $context['tagline'] = get_field('tagline', 'options');
         $context['part_of'] = get_field('part_of', 'options');
-        $context['part_of'] = get_field('part_of', 'options');
         $context['contact_cta'] = get_field('contact_cta', 'options');
         $context['contact_cta_link'] = get_field('contact_cta_link', 'options');
         $context['contact_cta_text'] = get_field('contact_cta_text', 'options');
