@@ -14,6 +14,8 @@
  * to load your dependencies and initialize Timber. If you are using Timber via the WordPress.org
  * plug-in, you can safely delete this block.
  */
+
+
 $composer_autoload = __DIR__ . '/vendor/autoload.php';
 if (file_exists($composer_autoload)) {
     require_once $composer_autoload;
@@ -111,31 +113,31 @@ class StarterSite extends Timber\Site
         return $classes;
     }
 
-    /** This is where you add some context
-     *
-     * @param string $context context['this'] Being the Twig's {{ this }}.
-     */
-    public function add_to_context($context)
-    {
-        $context['menu']  = new Timber\Menu('primary-menu');
-        $context['footer_menu']  = new Timber\Menu('footer-menu');
-        $context['foo']   = 'bar';
-        $context['stuff'] = 'I am a value set in your functions.php file';
-        $context['notes'] = 'These values are available everytime you call Timber::context();';
-        $context['post_per_page'] = get_option('posts_per_page');
-        $context['_S_VERSION'] = _S_VERSION;
-        $context['is_mobile'] = wp_is_mobile();
-        $context['contact_info'] = get_field('contact_information', 'options');
-        $context['socials'] = get_field('socials', 'options');
-        $context['tagline'] = get_field('tagline', 'options');
-        $context['part_of'] = get_field('part_of', 'options');
-        $context['part_of'] = get_field('part_of', 'options');
+  /** This is where you add some context
+   *
+   * @param string $context context['this'] Being the Twig's {{ this }}.
+   */
+  public function add_to_context($context)
+  {
+    $context['menu']  = new Timber\Menu('primary-menu');
+    $context['footer_menu']  = new Timber\Menu('footer-menu');
+    $context['foo']   = 'bar';
+    $context['stuff'] = 'I am a value set in your functions.php file';
+    $context['notes'] = 'These values are available everytime you call Timber::context();';
+    $context['post_per_page'] = get_option('posts_per_page');
+    $context['_S_VERSION'] = _S_VERSION;
+    $context['is_mobile'] = wp_is_mobile();
+    $context['contact_info'] = get_field('contact_information', 'options');
+    $context['socials'] = get_field('socials', 'options');
+    $context['tagline'] = get_field('tagline', 'options');
+    $context['part_of'] = get_field('part_of', 'options');
+    $context['part_of'] = get_field('part_of', 'options');
 
-        if (function_exists('icl_object_id')) {
-            $context['language'] = apply_filters('wpml_current_language', NULL);
-        } else {
-            $context['language'] = get_locale();
-        }
+    if (function_exists('icl_object_id')) {
+      $context['language'] = apply_filters('wpml_current_language', NULL);
+    } else {
+      $context['language'] = get_locale();
+    }
 
         $context['site']  = $this;
         return $context;
@@ -146,61 +148,61 @@ class StarterSite extends Timber\Site
         // Add default posts and comments RSS feed links to head.
         add_theme_support('automatic-feed-links');
 
-        /*
+    /*
 		 * Let WordPress manage the document title.
 		 * By adding theme support, we declare that this theme does not use a
 		 * hard-coded <title> tag in the document head, and expect WordPress to
 		 * provide it for us.
 		 */
-        add_theme_support('title-tag');
+    add_theme_support('title-tag');
 
-        /*
+    /*
 		 * Enable support for Post Thumbnails on posts and pages.
 		 *
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
-        add_theme_support('post-thumbnails');
+    add_theme_support('post-thumbnails');
 
-        /*
+    /*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
-        add_theme_support(
-            'html5',
-            array(
-                'comment-form',
-                'comment-list',
-                'gallery',
-                'caption',
-            )
-        );
+    add_theme_support(
+      'html5',
+      array(
+        'comment-form',
+        'comment-list',
+        'gallery',
+        'caption',
+      )
+    );
 
-        /*
+    /*
 		 * Enable support for Post Formats.
 		 *
 		 * See: https://codex.wordpress.org/Post_Formats
 		 */
-        // add_theme_support(
-        // 	'post-formats',
-        // 	array(
-        // 		'aside',
-        // 		'image',
-        // 		'video',
-        // 		'quote',
-        // 		'link',
-        // 		'gallery',
-        // 		'audio',
-        // 	)
-        // );
+    // add_theme_support(
+    // 	'post-formats',
+    // 	array(
+    // 		'aside',
+    // 		'image',
+    // 		'video',
+    // 		'quote',
+    // 		'link',
+    // 		'gallery',
+    // 		'audio',
+    // 	)
+    // );
 
-        add_theme_support('menus');
-        register_nav_menus(
-            array(
-                'primary-menu' => __('Primary Menu'),
-                'footer-menu' => __('Footer Menu'),
-                'legal-menu' => __('Legal Menu')
-            )
-        );
+    add_theme_support('menus');
+    register_nav_menus(
+      array(
+        'primary-menu' => __('Primary Menu'),
+        'footer-menu' => __('Footer Menu'),
+        'legal-menu' => __('Legal Menu')
+      )
+    );
 
         // add_image_size( 'square_medium', 430, 430, true );
     }
@@ -254,15 +256,15 @@ class StarterSite extends Timber\Site
 
         global $wp_query;
 
-        $load_more = array(
-            'posts' => json_encode($wp_query->query_vars), // everything about your loop is here
-            'current_page' => get_query_var('paged') ? get_query_var('paged') : 1,
-            'max_page' => $wp_query->max_num_pages,
-            'button_text' => __('More', 'timber'),
-            'loading_text' => __('Loading', 'timber'),
-            'is_search' => isset($_GET["s"]) ? $_GET["s"] : false,
-            'lang' => function_exists('icl_object_id') ? apply_filters('wpml_current_language', NULL) : get_locale()
-        );
+    $load_more = array(
+      'posts' => json_encode($wp_query->query_vars), // everything about your loop is here
+      'current_page' => get_query_var('paged') ? get_query_var('paged') : 1,
+      'max_page' => $wp_query->max_num_pages,
+      'button_text' => __('More', 'timber'),
+      'loading_text' => __('Loading', 'timber'),
+      'is_search' => isset($_GET["s"]) ? $_GET["s"] : false,
+      'lang' => function_exists('icl_object_id') ? apply_filters('wpml_current_language', NULL) : get_locale()
+    );
 
         $params_array = array(
             'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php',

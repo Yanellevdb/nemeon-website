@@ -1,4 +1,13 @@
 <header class="header">
+{% if topbar_menu %}
+  <nav class="topbar-menu">
+    <ul>
+      {% for item in topbar_menu.get_items %}
+        <li><a href="{{ item.get_link }}">{{ item.title }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+{% endif %}
   <div class="wrapper">
     <h1 class="hdr-logo" role="banner">
       <a class="hdr-logo-link" href="{{site.url}}" rel="home">
@@ -9,9 +18,6 @@
     <nav id="nav-main" class="nav-main" role="navigation">
       {% include "partial/menu.twig" with {'menu': menu, 'items': menu.get_items, 'class': 'primary-menu'} %}
     </nav>
-    <div class="lang-witch">
-      {{ langSwitch() }}
-    </div>
     <nav id="nav-main-mobile" class="nav-main-mobile" role="navigation">
       <div class="hamburger-icon">
         <div class="icon"></div>
