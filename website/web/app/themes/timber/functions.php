@@ -131,7 +131,6 @@ class StarterSite extends Timber\Site
         $context['socials'] = get_field('socials', 'options');
         $context['tagline'] = get_field('tagline', 'options');
         $context['part_of'] = get_field('part_of', 'options');
-        $context['part_of'] = get_field('part_of', 'options');
         $context['contact_cta'] = get_field('contact_cta', 'options');
         $context['contact_cta_link'] = get_field('contact_cta_link', 'options');
         $context['contact_cta_text'] = get_field('contact_cta_text', 'options');
@@ -174,7 +173,7 @@ class StarterSite extends Timber\Site
              */
         add_theme_support('post-thumbnails');
 
-        $defaults= array(
+        $defaults = array(
             'height' => 230,
             'width' => 1620,
             'flex-height' => false,
@@ -191,11 +190,11 @@ class StarterSite extends Timber\Site
         add_theme_support(
             'html5',
             array(
-            'comment-form',
-            'comment-list',
-            'gallery',
-            'caption',
-      )
+                'comment-form',
+                'comment-list',
+                'gallery',
+                'caption',
+            )
         );
 
         /*
@@ -219,15 +218,15 @@ class StarterSite extends Timber\Site
         add_theme_support('menus');
         register_nav_menus(
             array(
-            'primary-menu' => __('Primary Menu'),
-            'footer-menu' => __('Footer Menu'),
-            'legal-menu' => __('Legal Menu'),
-            'insights-menu' => __('Insights Menu'),
-            'about-menu' => __('About Menu'),
-            'services-menu' => __('Services Menu'),
-            'general-menu' => __('General Menu'),
+                'primary-menu' => __('Primary Menu'),
+                'footer-menu' => __('Footer Menu'),
+                'legal-menu' => __('Legal Menu'),
+                'insights-menu' => __('Insights Menu'),
+                'about-menu' => __('About Menu'),
+                'services-menu' => __('Services Menu'),
+                'general-menu' => __('General Menu'),
 
-      )
+            )
         );
 
         // add_image_size( 'square_medium', 430, 430, true );
@@ -283,24 +282,24 @@ class StarterSite extends Timber\Site
         global $wp_query;
 
         $load_more = array(
-          'posts' => json_encode($wp_query->query_vars), // everything about your loop is here
-          'current_page' => get_query_var('paged') ? get_query_var('paged') : 1,
-          'max_page' => $wp_query->max_num_pages,
-          'button_text' => __('More', 'timber'),
-          'loading_text' => __('Loading', 'timber'),
-          'is_search' => isset($_GET["s"]) ? $_GET["s"] : false,
-          'lang' => function_exists('icl_object_id') ? apply_filters('wpml_current_language', null) : get_locale()
+            'posts' => json_encode($wp_query->query_vars), // everything about your loop is here
+            'current_page' => get_query_var('paged') ? get_query_var('paged') : 1,
+            'max_page' => $wp_query->max_num_pages,
+            'button_text' => __('More', 'timber'),
+            'loading_text' => __('Loading', 'timber'),
+            'is_search' => isset($_GET["s"]) ? $_GET["s"] : false,
+            'lang' => function_exists('icl_object_id') ? apply_filters('wpml_current_language', null) : get_locale()
         );
 
         $params_array = array(
-          'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php',
-          'loadmore' => $load_more,
-          'pdf_link' => $this->get_pdf_link(),
-          'download' => array(
-            'download_title' => __('Download your pdf below', 'timber'),
-            'download_text' => __('Thanks for filling in the form! You can download the article below.', 'timber'),
-            'download_button' => __('Download your article', 'timber'),
-          )
+            'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php',
+            'loadmore' => $load_more,
+            'pdf_link' => $this->get_pdf_link(),
+            'download' => array(
+                'download_title' => __('Download your pdf below', 'timber'),
+                'download_text' => __('Thanks for filling in the form! You can download the article below.', 'timber'),
+                'download_button' => __('Download your article', 'timber'),
+            )
         );
 
         wp_localize_script('timber-app', 'nucleon_params', $params_array);
@@ -370,19 +369,19 @@ class StarterSite extends Timber\Site
          * @array $value        Advanced Link values
          */
         $sub_fields[] = array(
-          'name'      => 'no_follow',
-          'label'     => 'No follow',
-          'type'      => 'true_false',
-          'message'   => 'Add rel="nofollow"',
-          'ui'        => false
+            'name'      => 'no_follow',
+            'label'     => 'No follow',
+            'type'      => 'true_false',
+            'message'   => 'Add rel="nofollow"',
+            'ui'        => false
         );
 
         $sub_fields[] = array(
-          'name'      => 'is_button',
-          'label'     => 'Is button',
-          'type'      => 'true_false',
-          'message'   => 'shows link as button',
-          'ui'        => false
+            'name'      => 'is_button',
+            'label'     => 'Is button',
+            'type'      => 'true_false',
+            'message'   => 'shows link as button',
+            'ui'        => false
         );
 
         return $sub_fields;

@@ -898,17 +898,19 @@ body.cookies-accepted.cookies-set #cookie-notice {
     #footer .footer-main-menu .logo-footer {
       padding-bottom: 14px; }
     #footer .footer-main-menu .cta-footer {
-      padding-top: 10px;
-      font-size: large; }
-    #footer .footer-main-menu .wysiwyg a::after {
-      width: 0;
-      left: unset;
-      right: 0;
-      bottom: 0; }
-    #footer .footer-main-menu .wysiwyg a:hover::after, #footer .footer-main-menu .wysiwyg a:focus::after, #footer .footer-main-menu .wysiwyg a:active::after {
-      left: 0;
-      right: auto;
-      width: 100%; }
+      font-size: 1.2rem; }
+    #footer .footer-main-menu .wysiwyg {
+      margin-top: 25px;
+      margin-bottom: 25px; }
+      #footer .footer-main-menu .wysiwyg a::after {
+        width: 0;
+        left: unset;
+        right: 0;
+        bottom: 0; }
+      #footer .footer-main-menu .wysiwyg a:hover::after, #footer .footer-main-menu .wysiwyg a:focus::after, #footer .footer-main-menu .wysiwyg a:active::after {
+        left: 0;
+        right: auto;
+        width: 100%; }
   #footer .footer-sub-menu {
     display: flex;
     flex-direction: row;
