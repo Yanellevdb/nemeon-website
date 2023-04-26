@@ -1187,8 +1187,7 @@ html.scroll .header-text-color-white .header {
   .nav-main .nav-drop-item > a:hover {
     background-color: #000;
     color: #fff;
-    width: auto;
-    min-width: 150px; }
+    width: auto; }
   .nav-main ul {
     display: flex;
     align-items: center;
