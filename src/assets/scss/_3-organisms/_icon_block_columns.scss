@@ -6,6 +6,17 @@
       margin-bottom: rem(31);
     }
 
+    .call_to_action_element{
+      font-size: 1.65rem;
+      margin-top: 2rem;
+      display: flex;
+      justify-content: flex-end;
+
+      .underline{
+        color: $nucleon-green;
+      }
+    }
+
     .blocks {
       display: grid;
       grid-auto-flow: column;

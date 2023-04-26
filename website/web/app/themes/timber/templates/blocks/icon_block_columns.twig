@@ -15,6 +15,12 @@
           </div>
         {% endfor %}
       </div>
+
+      <div class="call_to_action_element">
+        <a class="underline" href="{{block.cta.link.url}}">{{block.cta.link.label}}</a>
+        <a class="underline" href="{{block.cta.link}}">{{block.cta.link_text}}</a>
+        {{ block.cta.text }}
+      </div>
     </div>
   </div>
 </section>

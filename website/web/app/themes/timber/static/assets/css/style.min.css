@@ -1083,6 +1083,13 @@ html.scroll .header-text-color-white .header {
   margin-top: 3.125rem; }
   .icon_block_columns_wrapper > .title {
     margin-bottom: 1.9375rem; }
+  .icon_block_columns_wrapper .call_to_action_element {
+    font-size: 1.65rem;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-end; }
+    .icon_block_columns_wrapper .call_to_action_element .underline {
+      color: #d6ff2e; }
   .icon_block_columns_wrapper .blocks {
     display: grid;
     grid-auto-flow: column;
