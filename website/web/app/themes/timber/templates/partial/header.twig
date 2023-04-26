@@ -2,7 +2,7 @@
   <nav class="topbar-menu">
     <ul>
       {% for item in topbar_menu.get_items %}
-        <li><a href="{{ item.get_link }}">{{ item.title }}</a></li>
+        <li><a class="no-underline" href="{{ item.get_link }}">{{ item.title }}</a></li>
       {% endfor %}
     </ul>
   </nav>

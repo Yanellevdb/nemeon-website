@@ -2,13 +2,13 @@
   <ul class="nav-main">
     {% for item in menu.items %}
       <li class="nav-main-item {{ item.classes|join(' ') }}">
-        <a class="nav-main-link" href="{{ item.link }}">{{ item.title }}</a>
+        <a class="nav-main-link no-underline" href="{{ item.link }}">{{ item.title }}</a>
         {% if item.children %}
           <span class="nav-arrow-down"></span>
           <ul class="nav-drop">
             {% for child in item.children %}
               <li class="nav-drop-item">
-                <a href="{{ child.link }}">{{ child.title }}</a>
+                <a class="no-underline" href="{{ child.link }}">{{ child.title }}</a>
               </li>
             {% endfor %}
           </ul>
