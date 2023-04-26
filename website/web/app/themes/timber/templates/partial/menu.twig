@@ -1,42 +1,19 @@
-{% if menu %}
-  <nav>
-    <ul>
-      {% for item in menu.get_items %}
-        <li class="{{ item.classes | join(' ') }}">
-          <a class="no-underline" target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
-          {% if item.has_children %}
-            <ul class="sub-menu">
-              {% for child in item.get_children %}
-                <li class="{{ child.classes | join(' ') }}">
-                  <a class="no-underline" target="{{ child.target }}" href="{{ child.link }}">{{ child.title }}</a>
-                  {% if child.has_children %}
-                    <ul class="sub-menu-2">
-                      {% for grandchild in child.get_children %}
-                        <li class="{{ grandchild.classes | join(' ') }}">
-                          <a class="no-underline" target="{{ grandchild.target }}" href="{{ grandchild.link }}">{{ grandchild.title }}</a>
-                        </li>
-                      {% endfor %}
-                    </ul>
-                  {% endif %}
-                </li>
-              {% endfor %}
-            </ul>
-          {% endif %}
-        </li>
-      {% endfor %}
-    </ul>
-  </nav>
-  <style>
-    nav ul li ul {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-    }
-
-    nav ul li:hover > ul {
-      display: block;
-    }
-  </style>
-
-{% endif %}
+<nav>
+  <ul class="nav-main">
+    {% for item in menu.items %}
+      <li class="nav-main-item {{ item.classes|join(' ') }}">
+        <a class="nav-main-link" href="{{ item.link }}">{{ item.title }}</a>
+        {% if item.children %}
+          <span class="nav-arrow-down"></span>
+          <ul class="nav-drop">
+            {% for child in item.children %}
+              <li class="nav-drop-item">
+                <a href="{{ child.link }}">{{ child.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

@@ -1156,6 +1156,39 @@ html.scroll .header-text-color-white .header {
   height: 1.875rem;
   display: flex;
   align-items: center; }
+  .nav-main .nav-arrow-down {
+    display: inline-block;
+    margin-left: 5px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #000; }
+  .nav-main .nav-main-item {
+    position: relative;
+    padding-bottom: 30px; }
+  .nav-main .nav-drop {
+    display: none;
+    position: absolute;
+    padding: 1.875rem;
+    background-color: #d6ff2e;
+    color: #000; }
+  .nav-main .nav-main .nav-drop {
+    margin-top: 15px; }
+  .nav-main .nav-main-item:hover > .nav-drop {
+    display: block; }
+  .nav-main .nav-drop-item {
+    display: block; }
+  .nav-main .nav-drop-item > a {
+    display: block;
+    padding: 10px;
+    color: #000;
+    text-decoration: none; }
+  .nav-main .nav-drop-item > a:hover {
+    background-color: #000;
+    color: #fff;
+    width: auto;
+    min-width: 150px; }
   .nav-main ul {
     display: flex;
     align-items: center;
