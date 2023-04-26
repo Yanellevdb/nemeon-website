@@ -14,4 +14,11 @@
 
 .topbar-menu a {
   color: $nucleon-green;
+  color: $white; /* Set the default background color */
+  transition: background-color 0.3s ease; /* Add a transition effect */
+}
+
+.topbar-menu a.active,
+.topbar-menu a:hover {
+  color: $nucleon-green; /* Set the active/hover background color */
 }
