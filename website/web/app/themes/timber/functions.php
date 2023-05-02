@@ -320,6 +320,7 @@ class StarterSite extends Timber\Site
         wp_dequeue_style('style');
     }
 
+
     /** This is where you can add your inline scripts and styles that needs to go inside head tag.
      *
      */

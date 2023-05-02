@@ -1,0 +1,13 @@
+{% import 'macros/titles.twig' as title %}
+
+<section class="partners">
+<div class="constrict">
+    {{ title.main(block.title, '', true) }}
+  {% block partners %}
+  <div class="partners">
+    {{ block.partner_list }}
+    {{ block.partners }}
+  </div>
+{% endblock %}
+</div>
+</section>
