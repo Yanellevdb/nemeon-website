@@ -3,6 +3,54 @@
   display: flex;
   align-items: center;
 
+  .nav-arrow-down {
+    display: inline-block;
+    margin-left: 5px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid $black;
+  }
+
+  .nav-main-item {
+    position: relative;
+    padding-bottom: 30px;
+  }
+
+  .nav-drop {
+    display: none;
+    position: absolute;
+    padding: rem(30);
+    background-color: $nucleon-green;
+    color: $black;
+  }
+
+  .nav-main .nav-drop {
+    margin-top: 15px;
+  }
+
+  .nav-main-item:hover > .nav-drop {
+    display: block;
+  }
+
+  .nav-drop-item {
+    display: block;
+  }
+
+  .nav-drop-item > a {
+    display: block;
+    padding: 10px;
+    color: #000;
+    text-decoration: none;
+  }
+
+  .nav-drop-item > a:hover {
+    background-color: $black;
+    color: #fff;
+    width: auto;
+  }
+
   ul {
     display: flex;
     align-items: center;

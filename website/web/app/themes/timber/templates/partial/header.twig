@@ -1,13 +1,16 @@
-<header class="header">
 {% if topbar_menu %}
   <nav class="topbar-menu">
     <ul>
       {% for item in topbar_menu.get_items %}
-        <li><a href="{{ item.get_link }}">{{ item.title }}</a></li>
+        {% set active_class = app.request.attributes.get('_route') == item.route ? 'active' : '' %}
+        <li><a class="no-underline {{ active_class }}" href="{{ item.get_link }}">{{ item.title }}</a></li>
       {% endfor %}
     </ul>
   </nav>
 {% endif %}
+
+
+<header class="header">
   <div class="wrapper">
     <h1 class="hdr-logo" role="banner">
       <a class="hdr-logo-link" href="{{site.url}}" rel="home">
