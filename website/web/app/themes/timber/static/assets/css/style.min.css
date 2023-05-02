@@ -1436,7 +1436,6 @@ html.scroll .header-text-color-white .header {
   transition: background-color 0.3s ease;
   /* Add a transition effect */ }
 
-.topbar-menu a.active,
 .topbar-menu a:hover {
   color: #d6ff2e;
   /* Set the active/hover background color */ }

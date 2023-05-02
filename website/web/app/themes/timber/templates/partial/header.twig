@@ -2,11 +2,13 @@
   <nav class="topbar-menu">
     <ul>
       {% for item in topbar_menu.get_items %}
-        <li><a class="no-underline" href="{{ item.get_link }}">{{ item.title }}</a></li>
+        {% set active_class = app.request.attributes.get('_route') == item.route ? 'active' : '' %}
+        <li><a class="no-underline {{ active_class }}" href="{{ item.get_link }}">{{ item.title }}</a></li>
       {% endfor %}
     </ul>
   </nav>
 {% endif %}
+
 
 <header class="header">
   <div class="wrapper">
