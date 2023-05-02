@@ -12,8 +12,9 @@
       display: flex;
       justify-content: flex-end;
 
-      .underline{
-        color: $nucleon-green;
+      .cta_link {
+        font-size: 1.65rem;
+        margin-right: 10px;
       }
     }
 
