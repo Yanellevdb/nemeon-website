@@ -14,7 +14,16 @@
     <div class="hero_big_wrapper">
       {{ title.main(block.title, '', true) }}
       {% if block.link.url %}
-        <a class="read-more underline" target="{{block.link.target}}" href="{{block.link.url}}">{{block.link.title}}</a>
+      <div class="hero_big_btns">
+      <div class="cta_block_link btn black">
+          <a href="{{block.link.url}}" target="{{block.link.target}}">{{block.link.title}}</a>
+        </div>
+              {% endif %}
+        {% if block.link_2.url %}
+      <div class="cta_block_link btn nucleon-green">
+          <a href="{{block.link_2.url}}" target="{{block.link_2.target}}">{{block.link_2.title}}</a>
+      </div>
+      </div>
       {% endif %}
     </div>
   </div>

@@ -6,6 +6,18 @@
       margin-bottom: rem(31);
     }
 
+    .call_to_action_element{
+      font-size: 1.65rem;
+      margin-top: 2rem;
+      display: flex;
+      justify-content: flex-end;
+
+      .cta_link {
+        font-size: 1.65rem;
+        margin-right: 10px;
+      }
+    }
+
     .blocks {
       display: grid;
       grid-auto-flow: column;
