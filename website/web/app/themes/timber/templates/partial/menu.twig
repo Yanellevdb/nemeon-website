@@ -1,6 +1,5 @@
-<nav>
-  <ul class="nav-main">
-    {% for item in menu.items %}
+  <ul>
+    {% for item in items %}
       <li class="nav-main-item {{ item.classes|join(' ') }}">
         <a class="nav-main-link no-underline" href="{{ item.link }}">{{ item.title }}</a>
         {% if item.children %}
@@ -16,4 +15,3 @@
       </li>
     {% endfor %}
   </ul>
-</nav>

@@ -439,3 +439,47 @@ require get_template_directory() . '/inc/shortcodes.php';
  * Load More
  */
 require get_template_directory() . '/inc/loadmore.php';
+
+
+
+
+
+/*
+
+
+{% if menu.location == 'General Menu' %}
+
+<ul>
+    {% for item in items %}
+      <li class="{{ item.classes | join(' ') }}">
+        <a class="no-underline" target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+        {% include "partial/menu.twig" with {'items': item.children} %}
+      </li>
+    {% endfor %}
+  </ul>
+
+  {% else %}
+
+  <ul class="nav-main">
+    {% for item in items %}
+      <li class="nav-main-item {{ item.classes|join(' ') }}">
+        <a class="nav-main-link no-underline" href="{{ item.link }}">{{ item.title }}</a>
+        {% if item.children %}
+          <span class="nav-arrow-down"></span>
+          <ul class="nav-drop">
+            {% for child in item.children %}
+              <li class="nav-drop-item">
+                <a class="no-underline" href="{{ child.link }}">{{ child.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+
+{% endif %}
+
+
+
+*/

@@ -907,8 +907,6 @@ body.cookies-accepted.cookies-set #cookie-notice {
     #footer .footer-main-menu ul.nav-main {
       display: flex;
       flex-direction: column; }
-    #footer .footer-main-menu .logo-footer {
-      padding-bottom: 14px; }
     #footer .footer-main-menu .cta-footer {
       font-size: 1.2rem; }
     #footer .footer-main-menu .wysiwyg {
