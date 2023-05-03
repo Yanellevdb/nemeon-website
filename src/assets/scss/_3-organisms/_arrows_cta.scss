@@ -1,0 +1,50 @@
+.arrows_cta {
+  position: relative;
+  padding: 110px;
+}
+
+.constrict {
+  height: 100%;
+}
+
+.arrows_cta_block {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.arrows_cta_text {
+  width: 50%;
+  text-align: left;
+}
+
+.cta_block_links {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  margin-top: 2rem;
+  width: 50%;
+  padding: 40px;
+}
+
+.cta_block_links a {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  position: relative;
+  text-decoration: none;
+}
+
+.arrow {
+  display: flex;
+  padding: 3px;
+  margin-left: 0.5rem;
+}
+
+.cta_block_links hr {
+  width: 100%;
+  border: none;
+  border-top: solid 1px black;
+}

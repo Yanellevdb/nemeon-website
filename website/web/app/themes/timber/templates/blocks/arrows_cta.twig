@@ -1,16 +1,26 @@
-<div class="arrow_cta">
-  <div class="arrows_cta__content">{{ block.content }}</div>
-  <h2 class="arrows_cta__title">{{ block.title }}</h2>
-  <div class="arrows_cta__text">{{ block.text}}</div>
-  {% if Links %}
-    <ul class="arrows_cta__links">
-      {% for link in Links %}
-        <li>
-          <a href="{{ block.link.url }}" target="{{ block.link.target }}">
-            {{ block.link.title }}
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
-  {% endif %}
-</div>
+{% import 'macros/titles.twig' as title %}
+
+<section class="arrows_cta {{ block.background_color }}">
+  <div class="constrict">
+    <div class="arrows_cta_block">
+      <div class="arrows_cta_text">
+        {{ title.main(block.title, '', true) }}
+        {% include 'partial/wysiwyg.twig' with { text: block.text } %}
+      </div>
+      <div class="cta_block_links">
+        <div class="arrow">
+        <a href="{{ block.link.url }}" target="{{ block.link.target }}">{{ block.link.title }}</a>
+        <img src="../../static/assets/img/arrow_right.svg" alt="arrow right">
+        </div><hr>
+        <div class="arrow">
+        <a href="{{ block.link2.url }}" target="{{ block.link2.target }}">{{ block.link2.title }}</a>
+        <img src="../../static/assets/img/arrow_right.svg" alt="arrow right">
+        </div><hr>
+        <div class="arrow">
+        <a href="{{ block.link3.url }}" target="{{ block.link3.target }}">{{ block.link3.title }}</a>
+        <img src="../../static/assets/img/arrow_right.svg" alt="arrow right">
+        </div><hr>
+      </div>
+    </div>
+  </div>
+</section>
