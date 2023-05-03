@@ -936,19 +936,26 @@ body.cookies-accepted.cookies-set #cookie-notice {
     justify-content: flex-end; } }
 
 .header {
-  position: fixed;
+  position: absolute;
   width: 100%;
   height: 1.875rem;
   display: block;
-  padding: 1.875rem 1.875rem 1.875rem 3.75rem;
   z-index: 9999;
-  transition: 200ms; }
+  transition: 200ms;
+  left: 0;
+  right: 0;
+  padding-top: 4rem; }
   .header .wrapper {
     height: 1.875rem;
     display: flex;
     justify-content: space-between;
+    gap: 20px;
     align-items: center;
     margin-top: -0.9375rem; }
+
+.header nav ul li {
+  display: inline-block;
+  white-space: nowrap; }
 
 .header-text-color-white .header a {
   color: #fff; }
@@ -1151,6 +1158,38 @@ html.scroll .header-text-color-white .header {
   height: 1.875rem;
   display: flex;
   align-items: center; }
+  .nav-main .nav-arrow-down {
+    display: inline-block;
+    margin-left: 5px;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #000; }
+  .nav-main .nav-main-item {
+    position: relative;
+    padding-bottom: 30px; }
+  .nav-main .nav-drop {
+    display: none;
+    position: absolute;
+    padding: 1.875rem;
+    background-color: #d6ff2e;
+    color: #000; }
+  .nav-main .nav-main .nav-drop {
+    margin-top: 15px; }
+  .nav-main .nav-main-item:hover > .nav-drop {
+    display: block; }
+  .nav-main .nav-drop-item {
+    display: block; }
+  .nav-main .nav-drop-item > a {
+    display: block;
+    padding: 10px;
+    color: #000;
+    text-decoration: none; }
+  .nav-main .nav-drop-item > a:hover {
+    background-color: #000;
+    color: #fff;
+    width: auto; }
   .nav-main ul {
     display: flex;
     align-items: center;
@@ -1178,7 +1217,7 @@ html.scroll .header-text-color-white .header {
         transform-origin: 50% 50%; }
         .nav-main-mobile .hamburger-icon .icon::after, .nav-main-mobile .hamburger-icon .icon::before {
           display: block;
-          content: "";
+          content: '';
           position: absolute;
           width: 1.875rem;
           height: 0.125rem;
@@ -1379,6 +1418,29 @@ html.scroll .header-text-color-white .header {
     margin-top: 5rem; }
     .text_block_columns_wrapper .blocks {
       grid-template-columns: 1fr; } }
+
+.topbar-menu ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  gap: 20px;
+  padding-right: 2.5rem; }
+
+.topbar-menu {
+  height: 55px;
+  background-color: #000; }
+
+.topbar-menu a {
+  color: #d6ff2e;
+  color: #fff;
+  /* Set the default background color */
+  transition: background-color 0.3s ease;
+  /* Add a transition effect */ }
+
+.topbar-menu a:hover {
+  color: #d6ff2e;
+  /* Set the active/hover background color */ }
 
 .constrict {
   max-width: 90rem;
