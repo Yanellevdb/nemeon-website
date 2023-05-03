@@ -1,0 +1,27 @@
+.topbar-menu ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+  gap: 20px;
+  padding-right: rem(40);
+}
+
+.topbar-menu a.active {
+  // color: $nucleon-green; /* Set the active link color */
+}
+
+.topbar-menu {
+  height: 55px;
+  background-color: $black;
+}
+
+.topbar-menu a {
+  color: $nucleon-green;
+  color: $white; /* Set the default background color */
+  transition: background-color 0.3s ease; /* Add a transition effect */
+}
+
+.topbar-menu a:hover {
+  color: $nucleon-green; /* Set the active/hover background color */
+}
