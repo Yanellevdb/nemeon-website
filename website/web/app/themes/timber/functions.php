@@ -119,8 +119,12 @@ class StarterSite extends Timber\Site
      */
     public function add_to_context($context)
     {
-        $context['menu']  = new Timber\Menu('primary-menu');
+        $args = array(
+            'depth' => 2,
+        );
+        $context['menu']  = new Timber\Menu('primary-menu', $args);
         $context['footer_menu']  = new Timber\Menu('footer-menu');
+        $context['topbar_menu'] = new Timber\Menu('topbar-menu');
         $context['foo']   = 'bar';
         $context['stuff'] = 'I am a value set in your functions.php file';
         $context['notes'] = 'These values are available everytime you call Timber::context();';
@@ -132,9 +136,21 @@ class StarterSite extends Timber\Site
         $context['tagline'] = get_field('tagline', 'options');
         $context['part_of'] = get_field('part_of', 'options');
         $context['part_of'] = get_field('part_of', 'options');
+        $context['contact_cta'] = get_field('contact_cta', 'options');
+        $context['contact_cta_link'] = get_field('contact_cta_link', 'options');
+        $context['contact_cta_text'] = get_field('contact_cta_text', 'options');
+        $context['arrows_cta'] = get_field('arrows_cta', 'options');
+        $context['offices'] = get_field('offices', 'options');
+        $context['insights_menu']  = new Timber\Menu('insights-menu');
+        $context['services_menu']  = new Timber\Menu('services-menu');
+        $context['about_menu']  = new Timber\Menu('about-menu');
+        $context['general_menu']  = new Timber\Menu('general-menu');
+        $context['custom_logo_url'] = wp_get_attachment_image_url(get_theme_mod('custom_logo'), 'full');
+
+
 
         if (function_exists('icl_object_id')) {
-            $context['language'] = apply_filters('wpml_current_language', NULL);
+            $context['language'] = apply_filters('wpml_current_language', null);
         } else {
             $context['language'] = get_locale();
         }
@@ -149,24 +165,34 @@ class StarterSite extends Timber\Site
         add_theme_support('automatic-feed-links');
 
         /*
-		 * Let WordPress manage the document title.
-		 * By adding theme support, we declare that this theme does not use a
-		 * hard-coded <title> tag in the document head, and expect WordPress to
-		 * provide it for us.
-		 */
+             * Let WordPress manage the document title.
+             * By adding theme support, we declare that this theme does not use a
+             * hard-coded <title> tag in the document head, and expect WordPress to
+             * provide it for us.
+             */
         add_theme_support('title-tag');
 
         /*
-		 * Enable support for Post Thumbnails on posts and pages.
-		 *
-		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-		 */
+             * Enable support for Post Thumbnails on posts and pages.
+             *
+             * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+             */
         add_theme_support('post-thumbnails');
 
+        $defaults = array(
+            'height' => 230,
+            'width' => 1620,
+            'flex-height' => false,
+            'flex-width' => false,
+            'unlink-homepage-logo' => true,
+        );
+
+        add_theme_support('custom-logo', $defaults);
+
         /*
-		 * Switch default core markup for search form, comment form, and comments
-		 * to output valid HTML5.
-		 */
+             * Switch default core markup for search form, comment form, and comments
+             * to output valid HTML5.
+             */
         add_theme_support(
             'html5',
             array(
@@ -178,10 +204,10 @@ class StarterSite extends Timber\Site
         );
 
         /*
-		 * Enable support for Post Formats.
-		 *
-		 * See: https://codex.wordpress.org/Post_Formats
-		 */
+             * Enable support for Post Formats.
+             *
+             * See: https://codex.wordpress.org/Post_Formats
+             */
         // add_theme_support(
         // 	'post-formats',
         // 	array(
@@ -200,7 +226,12 @@ class StarterSite extends Timber\Site
             array(
                 'primary-menu' => __('Primary Menu'),
                 'footer-menu' => __('Footer Menu'),
-                'legal-menu' => __('Legal Menu')
+                'topbar-menu' => __('TopBar Menu'),
+                'legal-menu' => __('Legal Menu'),
+                'insights-menu' => __('Insights Menu'),
+                'about-menu' => __('About Menu'),
+                'services-menu' => __('Services Menu'),
+                'general-menu' => __('General Menu'),
             )
         );
 
@@ -263,7 +294,7 @@ class StarterSite extends Timber\Site
             'button_text' => __('More', 'timber'),
             'loading_text' => __('Loading', 'timber'),
             'is_search' => isset($_GET["s"]) ? $_GET["s"] : false,
-            'lang' => function_exists('icl_object_id') ? apply_filters('wpml_current_language', NULL) : get_locale()
+            'lang' => function_exists('icl_object_id') ? apply_filters('wpml_current_language', null) : get_locale()
         );
 
         $params_array = array(

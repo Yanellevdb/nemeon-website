@@ -13,10 +13,15 @@
   <div class="constrict">
     <div class="hero_big_wrapper">
       {{ title.main(block.title, '', true) }}
-      {% if block.link.url %}
-        <a class="read-more underline" target="{{block.link.target}}" href="{{block.link.url}}">{{block.link.title}}</a>
-        <a class="read-more underline" target="{{block.link.target}}" href="{{block.link.url}}">{{block.link.title}}</a>
-      {% endif %}
+       <div class="two_buttons">
+    {% if block.link.url %}
+  <a class="btn black" target="{{block.link.target}}" href="{{block.link.url}}">{{block.link.title}}</a>
+{% endif %}
+{% if block.link2.url %}
+  <a class="btn green" target="{{block.link2.target}}" href="{{block.link2.url}}">{{block.link2.title}}</a>
+{% endif %}
+
+          </div>
     </div>
   </div>
 </section>
