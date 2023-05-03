@@ -135,6 +135,7 @@ class StarterSite extends Timber\Site
         $context['socials'] = get_field('socials', 'options');
         $context['tagline'] = get_field('tagline', 'options');
         $context['part_of'] = get_field('part_of', 'options');
+        $context['part_of'] = get_field('part_of', 'options');
         $context['contact_cta'] = get_field('contact_cta', 'options');
         $context['contact_cta_link'] = get_field('contact_cta_link', 'options');
         $context['contact_cta_text'] = get_field('contact_cta_text', 'options');
@@ -178,7 +179,6 @@ class StarterSite extends Timber\Site
         add_theme_support('post-thumbnails');
 
         $defaults = array(
-        $defaults = array(
             'height' => 230,
             'width' => 1620,
             'flex-height' => false,
@@ -195,11 +195,6 @@ class StarterSite extends Timber\Site
         add_theme_support(
             'html5',
             array(
-                'comment-form',
-                'comment-list',
-                'gallery',
-                'caption',
-            )
                 'comment-form',
                 'comment-list',
                 'gallery',
@@ -228,15 +223,15 @@ class StarterSite extends Timber\Site
         add_theme_support('menus');
         register_nav_menus(
             array(
-                    'primary-menu' => __('Primary Menu'),
-                    'footer-menu' => __('Footer Menu'),
-                    'topbar-menu' => __('TopBar Menu'),
+                'primary-menu' => __('Primary Menu'),
+                'footer-menu' => __('Footer Menu'),
+                'topbar-menu' => __('TopBar Menu'),
                 'legal-menu' => __('Legal Menu'),
-                    'insights-menu' => __('Insights Menu'),
-                    'about-menu' => __('About Menu'),
-                    'services-menu' => __('Services Menu'),
-                    'general-menu' => __('General Menu'),
-                  )
+                'insights-menu' => __('Insights Menu'),
+                'about-menu' => __('About Menu'),
+                'services-menu' => __('Services Menu'),
+                'general-menu' => __('General Menu'),
+            )
         );
 
         // add_image_size( 'square_medium', 430, 430, true );
