@@ -2,12 +2,14 @@
 
 <section class="partners">
 <div class="constrict">
-    {{ title.main(block.title, '', true) }}
-  {% block partners %}
-  <div class="partners">
+  {{ title.main(block.title, '', true) }}
+  <div class="partners_wrapper">
+    {% for item in block.partners %}
+      {% include 'partial/img.twig' with { img: item.partner_1, thumb: 'full' } %}
     {{ block.partner_list }}
-    {{ block.partners }}
+    {{ block.partner_list.partner_1 }}
+            {% endfor %}
+
   </div>
-{% endblock %}
 </div>
 </section>

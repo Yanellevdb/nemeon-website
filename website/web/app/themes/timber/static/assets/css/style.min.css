@@ -427,24 +427,24 @@ a {
     .hdr-logo-link .logo {
       display: block;
       height: 100%;
-      background-image: url("./static/img/logo-nemeon.png");
+      background-image: url("../img/logo-nemeon.png");
       background-size: contain;
       background-repeat: no-repeat; }
 
 #footer .hdr-logo-link .logo {
-  background-image: url("./static/img/logo-nemeon-white.svg"); }
+  background-image: url("../img/logo-nemeon-white.svg"); }
 
 .header-text-color-white .header .hdr-logo-link .logo {
-  background-image: url("./static/img/logo-nemeon-white.svg"); }
+  background-image: url("../img/logo-nemeon-white.svg"); }
 
 html.scroll .header .hdr-logo-link .logo {
-  background-image: url("./static/img/logo-nemeon-white.svg"); }
+  background-image: url("../img/logo-nemeon-white.svg"); }
 
 html.scroll .header-text-color-white .header .hdr-logo-link .logo {
-  background-image: url("./static/img/logo-nemeon.svg"); }
+  background-image: url("../img/logo-nemeon.svg"); }
 
 .header.open .hdr-logo-link .logo {
-  background-image: url("./static/img/logo-nemeon-white.svg"); }
+  background-image: url("../img/logo-nemeon-white.svg"); }
 
 @media screen and (max-width: 768px) {
   .hdr-logo {
@@ -1268,6 +1268,12 @@ html.scroll .header-text-color-white .header {
 .news_quote_wrapper p {
   margin-top: 1.875rem;
   font-weight: 400; }
+
+.partners {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; }
 
 .posts_wrapper {
   display: grid;
