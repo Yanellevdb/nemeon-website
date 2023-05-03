@@ -1,0 +1,16 @@
+<div class="arrow_cta">
+  <div class="arrows_cta__content">{{ block.content }}</div>
+  <h2 class="arrows_cta__title">{{ block.title }}</h2>
+  <div class="arrows_cta__text">{{ block.text}}</div>
+  {% if Links %}
+    <ul class="arrows_cta__links">
+      {% for link in Links %}
+        <li>
+          <a href="{{ block.link.url }}" target="{{ block.link.target }}">
+            {{ block.link.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</div>
