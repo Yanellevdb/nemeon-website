@@ -302,18 +302,20 @@ nav ul {
 
 .btn {
   background-color: #d6ff2e;
-  padding: 1.0625rem 1.25rem;
+  padding: 1.125rem 2rem;
   font-weight: 400;
   transition: 200ms;
   width: fit-content;
-  border: none; }
+  border: none;
+  margin-top: 2.125rem; }
   .btn:hover {
     cursor: pointer;
     color: #fff;
     background-color: #000; }
   .btn.black {
     background-color: #000;
-    color: #d6ff2e; }
+    color: #d6ff2e;
+    margin-right: 0.75rem; }
     .btn.black:hover {
       color: #000;
       background-color: #b2b2b2; }
