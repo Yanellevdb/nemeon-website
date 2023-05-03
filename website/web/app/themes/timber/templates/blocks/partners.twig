@@ -1,15 +1,65 @@
 {% import 'macros/titles.twig' as title %}
 
 <section class="partners">
-<div class="constrict">
-  {{ title.main(block.title, '', true) }}
-  <div class="partners_wrapper">
-    {% for item in block.partners %}
-      {% include 'partial/img.twig' with { img: item.partner_1, thumb: 'full' } %}
-    {{ block.partner_list }}
-    {{ block.partner_list.partner_1 }}
-            {% endfor %}
-
+  <div class="constrict">
+    {{ title.main(block.title, '', true) }}
+    <div class="partners_wrapper">
+      <div class="partners_slider">
+        {% for partner_block in block.partner_list %}
+        <div class="partners_slide">
+          <img src="{{ partner_block.url }}" alt="{{ partner_block.alt }}" />
+        </div>
+        {% endfor %}
+      </div>
+      <div class="partners-nav">
+        <button class="partners-nav-prev">&#10094;</button>
+        <button class="partners-nav-next">&#10095;</button>
+      </div>
+    </div>
   </div>
-</div>
 </section>
+
+<script>
+  const partnersSlider = document.querySelector('.partners_slider');
+  const partnersSlides = document.querySelectorAll('.partners_slide');
+  const prevBtn = document.querySelector('.partners-nav-prev');
+  const nextBtn = document.querySelector('.partners-nav-next');
+
+  let slideIndex = 0;
+
+  const showSlides = () => {
+    partnersSlider.style.transform = `translateX(${-slideIndex * 100}%)`;
+  };
+
+  const nextSlide = () => {
+    if (slideIndex === partnersSlides.length - 1) {
+      slideIndex = 0;
+    } else {
+      slideIndex++;
+    }
+    showSlides();
+  };
+
+  const prevSlide = () => {
+    if (slideIndex === 0) {
+      slideIndex = partnersSlides.length - 1;
+    } else {
+      slideIndex--;
+    }
+    showSlides();
+  };
+
+var nextButton = document.querySelector('.partners-nav-next');
+var partnersWrapper = document.querySelector('.partners_wrapper');
+var partnerItemWidth = partnersWrapper.querySelector('img').clientWidth;
+var scrollAmount = partnerItemWidth + 40; // 40 is the margin + padding of each image
+
+nextButton.addEventListener('click', function() {
+  partnersWrapper.scrollBy({
+    left: scrollAmount,
+    behavior: 'smooth'
+  });
+});
+
+  prevBtn.addEventListener('click', prevSlide);
+</script>
