@@ -296,6 +296,10 @@ nav ul {
 .wysiwyg > *:last-child {
   margin-bottom: 0; }
 
+.wysiwyg .code {
+  background: grey;
+  padding: '10px'; }
+
 .btn {
   background-color: #d6ff2e;
   padding: 1.0625rem 1.25rem;
@@ -1130,7 +1134,6 @@ html.scroll .header-text-color-white .header {
     color: #000; }
 
 .wpml-ls.wpml-ls-legacy-list-horizontal {
-  padding: 0;
   margin: 0 0 0 2.5rem; }
   @media screen and (max-width: 768px) {
     .wpml-ls.wpml-ls-legacy-list-horizontal {
@@ -1138,14 +1141,15 @@ html.scroll .header-text-color-white .header {
   .wpml-ls.wpml-ls-legacy-list-horizontal > ul {
     display: flex; }
   .wpml-ls.wpml-ls-legacy-list-horizontal a {
-    padding: 0;
+    padding-top: 1.25rem;
     font-weight: 300; }
     .wpml-ls.wpml-ls-legacy-list-horizontal a::after {
-      width: 0; }
+      width: 0;
+      color: #d6ff2e; }
     .wpml-ls.wpml-ls-legacy-list-horizontal a:hover::after {
       width: 100%; }
   .wpml-ls.wpml-ls-legacy-list-horizontal li + li {
-    margin-left: .5em; }
+    margin-left: 0.5em; }
   .wpml-ls.wpml-ls-legacy-list-horizontal .wpml-ls-current-language a::after {
     width: 100%; }
 
@@ -1434,9 +1438,7 @@ html.scroll .header-text-color-white .header {
 .topbar-menu a {
   color: #d6ff2e;
   color: #fff;
-  /* Set the default background color */
-  transition: background-color 0.3s ease;
-  /* Add a transition effect */ }
+  transition: background-color 0.3s ease; }
 
 .topbar-menu a:hover {
   color: #d6ff2e;
