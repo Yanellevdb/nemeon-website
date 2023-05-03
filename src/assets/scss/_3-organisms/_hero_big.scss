@@ -31,6 +31,15 @@
   }
 }
 
+.hero_big_btns {
+  display: flex;
+  flex-direction: row;
+}
+
+.cta_block_link.btn {
+  margin-right: 15px;
+}
+
 @include below($tablet) {
   .hero_big {
     video {
