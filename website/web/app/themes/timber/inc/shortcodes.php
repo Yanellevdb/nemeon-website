@@ -1,10 +1,10 @@
 <?php
-// function strong_shortcode( $atts, $content = null) {
-//   $a = shortcode_atts( array(
-//   ), $atts );
-// 	return '<strong>' . $content . '</strong>';
-// }
-// add_shortcode( 'b', 'strong_shortcode' );
+function markdownshortcode($atts, $content = null)
+{
+    $a = shortcode_atts(array(), $atts);
+    return '<div class="code">' . $content . '</div>';
+}
+add_shortcode('code', 'markdownshortcode');
 
 
 // function light_shortcode( $atts, $content = null) {

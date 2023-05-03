@@ -302,18 +302,20 @@ nav ul {
 
 .btn {
   background-color: #d6ff2e;
-  padding: 1.0625rem 1.25rem;
+  padding: 1.125rem 2rem;
   font-weight: 400;
   transition: 200ms;
   width: fit-content;
-  border: none; }
+  border: none;
+  margin-top: 2.125rem; }
   .btn:hover {
     cursor: pointer;
     color: #fff;
     background-color: #000; }
   .btn.black {
     background-color: #000;
-    color: #d6ff2e; }
+    color: #d6ff2e;
+    margin-right: 0.75rem; }
     .btn.black:hover {
       color: #000;
       background-color: #b2b2b2; }
@@ -431,24 +433,24 @@ a {
     .hdr-logo-link .logo {
       display: block;
       height: 100%;
-      background-image: url("./static/img/logo-nemeon.png");
+      background-image: url("../img/logo-nemeon.png");
       background-size: contain;
       background-repeat: no-repeat; }
 
 #footer .hdr-logo-link .logo {
-  background-image: url("./static/img/logo-nemeon-white.svg"); }
+  background-image: url("../img/logo-nemeon-white.svg"); }
 
 .header-text-color-white .header .hdr-logo-link .logo {
-  background-image: url("./static/img/logo-nemeon-white.svg"); }
+  background-image: url("../img/logo-nemeon-white.svg"); }
 
 html.scroll .header .hdr-logo-link .logo {
-  background-image: url("./static/img/logo-nemeon-white.svg"); }
+  background-image: url("../img/logo-nemeon-white.svg"); }
 
 html.scroll .header-text-color-white .header .hdr-logo-link .logo {
-  background-image: url("./static/img/logo-nemeon.svg"); }
+  background-image: url("../img/logo-nemeon.svg"); }
 
 .header.open .hdr-logo-link .logo {
-  background-image: url("./static/img/logo-nemeon-white.svg"); }
+  background-image: url("../img/logo-nemeon-white.svg"); }
 
 @media screen and (max-width: 768px) {
   .hdr-logo {
@@ -884,6 +886,9 @@ body.cookies-accepted.cookies-set #cookie-notice {
   margin-top: 10rem;
   background-color: #000;
   padding: 3.75rem 0 1.875rem; }
+  #footer .nav-main {
+    display: flex;
+    flex-direction: column; }
   #footer h3 {
     color: #b2b2b2;
     margin-bottom: 1.875rem; }
@@ -899,6 +904,9 @@ body.cookies-accepted.cookies-set #cookie-notice {
     grid-template-columns: repeat(4, minmax(12.5rem, auto)) 4fr;
     margin-bottom: 9.375rem;
     grid-gap: 2rem; }
+    #footer .footer-main-menu ul.nav-main {
+      display: flex;
+      flex-direction: column; }
     #footer .footer-main-menu .logo-footer {
       padding-bottom: 14px; }
     #footer .footer-main-menu .cta-footer {

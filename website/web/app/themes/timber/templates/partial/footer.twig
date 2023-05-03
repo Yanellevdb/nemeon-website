@@ -16,7 +16,7 @@
           </a>
         {% endif %}
         {% include "partial/wysiwyg.twig" with {'text': contact_cta } %}
-        <a href="{{ contact_cta_link }}" class="call_to_action">{{ contact_cta_text }}</a>
+        <a href="{{ contact_cta_link }}" class="cta-footer">{{ contact_cta_text }}</a>
 
       </div>
     </div>
@@ -26,8 +26,8 @@
     </div>
     <div>
       <div class="insights">
-        <h3>Insights</h3>
-        {% include "partial/menu.twig" with {'menu': insights_menu, 'items': insights_menu.get_items, 'class': 'insights-menu'} %}
+        <div><h3>Insights</h3></div>
+        <div>{% include "partial/menu.twig" with {'menu': insights_menu, 'items': insights_menu.get_items, 'class': 'insights-menu'} %}</div>
       </div>
       <div class="general">
         <h3>General</h3>

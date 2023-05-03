@@ -3,6 +3,11 @@
   background-color: $black;
   padding: rem(60) 0 rem(30);
 
+  .nav-main {
+    display: flex;
+    flex-direction: column;
+  }
+
   h3 {
     color: $nucleon-dark-grey;
     margin-bottom: rem(30);
@@ -21,11 +26,16 @@
     font-weight: 300;
   }
 
-  .footer-main-menu {
+   .footer-main-menu {
     display: grid;
     grid-template-columns: repeat(4, minmax(12.5rem, auto)) 4fr;
     margin-bottom: rem(150);
     grid-gap: 2rem;
+
+    ul.nav-main {
+      display: flex;
+      flex-direction: column;
+    }
 
     .logo-footer{
       padding-bottom: 14px;

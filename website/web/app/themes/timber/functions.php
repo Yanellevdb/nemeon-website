@@ -139,6 +139,7 @@ class StarterSite extends Timber\Site
         $context['contact_cta'] = get_field('contact_cta', 'options');
         $context['contact_cta_link'] = get_field('contact_cta_link', 'options');
         $context['contact_cta_text'] = get_field('contact_cta_text', 'options');
+        $context['arrows_cta'] = get_field('arrows_cta', 'options');
         $context['offices'] = get_field('offices', 'options');
         $context['insights_menu']  = new Timber\Menu('insights-menu');
         $context['services_menu']  = new Timber\Menu('services-menu');

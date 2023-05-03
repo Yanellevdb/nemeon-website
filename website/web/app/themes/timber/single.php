@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The Template for displaying all single posts
  *
@@ -22,12 +23,15 @@ $context['pdf'] = get_field('pdf');
 $context['extra_information'] = get_field('extra_information');
 
 if (post_password_required($timber_post->ID)) {
-    Timber::render('single-password.twig', $context);
+	Timber::render('single-password.twig', $context);
 } else {
-    Timber::render(array(
-		'single-' . $timber_post->ID . '.twig',
-		'single-' . $timber_post->post_type . '.twig',
-		'single-' . $timber_post->slug . '.twig',
-		'single.twig'),
-	$context);
+	Timber::render(
+		array(
+			'single-' . $timber_post->ID . '.twig',
+			'single-' . $timber_post->post_type . '.twig',
+			'single-' . $timber_post->slug . '.twig',
+			'single.twig'
+		),
+		$context
+	);
 }
