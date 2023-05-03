@@ -214,23 +214,7 @@
               "acfe_save_meta": 0,
               "return_format": "array"
             },
-            {
-              "key": "field_64510f4b0296f",
-              "label": "Link2",
-              "name": "link2",
-              "type": "link",
-              "instructions": "Give an important call-to-action to go to an important page",
-              "required": 0,
-              "conditional_logic": 0,
-              "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-              },
-              "wpml_cf_preferences": 2,
-              "acfe_save_meta": 0,
-              "return_format": "array"
-            },
+
             {
               "key": "field_6447e1d44c413",
               "label": "Link 2",
