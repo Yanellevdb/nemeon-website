@@ -11,55 +11,46 @@
         </div>
         {% endfor %}
       </div>
-      <div class="partners-nav">
-        <button class="partners-nav-prev">&#10094;</button>
-        <button class="partners-nav-next">&#10095;</button>
-      </div>
     </div>
   </div>
 </section>
 
 <script>
-  const partnersSlider = document.querySelector('.partners_slider');
-  const partnersSlides = document.querySelectorAll('.partners_slide');
-  const prevBtn = document.querySelector('.partners-nav-prev');
-  const nextBtn = document.querySelector('.partners-nav-next');
+    const partnersSlider = document.querySelector('.partners_slider');
+    const partnersSlides = document.querySelectorAll('.partners_slide');
 
-  let slideIndex = 0;
+    let slideIndex = 0;
+    const slideCount = partnersSlides.length;
+    const slideWidth = partnersSlides[0].clientWidth;
 
-  const showSlides = () => {
-    partnersSlider.style.transform = `translateX(${-slideIndex * 100}%)`;
-  };
+    setInterval(() => {
+      slideIndex = (slideIndex + 1) % slideCount;
+      partnersSlider.style.transition = 'transform 0.5s ease-in-out';
+      partnersSlider.style.transform = `translateX(${-slideIndex * slideWidth}px)`;
+    }, 3000);
 
-  const nextSlide = () => {
-    if (slideIndex === partnersSlides.length - 1) {
-      slideIndex = 0;
-    } else {
-      slideIndex++;
-    }
-    showSlides();
-  };
+    partnersSlider.addEventListener('transitionend', () => {
+      if (partnersSlides[slideIndex].classList.contains('first-clone')) {
+        partnersSlider.style.transition = 'none';
+        slideIndex = 0;
+        partnersSlider.style.transform = `translateX(${-slideIndex * slideWidth}px)`;
+      }
+      if (partnersSlides[slideIndex].classList.contains('last-clone')) {
+        partnersSlider.style.transition = 'none';
+        slideIndex = slideCount - 1;
+        partnersSlider.style.transform = `translateX(${-slideIndex * slideWidth}px)`;
+      }
+    });
 
-  const prevSlide = () => {
-    if (slideIndex === 0) {
-      slideIndex = partnersSlides.length - 1;
-    } else {
-      slideIndex--;
-    }
-    showSlides();
-  };
+    partnersSlider.addEventListener('mouseover', () => {
+      clearInterval(interval);
+    });
 
-var nextButton = document.querySelector('.partners-nav-next');
-var partnersWrapper = document.querySelector('.partners_wrapper');
-var partnerItemWidth = partnersWrapper.querySelector('img').clientWidth;
-var scrollAmount = partnerItemWidth + 40; // 40 is the margin + padding of each image
-
-nextButton.addEventListener('click', function() {
-  partnersWrapper.scrollBy({
-    left: scrollAmount,
-    behavior: 'smooth'
-  });
-});
-
-  prevBtn.addEventListener('click', prevSlide);
+    partnersSlider.addEventListener('mouseout', () => {
+      interval = setInterval(() => {
+        slideIndex = (slideIndex + 1) % slideCount;
+        partnersSlider.style.transition = 'transform 0.5s ease-in-out';
+        partnersSlider.style.transform = `translateX(${-slideIndex * slideWidth}px)`;
+      }, 3000);
+    });
 </script>
