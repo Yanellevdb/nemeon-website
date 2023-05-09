@@ -8,6 +8,7 @@
 .arrows-cta {
   position: relative;
   padding: 110px;
+  margin-top: 70px;
 
   a::after {
     height: 0rem;
@@ -43,7 +44,8 @@
   }
 
   .arrows-cta-link .shortcode {
-    margin-left: 1rem;
+    margin-right: 1rem;
+    font-size: 1.4em;
   }
 
   .arrows-cta-link {
