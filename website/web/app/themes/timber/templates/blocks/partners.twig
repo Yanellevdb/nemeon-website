@@ -16,37 +16,31 @@
 </section>
 
 <script>
-  const partnersSlider = document.querySelector('.partners_slider');
-  const partnersSlides = document.querySelectorAll('.partners_slide');
-  const slideCount = partnersSlides.length;
-  const slideWidth = partnersSlides[0].clientWidth;
-  let x = 0;
-  let frame = null;
-  let clonedSlides = [];
+const partnersSlider = document.querySelector('.partners_slider');
+const partnersSlides = document.querySelectorAll('.partners_slide');
+const slideCount = partnersSlides.length;
+const slideWidth = partnersSlides[0].clientWidth;
 
-  // Clone the slides for seamless loop
-  for (let i = 0; i < slideCount; i++) {
-    const clonedSlide = partnersSlides[i].cloneNode(true);
-    clonedSlides.push(clonedSlide);
-    partnersSlider.appendChild(clonedSlide);
+let x = -slideWidth * (slideCount - 1);
+let frame = null;
+
+function animate() {
+  x--;
+  if (x <= -slideWidth * slideCount) {
+    x = 0;
   }
+  partnersSlider.style.transform = `translateX(${x}px)`;
+  frame = window.requestAnimationFrame(animate);
+}
 
-  function animate() {
-    x--;
-    if (x <= -slideWidth * slideCount) {
-      x = 0;
-    }
-    partnersSlider.style.transform = `translateX(${x}px)`;
-    frame = window.requestAnimationFrame(animate);
-  }
+animate();
 
+partnersSlider.addEventListener('mouseover', () => {
+  window.cancelAnimationFrame(frame);
+});
+
+partnersSlider.addEventListener('mouseout', () => {
   animate();
+});
 
-  partnersSlider.addEventListener('mouseover', () => {
-    window.cancelAnimationFrame(frame);
-  });
-
-  partnersSlider.addEventListener('mouseout', () => {
-    animate();
-  });
 </script>
