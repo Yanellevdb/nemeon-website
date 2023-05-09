@@ -18,39 +18,35 @@
 <script>
   const partnersSlider = document.querySelector('.partners_slider');
   const partnersSlides = document.querySelectorAll('.partners_slide');
-
-  let slideIndex = 0;
   const slideCount = partnersSlides.length;
-  const slideWidth = partnersSlides[0].clientWidth + (6*16);
+  const slideWidth = partnersSlides[0].clientWidth;
+  let x = 0;
+  let frame = null;
+  let clonedSlides = [];
 
-  setInterval(() => {
-    slideIndex = (slideIndex + 1) % slideCount;
-    partnersSlider.style.transition = 'transform 0.5s ease-in-out';
-    partnersSlider.style.transform = `translateX(${-slideIndex * slideWidth}px)`;
-  }, 3000);
+  // Clone the slides for seamless loop
+  for (let i = 0; i < slideCount; i++) {
+    const clonedSlide = partnersSlides[i].cloneNode(true);
+    clonedSlides.push(clonedSlide);
+    partnersSlider.appendChild(clonedSlide);
+  }
 
-  partnersSlider.addEventListener('transitionend', () => {
-    if (partnersSlides[slideIndex].classList.contains('first-clone')) {
-      partnersSlider.style.transition = 'none';
-      slideIndex = 0;
-      partnersSlider.style.transform = `translateX(${-slideIndex * slideWidth}px)`;
+  function animate() {
+    x--;
+    if (x <= -slideWidth * slideCount) {
+      x = 0;
     }
-    if (partnersSlides[slideIndex].classList.contains('last-clone')) {
-      partnersSlider.style.transition = 'none';
-      slideIndex = slideCount - 1;
-      partnersSlider.style.transform = `translateX(${-slideIndex * slideWidth}px)`;
-    }
-  });
+    partnersSlider.style.transform = `translateX(${x}px)`;
+    frame = window.requestAnimationFrame(animate);
+  }
+
+  animate();
 
   partnersSlider.addEventListener('mouseover', () => {
-    clearInterval(interval);
+    window.cancelAnimationFrame(frame);
   });
 
   partnersSlider.addEventListener('mouseout', () => {
-    interval = setInterval(() => {
-      slideIndex = (slideIndex + 1) % slideCount;
-      partnersSlider.style.transition = 'transform 0.5s ease-in-out';
-      partnersSlider.style.transform = `translateX(${-slideIndex * slideWidth}px)`;
-    }, 3000);
+    animate();
   });
 </script>
