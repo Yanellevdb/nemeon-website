@@ -1,25 +1,25 @@
 {% import 'macros/titles.twig' as title %}
 
-<section class="arrows_cta {{ block.background_color }}">
-  <div class="constrict">
-    <div class="arrows_cta_block">
-      <div class="arrows_cta_text">
+<section class="arrows-cta {{ block.background_color }}">
+  <div class="arrows-cta-container">
+    <div class="arrows-cta-block">
+      <div class="arrows-cta-text">
         {{ title.main(block.title, '', true) }}
         {% include 'partial/wysiwyg.twig' with { text: block.text } %}
       </div>
-      <div class="cta_block_links">
-        <div class="arrow">
-        <a href="{{ block.link.url }}" target="{{ block.link.target }}">{{ block.link.title }}</a>
-        <img src="../../static/assets/img/arrow_right.svg" alt="arrow right">
-        </div><hr>
-        <div class="arrow">
-        <a href="{{ block.link2.url }}" target="{{ block.link2.target }}">{{ block.link2.title }}</a>
-        <img src="../../static/assets/img/arrow_right.svg" alt="arrow right">
-        </div><hr>
-        <div class="arrow">
-        <a href="{{ block.link3.url }}" target="{{ block.link3.target }}">{{ block.link3.title }}</a>
-        <img src="../../static/assets/img/arrow_right.svg" alt="arrow right">
-        </div><hr>
+      <div class="arrows-cta-links">
+        <div class="arrows-cta-link">
+          <a href="{{ block.link.url }}" target="_self">{{ block.link.title }} <span class="shortcode">&#8594;</span></a>
+        </div>
+        <hr>
+        <div class="arrows-cta-link">
+          <a href="{{ block.link2.url }}" target="_self">{{ block.link2.title }} <span class="shortcode">&#8594;</span></a>
+        </div>
+        <hr>
+        <div class="arrows-cta-link">
+          <a href="{{ block.link3.url }}" target="_self"><span>{{ block.link3.title }}</span> <span class="shortcode">&#8594;</span></a>
+        </div>
+        <hr>
       </div>
     </div>
   </div>
