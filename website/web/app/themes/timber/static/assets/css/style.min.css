@@ -1108,6 +1108,10 @@ html.scroll .header-text-color-white .header {
     .icon_block_columns_wrapper .call_to_action_element .cta_link {
       font-size: 1.65rem;
       margin-right: 10px; }
+    .icon_block_columns_wrapper .call_to_action_element a.underline:after {
+      color: #d6ff2e; }
+    .icon_block_columns_wrapper .call_to_action_element a::after {
+      height: 0.085rem; }
   .icon_block_columns_wrapper .blocks {
     display: grid;
     grid-auto-flow: column;
@@ -1317,6 +1321,29 @@ html.scroll .header-text-color-white .header {
 .news_quote_wrapper p {
   margin-top: 1.875rem;
   font-weight: 400; }
+
+.partners {
+  margin-top: 10rem; }
+
+.partners_title {
+  text-align: center;
+  margin-bottom: 30px; }
+
+.partners_slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out; }
+
+.partners_wrapper {
+  overflow: hidden; }
+
+.partners_slider {
+  display: inline-flex;
+  transition: transform 0.5s ease-in-out;
+  white-space: nowrap; }
+
+.partners_slide {
+  display: inline-block;
+  margin-right: 6rem; }
 
 .posts_wrapper {
   display: grid;

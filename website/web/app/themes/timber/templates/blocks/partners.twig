@@ -1,0 +1,56 @@
+{% import 'macros/titles.twig' as title %}
+
+<section class="partners">
+  <div class="constrict">
+    {{ title.main(block.title, '', true) }}
+    <div class="partners_wrapper">
+      <div class="partners_slider">
+        {% for partner_block in block.partner_list %}
+        <div class="partners_slide">
+          <img src="{{ partner_block.url }}" alt="{{ partner_block.alt }}" />
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const partnersSlider = document.querySelector('.partners_slider');
+  const partnersSlides = document.querySelectorAll('.partners_slide');
+
+  let slideIndex = 0;
+  const slideCount = partnersSlides.length;
+  const slideWidth = partnersSlides[0].clientWidth + (6*16);
+
+  setInterval(() => {
+    slideIndex = (slideIndex + 1) % slideCount;
+    partnersSlider.style.transition = 'transform 0.5s ease-in-out';
+    partnersSlider.style.transform = `translateX(${-slideIndex * slideWidth}px)`;
+  }, 3000);
+
+  partnersSlider.addEventListener('transitionend', () => {
+    if (partnersSlides[slideIndex].classList.contains('first-clone')) {
+      partnersSlider.style.transition = 'none';
+      slideIndex = 0;
+      partnersSlider.style.transform = `translateX(${-slideIndex * slideWidth}px)`;
+    }
+    if (partnersSlides[slideIndex].classList.contains('last-clone')) {
+      partnersSlider.style.transition = 'none';
+      slideIndex = slideCount - 1;
+      partnersSlider.style.transform = `translateX(${-slideIndex * slideWidth}px)`;
+    }
+  });
+
+  partnersSlider.addEventListener('mouseover', () => {
+    clearInterval(interval);
+  });
+
+  partnersSlider.addEventListener('mouseout', () => {
+    interval = setInterval(() => {
+      slideIndex = (slideIndex + 1) % slideCount;
+      partnersSlider.style.transition = 'transform 0.5s ease-in-out';
+      partnersSlider.style.transform = `translateX(${-slideIndex * slideWidth}px)`;
+    }, 3000);
+  });
+</script>

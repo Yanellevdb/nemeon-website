@@ -1,0 +1,27 @@
+.partners {
+  margin-top: 10rem;
+}
+
+.partners_title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+
+.partners_slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.partners_wrapper {
+  overflow: hidden;
+}
+.partners_slider {
+  display: inline-flex;
+  transition: transform 0.5s ease-in-out;
+  white-space: nowrap;
+}
+.partners_slide {
+  display: inline-block;
+  margin-right: 6rem;
+}
