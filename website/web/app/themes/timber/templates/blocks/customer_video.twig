@@ -7,12 +7,14 @@
       <div class="customervideo_intertitle">{{ block.intertitle }}</div>
     </div>
     <?php if ($video = get_field('video')): ?>
-      <div class="customervideo_video">
-        <video src="{{ block.video.url }}" controls></video>
-      </div>
-    <?php endif; ?>
-    <div class="customervideo_cta">
-      <a class="underline {{block.link.color}}" href="{{ block.link.url }}" target="{{ block.link.url.target }}">{{ block.link.label }}</a>&nbsp;{{ block.link.text }}
-    </div>
+  <div class="customervideo_video">
+    <video src="<?php echo $video['url']; ?>" controls></video>
+  </div>
+<?php endif; ?>
+
+  <div class="customervideo_cta">
+  <a class="underline {{block.link.color}}" href="{{ block.link.url }}" target="{{ block.link.url.target }}">{{ block.link.label }}</a>&nbsp;{{ block.link.text }}
+</div>
+
   </div>
 </section>
