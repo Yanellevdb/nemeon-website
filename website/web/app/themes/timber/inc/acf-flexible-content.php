@@ -68,6 +68,9 @@ class PostFlexible extends Timber\Post
           case 'customer_video':
             $block['template'] = 'customer_video';
             break;
+          case 'latest_post':
+            $block['template'] = 'latest_post';
+            break;
           case 'job_title':
             $block['template'] = 'job_title';
             break;
