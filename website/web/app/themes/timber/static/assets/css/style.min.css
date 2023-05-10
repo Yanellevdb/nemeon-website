@@ -593,6 +593,12 @@ h3 {
   flex-grow: 1;
   justify-content: space-between; }
 
+.constrict {
+  max-width: 90rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1.875rem 0 3.75rem; }
+
 .arrows-cta {
   position: relative;
   padding: 110px;
@@ -603,8 +609,6 @@ h3 {
     transition-property: width;
     transition-duration: 200ms;
     transition-timing-function: ease-out; }
-  .arrows-cta .arrows-cta-container {
-    height: 100%; }
   .arrows-cta .arrows-cta-block {
     display: flex;
     flex-direction: row;
