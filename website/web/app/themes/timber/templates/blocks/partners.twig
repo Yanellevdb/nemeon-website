@@ -5,9 +5,9 @@
     {{ title.main(block.title, '', true) }}
     <div class="partners_wrapper">
       <div class="partners_slider">
-        {% for partner_block in block.partner_list %}
+        {% for image in block.gallery %}
         <div class="partners_slide">
-          <img src="{{ partner_block.url }}" alt="{{ partner_block.alt }}" />
+          <img src="{{ image.url }}" alt="{{ image.alt }}" />
         </div>
         {% endfor %}
       </div>
@@ -16,41 +16,33 @@
 </section>
 
 <script>
-  const partnersSlider = document.querySelector('.partners_slider');
-  const partnersSlides = document.querySelectorAll('.partners_slide');
 
-  let slideIndex = 0;
-  const slideCount = partnersSlides.length;
-  const slideWidth = partnersSlides[0].clientWidth + (6*16);
+const partnersSlider = document.querySelector('.partners_slider');
+const partnersSlides = document.querySelectorAll('.partners_slide');
+const slideCount = partnersSlides.length;
+const slideWidth = partnersSlides[0].clientWidth;
 
-  setInterval(() => {
-    slideIndex = (slideIndex + 1) % slideCount;
-    partnersSlider.style.transition = 'transform 0.5s ease-in-out';
-    partnersSlider.style.transform = `translateX(${-slideIndex * slideWidth}px)`;
-  }, 3000);
+let x = 0;
+let frame = null;
 
-  partnersSlider.addEventListener('transitionend', () => {
-    if (partnersSlides[slideIndex].classList.contains('first-clone')) {
-      partnersSlider.style.transition = 'none';
-      slideIndex = 0;
-      partnersSlider.style.transform = `translateX(${-slideIndex * slideWidth}px)`;
-    }
-    if (partnersSlides[slideIndex].classList.contains('last-clone')) {
-      partnersSlider.style.transition = 'none';
-      slideIndex = slideCount - 1;
-      partnersSlider.style.transform = `translateX(${-slideIndex * slideWidth}px)`;
-    }
-  });
+function animate() {
+  x--;
+  if (x <= -slideWidth * (slideCount - 1)) {
+    x = 50;
+  }
+  partnersSlider.style.transform = `translateX(${x}px)`;
+  frame = window.requestAnimationFrame(animate);
+}
 
-  partnersSlider.addEventListener('mouseover', () => {
-    clearInterval(interval);
-  });
+animate();
 
-  partnersSlider.addEventListener('mouseout', () => {
-    interval = setInterval(() => {
-      slideIndex = (slideIndex + 1) % slideCount;
-      partnersSlider.style.transition = 'transform 0.5s ease-in-out';
-      partnersSlider.style.transform = `translateX(${-slideIndex * slideWidth}px)`;
-    }, 3000);
-  });
+partnersSlider.addEventListener('mouseover', () => {
+  window.cancelAnimationFrame(frame);
+});
+
+partnersSlider.addEventListener('mouseout', () => {
+  animate();
+});
+
+
 </script>
