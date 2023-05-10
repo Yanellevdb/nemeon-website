@@ -1,25 +1,27 @@
 {% import 'macros/titles.twig' as title %}
 
 <section class="arrows-cta {{ block.background_color }}">
-  <div class="arrows-cta-container">
-    <div class="arrows-cta-block">
-      <div class="arrows-cta-text">
-        {{ title.main(block.title, '', true) }}
-        {% include 'partial/wysiwyg.twig' with { text: block.text } %}
-      </div>
-      <div class="arrows-cta-links">
-        <div class="arrows-cta-link">
-          <a href="{{ block.link.url }}" target="_self">{{ block.link.title }} <span class="shortcode">&#8594;</span></a>
+  <div class="constrict">
+    <div class="arrows-cta-container">
+      <div class="arrows-cta-block">
+        <div class="arrows-cta-text">
+          {{ title.main(block.title, '', true) }}
+          {% include 'partial/wysiwyg.twig' with { text: block.text } %}
         </div>
-        <hr>
-        <div class="arrows-cta-link">
-          <a href="{{ block.link2.url }}" target="_self">{{ block.link2.title }} <span class="shortcode">&#8594;</span></a>
+        <div class="arrows-cta-links">
+          <div class="arrows-cta-link">
+            <a href="{{ block.link.url }}" target="_self">{{ block.link.title }} <span class="shortcode">&#8594;</span></a>
+          </div>
+          <hr>
+          <div class="arrows-cta-link">
+            <a href="{{ block.link2.url }}" target="_self">{{ block.link2.title }} <span class="shortcode">&#8594;</span></a>
+          </div>
+          <hr>
+          <div class="arrows-cta-link">
+            <a href="{{ block.link3.url }}" target="_self"><span>{{ block.link3.title }}</span> <span class="shortcode">&#8594;</span></a>
+          </div>
+          <hr>
         </div>
-        <hr>
-        <div class="arrows-cta-link">
-          <a href="{{ block.link3.url }}" target="_self"><span>{{ block.link3.title }}</span> <span class="shortcode">&#8594;</span></a>
-        </div>
-        <hr>
       </div>
     </div>
   </div>
