@@ -1380,9 +1380,11 @@
                                         "id": ""
                                     },
                                     "wpml_cf_preferences": 2,
+                                    "acfe_save_meta": 0,
                                     "post_type": [
                                         "post",
-                                        "jobs"
+                                        "jobs",
+                                        "events"
                                     ],
                                     "field_type": "select",
                                     "default_value": [],
@@ -1428,48 +1430,6 @@
                                     "search_placeholder": ""
                                 },
                                 {
-                                    "key": "field_61264d6d54c28",
-                                    "label": "Posts",
-                                    "name": "posts",
-                                    "type": "post_object",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": [
-                                        [
-                                            {
-                                                "field": "field_61264d3954c27",
-                                                "operator": "==",
-                                                "value": "custom"
-                                            },
-                                            {
-                                                "field": "field_61264cf354c26",
-                                                "operator": "==",
-                                                "value": "Post"
-                                            }
-                                        ]
-                                    ],
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "wpml_cf_preferences": 2,
-                                    "post_type": [
-                                        "post"
-                                    ],
-                                    "taxonomy": "",
-                                    "allow_null": 1,
-                                    "multiple": 1,
-                                    "return_format": "object",
-                                    "save_custom": 0,
-                                    "save_post_status": "publish",
-                                    "acfe_bidirectional": {
-                                        "acfe_bidirectional_enabled": "0"
-                                    },
-                                    "ui": 1,
-                                    "save_post_type": ""
-                                },
-                                {
                                     "key": "field_61264dbd54c29",
                                     "label": "Jobs",
                                     "name": "jobs",
@@ -1498,6 +1458,49 @@
                                     "wpml_cf_preferences": 2,
                                     "post_type": [
                                         "jobs"
+                                    ],
+                                    "taxonomy": "",
+                                    "allow_null": 1,
+                                    "multiple": 1,
+                                    "return_format": "object",
+                                    "save_custom": 0,
+                                    "save_post_status": "publish",
+                                    "acfe_bidirectional": {
+                                        "acfe_bidirectional_enabled": "0"
+                                    },
+                                    "ui": 1,
+                                    "save_post_type": ""
+                                },
+                                {
+                                    "key": "field_645bafa0ab9d7",
+                                    "label": "Events",
+                                    "name": "events",
+                                    "type": "post_object",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_61264d3954c27",
+                                                "operator": "==",
+                                                "value": "custom"
+                                            },
+                                            {
+                                                "field": "field_61264cf354c26",
+                                                "operator": "==",
+                                                "value": "Jobs"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "wpml_cf_preferences": 2,
+                                    "acfe_save_meta": 0,
+                                    "post_type": [
+                                        "events"
                                     ],
                                     "taxonomy": "",
                                     "allow_null": 1,
@@ -2346,5 +2349,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1683721275
+    "modified": 1684141397
 }

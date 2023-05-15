@@ -96,7 +96,10 @@
                             "append": "",
                             "maxlength": ""
                         }
-                    ]
+                    ],
+                    "acfe_group_modal_close": 0,
+                    "acfe_group_modal_button": "",
+                    "acfe_group_modal_size": "large"
                 },
                 {
                     "key": "field_612ca732cc2f7",
@@ -118,7 +121,10 @@
                     "append": "",
                     "maxlength": ""
                 }
-            ]
+            ],
+            "acfe_group_modal_close": 0,
+            "acfe_group_modal_button": "",
+            "acfe_group_modal_size": "large"
         }
     ],
     "location": [
@@ -149,6 +155,20 @@
                 "operator": "==",
                 "value": "post"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "events"
+            }
+        ],
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-events-page"
+            }
         ]
     ],
     "menu_order": 0,
@@ -167,5 +187,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1646927535
+    "modified": 1684140513
 }
