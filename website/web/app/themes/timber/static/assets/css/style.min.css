@@ -1157,6 +1157,9 @@ html.scroll .header-text-color-white .header {
   display: flex;
   flex-direction: column;
   max-width: 49.375rem; }
+  .hero_small_content h1,
+  .hero_small_content .h1 {
+    line-height: 0; }
   .hero_small_content h3 {
     color: inherit; }
 
@@ -1170,10 +1173,6 @@ html.scroll .header-text-color-white .header {
     position: absolute;
     height: 100%;
     right: 0; }
-
-.hero_small_link {
-  position: absolute;
-  bottom: 3.125rem; }
 
 @media screen and (max-width: 768px) {
   .hero_small_wrapper {
@@ -1580,6 +1579,44 @@ html.scroll .header-text-color-white .header {
 .topbar-menu a:hover {
   color: #d6ff2e;
   /* Set the active/hover background color */ }
+
+.services_icons_block {
+  padding: 75px;
+  display: flex;
+  gap: 84px; }
+
+.service-columns {
+  display: flex;
+  flex-direction: column; }
+
+.icon {
+  display: flex;
+  background-color: #d6ff2e;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center; }
+
+div.icon img {
+  padding: 15px;
+  object-fit: contain; }
+
+.service {
+  display: flex;
+  flex-direction: row;
+  gap: 24px; }
+
+.call_to_action_element {
+  padding-top: 100px;
+  text-align: right;
+  font-size: 1.3rem; }
+
+.bg-black a::after {
+  background-color: #d6ff2e; }
+
+a.underline.cta_link {
+  font-size: 1.3rem; }
 
 .constrict {
   max-width: 90rem;

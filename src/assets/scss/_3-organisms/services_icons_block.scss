@@ -1,0 +1,45 @@
+.services_icons_block {
+  padding: 75px;
+  display: flex;
+  gap: 84px;
+}
+
+.service-columns {
+  display: flex;
+  flex-direction: column;
+}
+
+.icon {
+  display: flex;
+  background-color: $nucleon-green;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+div.icon img {
+  padding: 15px;
+  object-fit: contain;
+}
+
+.service {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+.call_to_action_element {
+  padding-top: 100px;
+  text-align: right;
+  font-size: 1.3rem;
+}
+
+.bg-black a::after {
+  background-color: $nucleon-green;
+}
+
+a.underline.cta_link {
+  font-size: 1.3rem;
+}
