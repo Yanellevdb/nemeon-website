@@ -82,6 +82,25 @@ class StarterSite extends Timber\Site
         add_action('wp_footer', array($this, 'timber_wp_footer'));
         add_action('wp_body_open', array($this, 'timber_wp_body_open'));
         add_filter('body_class', array($this, 'timber_body_classes'));
+        // Voeg SVG-ondersteuning toe aan Twig
+        add_filter('timber/twig', 'add_to_twig');
+        function add_to_twig($twig)
+        {
+            $twig->addExtension(new Twig_Extension_StringLoader());
+            $twig->addFilter(new Twig_SimpleFilter('svg', 'get_svg'));
+            return $twig;
+        }
+
+        // Laad SVG-bestand
+        function get_svg($svg)
+        {
+            $file_path = get_template_directory() . '/path/to/your/svg/directory/' . $svg . '.svg';
+            if (file_exists($file_path)) {
+                return file_get_contents($file_path);
+            }
+            return '';
+        }
+
         // add_filter( 'acfe/fields/advanced_link/sub_fields/name=link', array($this, 'rdlk_acfe_add_options'), 10, 3 );
 
         // remove_filter( 'wp_robots', 'wp_robots_noindex' );
@@ -96,10 +115,14 @@ class StarterSite extends Timber\Site
     {
         require get_template_directory() . '/inc/cpt-jobs.php';
     }
+
+
     /** This is where you can register custom taxonomies. */
     public function register_taxonomies()
     {
     }
+
+
 
     public function timber_body_classes($classes)
     {
@@ -441,6 +464,13 @@ require get_template_directory() . '/inc/shortcodes.php';
  */
 require get_template_directory() . '/inc/loadmore.php';
 
+// Voeg SVG-ondersteuning toe
+function custom_mime_types($mimes)
+{
+    $mimes['svg'] = 'image/svg+xml';
+    return $mimes;
+}
+add_filter('upload_mimes', 'custom_mime_types');
 
 
 
