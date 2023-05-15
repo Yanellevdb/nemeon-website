@@ -1,0 +1,47 @@
+{% import 'macros/titles.twig' as title %}
+
+<section class="services_icons">
+  <div class="constrict">
+    {{ title.main(block.title, '', true) }}
+    <div class="services_icons_block {{ block.background_color }}">
+      {% set columnCounter = 0 %}
+      <div class="service-columns">
+      
+      {% for service in block.services %}
+        {% set columnCounter = columnCounter + 1 %}
+        {% if columnCounter > 3 %}
+          {% set columnCounter = 1 %}
+          </div>
+          <div class="service-columns">
+        {% endif %}
+        
+        <div class="service">
+          <div class="icon">
+            {% if service.icon %}
+              <img src="{{ service.icon }}" alt="Icon">
+            {% endif %}
+          </div>
+          <div class="service_content">
+            <h3>{{ service.title }}</h3>
+            <p>{{ service.text }}</p>
+          </div>
+        </div>
+        
+        {% if columnCounter == 2 and loop.last %}
+          <div class="service" style="display: none;"></div>
+          <div class="service" style="display: none;"></div>
+        {% endif %}
+        
+      {% endfor %}
+      
+      <div class="call_to_action_element">
+        <a class="underline cta_link" href="{{ block.link.url }}">{{ block.link.label }}</a>
+        {{ block.link.text }}
+        {{ block.cta_text }}
+      </div>
+      
+      </div>
+         
+    </div>
+  </div>
+</section>
