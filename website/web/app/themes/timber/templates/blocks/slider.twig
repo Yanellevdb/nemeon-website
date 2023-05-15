@@ -1,6 +1,6 @@
 {% import 'macros/titles.twig' as title %}
 
-<section class="partners">
+<section class="slider">
   <div class="constrict">
 
    <div {% if block.centered_title %}style="text-align: center"{% endif %}>
@@ -8,17 +8,17 @@
       {{ block.subtitle }}
     </div>
    
-    <div class="partners_wrapper">
-      <div class="partners_slider">
+    <div class="slider_wrapper">
+      <div class="slider_gallery">
         {% for image in block.gallery %}
-        <div class="partners_slide">
+        <div class="slider_image">
           <img src="{{ image.url }}" alt="{{ image.alt }}" />
         </div>
         {% endfor %}
       </div>
     </div>
     {% if block.button is not empty %}
-    <div class="solutionsBtn">
+    <div class="sliderBtn">
     <a href="{{ block.button.url }}" class="btn black">{{ block.button.title }}</a>
     </div>
     {% endif %}
@@ -27,10 +27,10 @@
 
 <script>
 
-const partnersSlider = document.querySelector('.partners_slider');
-const partnersSlides = document.querySelectorAll('.partners_slide');
-const slideCount = partnersSlides.length;
-const slideWidth = partnersSlides[0].clientWidth;
+const sliderGallery = document.querySelector('.slider_gallery');
+const sliderImages = document.querySelectorAll('.slider_image');
+const slideCount = sliderGallery.length;
+const slideWidth = sliderImages[0].clientWidth;
 
 let x = 0;
 let frame = null;
@@ -40,17 +40,17 @@ function animate() {
   if (x <= -slideWidth * (slideCount - 1)) {
     x = 50;
   }
-  partnersSlider.style.transform = `translateX(${x}px)`;
+  sliderGallery.style.transform = `translateX(${x}px)`;
   frame = window.requestAnimationFrame(animate);
 }
 
 animate();
 
-partnersSlider.addEventListener('mouseover', () => {
+sliderGallery.addEventListener('mouseover', () => {
   window.cancelAnimationFrame(frame);
 });
 
-partnersSlider.addEventListener('mouseout', () => {
+sliderGallery.addEventListener('mouseout', () => {
   animate();
 });
 
