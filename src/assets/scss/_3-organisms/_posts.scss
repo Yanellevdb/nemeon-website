@@ -20,15 +20,29 @@
 
     .post-archive-link {
       align-self: end;
-      color: $nucleon-dark-grey;
+      color: black;
+      font-size: 22px;
+
+    }
+
+    a.post-archive-link.underline:after{
+      color: $nucleon-green;
+      height: 2px;
     }
   }
+}
+
+h3.article-teaser__title.title {
+  color: black;
+  font-weight: bolder;
 }
 
 .article-teaser {
   display: grid;
   grid-template-columns: minmax(#{rem(200)}, auto) 1fr;
   grid-gap: rem(30);
+  background-color: $nucleon-grey;
+  padding: 2rem;
 
   &__visual {
     width: rem(200);

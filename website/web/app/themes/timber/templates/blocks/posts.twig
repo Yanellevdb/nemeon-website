@@ -12,8 +12,8 @@
               {% for post in item.jobs %}
                 {% include ['partial/tease-post.twig', 'partial/tease.twig'] %}
               {% endfor %}
-            {% elseif item.post_type.name == 'post' %}
-              {% for post in item.posts %}
+              {% elseif item.post_type.name == 'events' %}
+              {% for post in item.events %}
                 {% include ['partial/tease-post.twig', 'partial/tease.twig'] %}
               {% endfor %}
             {% endif %}

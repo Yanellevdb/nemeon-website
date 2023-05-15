@@ -114,6 +114,7 @@ class StarterSite extends Timber\Site
     public function register_post_types()
     {
         require get_template_directory() . '/inc/cpt-jobs.php';
+        require get_template_directory() . '/inc/cpt-events.php';
     }
 
 

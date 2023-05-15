@@ -1,0 +1,58 @@
+{% import 'macros/titles.twig' as title %}
+
+<section class="slider">
+  <div class="constrict">
+
+   <div {% if block.centered_title %}style="text-align: center"{% endif %}>
+      {{ title.main(block.title, '', true, block.centered_title ? 'text-center' : '') }}     
+      {{ block.subtitle }}
+    </div>
+   
+    <div class="slider_wrapper">
+      <div class="slider_gallery">
+        {% for image in block.gallery %}
+        <div class="slider_image">
+          <img src="{{ image.url }}" alt="{{ image.alt }}" />
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% if block.button is not empty %}
+    <div class="sliderBtn">
+    <a href="{{ block.button.url }}" class="btn black">{{ block.button.title }}</a>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<script>
+
+const sliderGallery = document.querySelector('.slider_gallery');
+const sliderImages = document.querySelectorAll('.slider_image');
+const slideCount = sliderGallery.length;
+const slideWidth = sliderImages[0].clientWidth;
+
+let x = 0;
+let frame = null;
+
+function animate() {
+  x--;
+  if (x <= -slideWidth * (slideCount - 1)) {
+    x = 50;
+  }
+  sliderGallery.style.transform = `translateX(${x}px)`;
+  frame = window.requestAnimationFrame(animate);
+}
+
+animate();
+
+sliderGallery.addEventListener('mouseover', () => {
+  window.cancelAnimationFrame(frame);
+});
+
+sliderGallery.addEventListener('mouseout', () => {
+  animate();
+});
+
+
+</script>

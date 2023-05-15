@@ -1,4 +1,4 @@
-.partners {
+.slider {
   margin-top: 10rem;
 }
 
@@ -7,22 +7,28 @@
   transition: transform 0.5s ease-in-out;
 }
 
-.partners_wrapper {
+.slider_wrapper {
   overflow: hidden;
   margin-top: 4rem;
 }
-.partners_slider {
+.slider_gallery {
   display: inline-flex;
   transition: transform 0.5s linear;
   white-space: nowrap;
   align-items: center;
 }
-.partners_slide {
+.slider_image {
   display: inline-block;
   margin-right: 5rem;
 }
 
-.partners_slide img {
+.slider_image img {
   width: 150px;
   height: auto;
+}
+
+.sliderBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

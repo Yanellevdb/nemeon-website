@@ -1,0 +1,16 @@
+{% import 'macros/titles.twig' as title %}
+
+<section class="event_content">
+  <div class="constrict">
+    <div class="event_content_wrapper">
+      {% for item in block.content %}
+        <div class="event_content__item">
+          {{ title.main(item.title, '', true) }}
+          <div class="description">
+            {% include 'partial/wysiwyg.twig' with { text: item.description } %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
