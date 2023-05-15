@@ -1434,6 +1434,11 @@ html.scroll .header-text-color-white .header {
   width: 150px;
   height: auto; }
 
+.solutionsBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
 .posts_wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

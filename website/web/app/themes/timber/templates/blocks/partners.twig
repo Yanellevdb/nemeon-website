@@ -2,7 +2,12 @@
 
 <section class="partners">
   <div class="constrict">
-    {{ title.main(block.title, '', true) }}
+
+   <div {% if block.centered_title %}style="text-align: center"{% endif %}>
+      {{ title.main(block.title, '', true, block.centered_title ? 'text-center' : '') }}     
+      {{ block.subtitle }}
+    </div>
+   
     <div class="partners_wrapper">
       <div class="partners_slider">
         {% for image in block.gallery %}
@@ -12,6 +17,11 @@
         {% endfor %}
       </div>
     </div>
+    {% if block.button is not empty %}
+    <div class="solutionsBtn">
+    <a href="{{ block.button.url }}" class="btn black">{{ block.button.title }}</a>
+    </div>
+    {% endif %}
   </div>
 </section>
 
