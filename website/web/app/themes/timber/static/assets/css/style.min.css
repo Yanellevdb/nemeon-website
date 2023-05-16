@@ -1547,6 +1547,89 @@ h3.article-teaser__title.title {
   flex-direction: column;
   align-items: center; }
 
+.steps-wrapper {
+  margin-top: 10rem; }
+
+.steps-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start; }
+  .steps-content .intro {
+    width: 50%;
+    padding-right: 4rem; }
+  .steps-content .timeline-item {
+    display: flex;
+    flex-direction: row; }
+  .steps-content .timeline {
+    position: relative; }
+  .steps-content .timeline .timeline-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 55px; }
+  .steps-content .timeline .timeline-number-container {
+    position: relative;
+    margin-right: 10px;
+    align-self: center; }
+  .steps-content .timeline .timeline-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: #f2f2f2;
+    border-radius: 50%;
+    color: #000;
+    font-weight: bold;
+    position: relative;
+    z-index: 2; }
+  .steps-content .timeline .timeline-number:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 45px;
+    height: 45px;
+    background-color: #b2b2b2;
+    border-radius: 50%;
+    z-index: -1; }
+  .steps-content .timeline .timeline-content {
+    position: relative;
+    margin-left: 3rem; }
+  .steps-content .timeline:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    /* Adjust the margin-left value to increase/decrease space between the dots */
+    transform: translateY(-50%);
+    width: 2px;
+    height: calc(100% - 125px);
+    background-color: #fff;
+    border-style: dashed;
+    z-index: -2;
+    border-width: 1px; }
+  .steps-content .timeline .timeline-number-container:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    background-color: #f2f2f2;
+    border-radius: 50%;
+    z-index: -3; }
+  .steps-content .timeline-right-side {
+    position: relative; }
+  .steps-content .timeline-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center; }
+  .steps-content .description {
+    padding-bottom: 3rem; }
+
 .text_block_columns_wrapper {
   margin-top: 9.375rem; }
   .text_block_columns_wrapper > .title {
