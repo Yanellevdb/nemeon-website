@@ -1,0 +1,28 @@
+{% import 'macros/titles.twig' as title %}
+
+<section class="steps">
+  <div class="constrict">
+   
+<div class="steps-wrapper">
+  <div class="steps-content">
+    <div class="intro">
+        <div>{{ title.main(block.title, '', true) }}</div>
+        <div class="description">{% include 'partial/wysiwyg.twig' with { text: block.description } %}</div>
+        <div><a href="{{block.button.url}}" class="btn black">{{block.button.title}}</a></div>
+    </div>
+    <div class="timeline">
+        {% for item in block.timeline %}
+        <div class="timeline-item">
+              <div class="timeline-number-container">
+                <div class="timeline-number">{{ item.number }}</div>
+              </div>
+              <div class="timeline-content">
+                <p>{{ item.sentence }}</p>
+              </div>
+            </div>
+        {% endfor %}
+      </div>
+  </div>
+</div>
+
+</section>

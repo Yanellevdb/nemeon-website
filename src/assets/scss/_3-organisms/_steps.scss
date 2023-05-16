@@ -1,0 +1,112 @@
+.steps-wrapper {
+    margin-top: 10rem;
+  }
+  
+  .steps-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+  
+    .intro {
+      width: 45%;
+      padding-right: 5rem;
+      margin-right: 2rem;
+    }
+  
+    .timeline-item {
+      display: flex;
+      flex-direction: row;
+    }
+  
+    .timeline {
+      position: relative;
+    }
+  
+    .timeline .timeline-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 55px;
+    }
+  
+    .timeline .timeline-number-container {
+      position: relative;
+      margin-right: 10px;
+      align-self: center;
+    }
+  
+    .timeline .timeline-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 60px;
+      height: 60px;
+      background-color: $nucleon-grey;
+      border-radius: 50%;
+      color: #000;
+      font-weight: bold;
+      position: relative;
+      z-index: 2;
+    }
+  
+    .timeline .timeline-number:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 45px;
+      height: 45px;
+      background-color: $nucleon-dark-grey;
+      border-radius: 50%;
+      z-index: -1;
+    }
+  
+     
+    .timeline .timeline-content {
+      position: relative;
+      margin-left: 3rem;
+    }
+  
+    .timeline:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 30px; /* Adjust the margin-left value to increase/decrease space between the dots */
+        transform: translateY(-50%);
+        width: 2px;
+        height: calc(100% - 125px);
+        background-color: #fff;
+        border-style: dashed;
+        z-index: -2;
+      border-width: 1px;
+    }
+  
+    .timeline .timeline-number-container:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 30px;
+      height: 30px;
+      background-color: $nucleon-grey;
+      border-radius: 50%;
+      z-index: -3;
+    }
+  
+    .timeline-right-side {
+      position: relative;
+    }
+  
+    .timeline-content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+  
+    .description {
+      padding-bottom: 3rem;
+    }
+  }
+  
