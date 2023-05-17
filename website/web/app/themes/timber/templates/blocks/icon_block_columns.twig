@@ -3,10 +3,15 @@
 <section class="icon_block_columns">
   <div class="constrict">
     <div class="icon_block_columns_wrapper">
-      {{ title.main(block.title, '', true) }}
+
+      <div {% if block.centered_title %}style="text-align: center"{% endif %}>
+      {{ title.main(block.title, '', true, block.centered_title ? 'text-center' : '') }}     
+      <div {% if block.centered_title %}style="margin: 1rem 8rem 3rem 8rem"{% endif %}>{% include 'partial/wysiwyg.twig' with { text: block.description } %} </div>     
+     
       <div class="blocks">
         {% for item in block.blocks %}
-          <div class="block {{item.background_color}}">
+
+          <div class="block {{item.background_color}}" {% if block.centered_title %}style="justify-items: center;"{% endif %}>
             <figure class="block__visual">
               {% include 'partial/img.twig' with { img: item.icon, thumb: 'full' } %}
             </figure>
@@ -20,6 +25,8 @@
         <a class="underline cta_link" href="{{block.cta_text_copy2.url}}">{{ block.cta_text_copy2.title }}</a>
         {{ block.cta_text }}
       </div>
+      </div>
+
     </div>
   </div>
 </section>

@@ -1556,8 +1556,9 @@ h3.article-teaser__title.title {
   justify-content: flex-start;
   align-items: flex-start; }
   .steps-content .intro {
-    width: 50%;
-    padding-right: 4rem; }
+    width: 45%;
+    padding-right: 5rem;
+    margin-right: 2rem; }
   .steps-content .timeline-item {
     display: flex;
     flex-direction: row; }
