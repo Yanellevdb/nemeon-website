@@ -1,7 +1,12 @@
 .content_grid_blocks {
   display: flex;
   flex-direction: column;
+  gap: 0px;
 
+  .content_grid_blocks_item {
+    display: flex;
+    flex-direction: row;
+  }
   .content_grid_blocks_row {
     display: flex;
     flex-direction: row;
