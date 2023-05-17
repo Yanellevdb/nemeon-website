@@ -6,13 +6,17 @@
       <div class="cta_block_content">
         {{ title.main(block.title, '', true) }}
         {% include 'partial/wysiwyg.twig' with { text: block.text } %}
-        <div class="cta_block_link btn black">
+        <div class="cta_block_link underline">
           <a href="{{block.link.url}}" target="{{block.link.target}}">{{block.link.title}}</a>
         </div>
       </div>
+      
+      {% if block.image %}
+
       <picture class="cta_block_image">
         <img src="{{block.image}}" alt="">
       </picture>
+      {% endif %}
     </div>
   </div>
 </section>
