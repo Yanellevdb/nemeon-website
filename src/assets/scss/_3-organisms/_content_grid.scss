@@ -1,65 +1,43 @@
-.content_grid {
-  &_wrapper {
-    margin-top: rem(50);
+.content_grid_blocks {
+  display: flex;
+  flex-direction: column;
 
-    & > .title {
-      margin-bottom: rem(31);
+  .content_grid_blocks_row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &--reverse {
+      flex-direction: row-reverse;
     }
-  }
 
-  &_blocks {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: rem(30);
+    .content_grid_blocks_item,
+    .content_grid_blocks_item_visual {
+      flex: 1;
+    }
 
-    &_item {
-      display: grid;
-      grid-template-columns: rem(200) 1fr;
-      gap: rem(30);
-      align-items: center;
+    .content_grid_blocks {
+      grid-gap: 0px;
+    }
 
-      p {
-        margin: 0;
-      }
-
-      &__visual {
-        width: rem(200);
-        height: rem(200);
-        position: relative;
-
-        img {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
+    .content_grid_blocks_item {
+      .content_grid_blocks_item_content {
+        p {
+          margin: 0;
         }
       }
+    }
 
-      .title {
-        color: $black;
+    .content_grid_blocks_item_visual {
+      picture {
+        width: 100%;
+        height: 100%;
       }
-    }
-  }
-}
 
-@include below($desktop) {
-  .content_grid {
-    &_blocks {
-      grid-template-columns: 1fr;
-    }
-  }
-}
-@include below($tablet) {
-  .content_grid {
-    &_blocks {
-      &_item {
-        grid-template-columns: 1fr;
-        gap: rem(15);
-
-        &__visual {
-          width: 100%;
-          height: rem(300);
-        }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
     }
   }

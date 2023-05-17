@@ -2286,7 +2286,7 @@
                                     "key": "field_6464d2b715c63",
                                     "label": "Title",
                                     "name": "title",
-                                    "type": "text",
+                                    "type": "select",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -2295,13 +2295,22 @@
                                         "class": "",
                                         "id": ""
                                     },
+                                    "choices": {
+                                        "h2": "h2",
+                                        "h3": "h3",
+                                        "h4": "h4",
+                                        "h5": "h5"
+                                    },
+                                    "default_value": false,
+                                    "allow_null": 0,
+                                    "multiple": 0,
+                                    "ui": 0,
+                                    "return_format": "value",
                                     "wpml_cf_preferences": 1,
-                                    "acfe_save_meta": 0,
-                                    "default_value": "",
+                                    "ajax": 0,
                                     "placeholder": "",
-                                    "prepend": "",
-                                    "append": "",
-                                    "maxlength": ""
+                                    "allow_custom": 0,
+                                    "search_placeholder": ""
                                 },
                                 {
                                     "key": "field_622b70ffe8b65",
@@ -3695,5 +3704,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1684329407
+    "modified": 1684329888
 }
