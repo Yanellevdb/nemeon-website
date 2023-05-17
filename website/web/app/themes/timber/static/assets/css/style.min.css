@@ -1641,13 +1641,18 @@ h3.article-teaser__title.title {
     background-color: #d6ff2e;
     margin: 2rem 0;
     /* Adjust margin as needed */ }
+  .testimonials_wrapper .grey-divider {
+    height: 1px;
+    width: 30%;
+    background-color: #000;
+    margin: 2rem 0;
+    /* Adjust margin as needed */ }
 
 .testimonials .blocks {
   display: grid;
   grid-auto-flow: column;
   grid-gap: 1.875rem;
   justify-content: center;
-  color: #fff;
   text-align: center;
   align-items: stretch; }
   .testimonials .blocks .block {

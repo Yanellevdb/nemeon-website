@@ -12,7 +12,13 @@
         margin: 2rem 0; /* Adjust margin as needed */
       }
 
-      
+      .grey-divider {
+        height: 1px;
+        width: 30%;
+        background-color: #000;
+        margin: 2rem 0; /* Adjust margin as needed */
+      }
+
     }
   
       .blocks {
@@ -20,7 +26,6 @@
         grid-auto-flow: column;
         grid-gap: rem(30);
         justify-content: center;
-        color: #fff;
         text-align: center;
         align-items: stretch;
   

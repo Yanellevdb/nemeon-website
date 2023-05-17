@@ -11,12 +11,12 @@
           <div class="block {{item.background_color}}">
             {% include 'partial/wysiwyg.twig' with { text: item.content } %}
 
-            <div class="divider"></div> 
+            <div class="divider {% if item.background_color == 'bg-grey' or item.background_color == 'bg-green' %}grey-divider{% endif %}"></div> 
 
             <figure class="block__visual">
               {% include 'partial/img.twig' with { img: item.icon, thumb: 'full' } %}
             </figure>
-            <h3>{{ item.name }}</h3>
+            <h3 {% if item.background_color == 'bg-dark-grey' or item.background_color == 'bg-green' %} style="color: black;"{% endif %}>{{ item.name }}</h3>
             <h5>{{ item.function }}</h5>
             {{ title.main(item.function) }}
           </div>

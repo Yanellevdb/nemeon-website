@@ -1089,7 +1089,6 @@
                                         "bg-grey": "Grey",
                                         "bg-green": "Green",
                                         "bg-dark-grey": "Dark Grey",
-                                        "bg-white": "White",
                                         "bg-black": "Black"
                                     },
                                     "default_value": "bg-black",
@@ -2883,5 +2882,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1684315163
+    "modified": 1684318149
 }
