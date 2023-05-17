@@ -9,20 +9,19 @@
           {% include 'partial/wysiwyg.twig' with { text: block.text } %}
         </div>
         <div class="arrows-cta-links">
-          <div class="arrows-cta-link">
-            <a href="{{ block.link.url }}" target="_self">{{ block.link.title }} <span class="shortcode">&#8594;</span></a>
-          </div>
-          <hr>
-          <div class="arrows-cta-link">
-            <a href="{{ block.link2.url }}" target="_self">{{ block.link2.title }} <span class="shortcode">&#8594;</span></a>
-          </div>
-          <hr>
-          <div class="arrows-cta-link">
-            <a href="{{ block.link3.url }}" target="_self"><span>{{ block.link3.title }}</span> <span class="shortcode">&#8594;</span></a>
-          </div>
-          <hr>
+          {% for link in block.links %}
+            <div class="arrows-cta-link">
+              <a href="{{ link.url }}" target="_self">{{ link.link.title }} <span class="shortcode">&#8594;</span></a>
+            </div>
+          {% if link.description %}
+                <p>{{ link.description }}</p>
+              {% endif %}
+            <hr>
+          {% endfor %}
         </div>
       </div>
     </div>
   </div>
 </section>
+
+

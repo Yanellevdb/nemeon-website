@@ -1,0 +1,59 @@
+{% import 'macros/titles.twig' as title %}
+
+<section class="arrows-cta-2-columns {{ block.background_color }}">
+  <div class="constrict">
+    <div class="arrows-cta-2-columns-container">
+      {{ title.main(block.title, '', true) }}
+      {% include 'partial/wysiwyg.twig' with { text: block.text } %}
+
+      <div class="arrows-cta-2-columns-row">
+        <div class="arrows-cta-2-columns-column">
+          <ul class="arrows-cta-2-columns-list">
+            {% for link in block.links|slice(0, block.links|length // 2) %}
+            <li class="arrows-cta-2-columns-item visible">
+              <a class="link-url" href="{{ link.url }}" target="_self">
+                <div class="space-between">
+                  <div class="link-title">{{ link.link.title }}</div>
+                  <div class="shortcode">&#8594;</div>
+                </div>
+              </a>
+              {% if link.description %}
+              <p>{{ link.description }}</p>
+              <hr />
+              {% endif %}
+            </li>
+            {% else %}
+            <li class="arrows-cta-2-columns-item"></li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="arrows-cta-2-columns-column">
+          <ul class="arrows-cta-2-columns-list">
+            {% for link in block.links|slice(block.links|length // 2) %}
+            <li class="arrows-cta-2-columns-item visible">
+              <a class="link-url" href="{{ link.url }}" target="_self">
+                <div class="space-between">
+                  <div class="link-title">{{ link.link.title }}</div>
+                  <div class="shortcode">&#8594;</div>
+                </div>
+              </a>
+              {% if link.description %}
+              <p>{{ link.description }}</p>
+              <hr />
+              {% endif %}
+            </li>
+            {% else %}
+            <li class="arrows-cta-2-columns-item"></li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+      <div class="call_to_action_element">
+        <a class="underline cta_link" href="{{ block.cta.url }}">{{
+          block.cta.label
+        }}</a>
+        &nbsp;{{ block.cta.text }}
+      </div>
+    </div>
+  </div>
+</section>
