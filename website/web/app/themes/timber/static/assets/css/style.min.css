@@ -41,13 +41,13 @@
   font-family: "Riforma LL";
   font-weight: 300;
   font-style: normal;
-  src: url("./static/fonts/riforma-ll/riforma-ll-light.woff2") format("woff2"), url("./static/fonts/riforma-ll/riforma-ll-light.woff") format("woff"); }
+  src: url("../fonts/riforma-ll/riforma-ll-light.woff2") format("woff2"), url("../fonts/riforma-ll/riforma-ll-light.woff") format("woff"); }
 
 @font-face {
   font-family: "Riforma LL";
   font-weight: 400;
   font-style: normal;
-  src: url("./static/fonts/riforma-ll/riforma-ll-regular.woff2") format("woff2"), url("./static/fonts/riforma-ll/riforma-ll-regular.woff") format("woff"); }
+  src: url("../fonts/riforma-ll/riforma-ll-regular.woff2") format("woff2"), url("../fonts/riforma-ll/riforma-ll-regular.woff") format("woff"); }
 
 html {
   box-sizing: border-box;
