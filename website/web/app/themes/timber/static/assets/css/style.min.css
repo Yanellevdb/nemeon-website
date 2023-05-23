@@ -1282,6 +1282,32 @@ html.scroll .header-text-color-white .header {
   .icon_block_columns_wrapper .blocks {
     grid-auto-flow: row; } }
 
+.image_block_cta {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline; }
+
+.image_block_image {
+  width: 100%;
+  position: relative;
+  overflow: hidden; }
+
+.image_block_image_inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-start; }
+
+.image_block_image img {
+  padding-top: 35px;
+  width: 100%;
+  height: auto;
+  object-fit: cover; }
+
+.image_block {
+  padding: 100px; }
+
 .job_content_wrapper {
   display: grid;
   grid-gap: 3.125rem;
