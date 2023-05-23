@@ -7,8 +7,8 @@
       {% for item in block.blocks %}
         <div class="content_grid_blocks_row {% if loop.index is even %}content_grid_blocks_row--reverse{% endif %} {{ item.background_color }}">
           <div class="content_grid_blocks_item">
-              <p>{{ item.text }}</p>
-              <a class="link" href="{{ item.button.url }}" target="{{ item.button.target }}">{{ item.button.title }}</a>
+            <p class="content_grid_blocks_item_text">{{ item.text }}</p>
+            <a class="link" href="{{ item.button.url }}" target="{{ item.button.target }}">{{ item.button.title }}</a>
           </div>
           <div class="content_grid_blocks_item_visual">
             <img src="{{ item.image }}" alt="Icon">
