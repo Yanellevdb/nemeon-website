@@ -3,18 +3,11 @@
 <section class="hero_small {{block.background}}{% if block.hero_with_image %} hero_with_image{% endif %}" {% if block.background_image %}style="background-image: url('{{ block.background_image.url }}');"{% endif %}>
   <div class="constrict">
     <div class="hero_small_wrapper">
-      <div class="hero_small_content">
+      <div style="color: {{ block.title.color }}" class="hero_small_content">
         {{ title.main(block.title, '', true) }}
-        {% if block.hero_with_image %}
           <p class="small">{{block.subtext}}</p>
-        {% endif %}
         <a class="link" href="{{block.link.url}}" target="{{block.link.target}}">{{block.link.title}}</a>
       </div>
-      {% if block.hero_with_image %}
-        <picture class="hero_small_image">
-          {% include 'partial/img.twig' with { img: block.image, thumb: 'full' } %}
-        </picture>
-      {% endif %}
     </div>
   </div>
-</section>
+</section> 
