@@ -13,13 +13,13 @@
 // Black (Heavy): 900
 // ==========================================================================
 
-$base-font-path: "./static/fonts/";
+$base-font-path: '../fonts/';
 
 $fonts: (
-  "Riforma LL": (
-    (300, normal, "riforma-ll/riforma-ll-light"),
+  'Riforma LL': (
+    (300, normal, 'riforma-ll/riforma-ll-light'),
     // (300, italic, "riforma-ll/riforma-ll-lightitalic"),
-    (400, normal, "riforma-ll/riforma-ll-regular"),
+    (400, normal, 'riforma-ll/riforma-ll-regular'),
     // (400, italic, "riforma-ll/riforma-ll-italic"),
   ),
 );
@@ -31,8 +31,8 @@ $fonts: (
         font-family: $name;
         font-weight: $weight;
         font-style: $style;
-        src: url($base-font-path + $path + ".woff2") format("woff2"),
-          url($base-font-path + $path + ".woff") format("woff");
+        src: url($base-font-path + $path + '.woff2') format('woff2'),
+          url($base-font-path + $path + '.woff') format('woff');
       }
     }
   }

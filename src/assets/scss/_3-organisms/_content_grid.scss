@@ -1,66 +1,45 @@
-.content_grid {
-  &_wrapper {
-    margin-top: rem(50);
-
-    & > .title {
-      margin-bottom: rem(31);
-    }
-  }
-
-  &_blocks {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: rem(30);
-
-    &_item {
-      display: grid;
-      grid-template-columns: rem(200) 1fr;
-      gap: rem(30);
-      align-items: center;
-
-      p {
-        margin: 0;
-      }
-
-      &__visual {
-        width: rem(200);
-        height: rem(200);
-        position: relative;
-
-        img {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-      }
-
-      .title {
-        color: $black;
-      }
-    }
-  }
+.content_grid_blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
 }
 
-@include below($desktop) {
-  .content_grid {
-    &_blocks {
-      grid-template-columns: 1fr;
-    }
-  }
+.link {
+  padding-top: 30px;
 }
-@include below($tablet) {
-  .content_grid {
-    &_blocks {
-      &_item {
-        grid-template-columns: 1fr;
-        gap: rem(15);
 
-        &__visual {
-          width: 100%;
-          height: rem(300);
-        }
-      }
+.content_grid_blocks_item {
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+}
+
+.content_grid_blocks_row {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: 100%;
+  height: 100%;
+
+  &--reverse {
+    flex-direction: row-reverse;
+  }
+
+  .content_grid_blocks_item {
+    flex: 1;
+    flex-direction: column;
+    margin: 0;
+    padding: 80px;
+    align-items: flex-start;
+    width: 50%;
+  }
+
+  .content_grid_blocks_item_visual {
+    width: 50%;
+
+    img {
+      width: 100%;
+      height: 100%;
     }
   }
 }
