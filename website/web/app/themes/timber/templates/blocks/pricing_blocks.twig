@@ -4,27 +4,34 @@
   <div class="constrict">
     <div class="pricing_wrapper">
       {{ title.main(block.title, '', true) }}
-      <div class="pricing_blocks">
+      <div class="pricing_tabs">
+        <ul class="tabs-nav">
+          {% for item in block.blocks %}
+            <li><a class= "tabs btn" href="#tab-{{ loop.index0 }}">{{ item.title }}</a></li>
+          {% endfor %}
+        </ul>
         {% for item in block.blocks %}
-          <div class="pricing_blocks_item {{item.background}}">
+        <h2>{{ item.title }}</h2>
+        <p>{{ item.description }}</p>
+          <div id="tab-{{ loop.index0 }}" class="tab-content pricing_blocks_item {{ item.tab.background }}">
             <figure class="pricing_blocks_item__visual">
-              {% include 'partial/img.twig' with { img: item.image, thumb: 'full' } %}
+              {% include 'partial/img.twig' with { img: item.tab.image, thumb: 'full' } %}
             </figure>
-            <h3 class="title">{{item.title}}</h3>
+            <h3 class="title">{{ item.tab.title }}</h3>
+            <p>{{ item.tab.description }}</p>
             <div class="pricing_blocks_item_prices">
-              {% for price in item.prices %}
+              {% for price in item.tab.prices %}
                 <div class="pricing_blocks_item_prices_item">
                   {% if price.text %}
-                    <p>{{price.text}}</p>
+                    <p>{{ price.text }}</p>
                   {% endif %}
-                  <p>{{price.price}}</p>
+                  <p>{{ price.price }}</p>
                 </div>
               {% endfor %}
             </div>
           </div>
         {% endfor %}
       </div>
-      <p>{{block.subtext}}</p>
     </div>
   </div>
 </section>

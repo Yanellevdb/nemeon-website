@@ -312,6 +312,13 @@ nav ul {
     cursor: pointer;
     color: #fff;
     background-color: #000; }
+  .btn.grey {
+    background-color: #b2b2b2;
+    color: #fff;
+    margin-right: 0.75rem; }
+    .btn.grey:hover {
+      color: #000;
+      background-color: #d6ff2e; }
   .btn.black {
     background-color: #000;
     color: #d6ff2e;
@@ -1573,6 +1580,13 @@ h3.article-teaser__title.title {
   .pricing_blocks {
     grid-auto-flow: row; } }
 
+.tabs-nav {
+  display: flex;
+  flex-direction: row; }
+
+.tabs {
+  margin-right: 10px; }
+
 .single .article-content .constrict {
   max-width: 1250px; }
 
@@ -1697,7 +1711,7 @@ h3.article-teaser__title.title {
     padding-bottom: 3rem; }
 
 .testimonials_wrapper {
-  margin-top: 3.125rem; }
+  margin-top: 10rem; }
   .testimonials_wrapper > .title {
     margin-bottom: 1.9375rem; }
   .testimonials_wrapper .divider {

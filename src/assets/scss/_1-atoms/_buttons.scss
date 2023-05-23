@@ -13,6 +13,17 @@
     background-color: $black;
   }
 
+  &.grey {
+    background-color: $nucleon-dark-grey;
+    color: $white;
+    margin-right: rem(12);
+
+    &:hover {
+      color: $black;
+      background-color: $nucleon-green;
+    }
+  }
+
   &.black {
     background-color: $black;
     color: $nucleon-green;
