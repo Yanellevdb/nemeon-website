@@ -10,19 +10,26 @@
   &_content {
     display: flex;
     flex-direction: column;
-    gap: rem(60);
+    gap: 1.75rem;
+  }
 
-    .wysiwyg {
-      p,
-      a {
-        font-size: rem(26);
-        line-height: lh(34, 26);
-        margin: 0;
-      }
+  .wysiwyg {
+    p {
+      font-size: 1rem;
+      line-height: lh(34, 26);
+      margin: 0;
+    }
 
-      a {
-        font-weight: 300;
-      }
+    a {
+      font-weight: 300;
+    }
+  }
+
+  .cta_block_link {
+    padding-top: 2rem;
+
+    a {
+      font-size: 1.25rem;
     }
   }
 

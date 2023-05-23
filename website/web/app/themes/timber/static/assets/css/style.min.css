@@ -905,14 +905,20 @@ body.cookies-accepted.cookies-set #cookie-notice {
 .cta_block_content {
   display: flex;
   flex-direction: column;
-  gap: 3.75rem; }
-  .cta_block_content .wysiwyg p,
-  .cta_block_content .wysiwyg a {
-    font-size: 1.625rem;
-    line-height: 1.30769;
-    margin: 0; }
-  .cta_block_content .wysiwyg a {
-    font-weight: 300; }
+  gap: 1.75rem; }
+
+.cta_block .wysiwyg p {
+  font-size: 1rem;
+  line-height: 1.30769;
+  margin: 0; }
+
+.cta_block .wysiwyg a {
+  font-weight: 300; }
+
+.cta_block .cta_block_link {
+  padding-top: 2rem; }
+  .cta_block .cta_block_link a {
+    font-size: 1.25rem; }
 
 .cta_block_image {
   position: relative;
