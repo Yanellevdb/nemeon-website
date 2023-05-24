@@ -4,11 +4,19 @@
 {% extends "_base/base.twig" %}
 
 {% block content %}
-  {% include 'blocks/hero_small.twig' with { block: {title: {size: 'h1', content: posts_title}, background:'bg-dark-grey'}}%}
+  {% include 'blocks/hero_small.twig' with { block: {title: {size: 'h1', content: posts_title}, subtext: posts_subtext, background: 'bg-dark-grey'}}%}
   {# {{ parent() }} #}
 
   <section class="archive-block">
     <div class="constrict">
+
+    <div class="search-block">
+    <h2> Are you looking for something specific? </h2>
+    <form action="{{ site.url }}/" class="search-form">
+    <input type="text"  name="s" placeholder="Enter to search..." class="search-input"> 
+    </form>
+    </div>
+
       <div class="archive-block__wrapper" id="posts">
         {% for post in posts %}
           {% include ['partial/tease-post.twig', 'tease.twig'] with {archive: true} %}
@@ -26,3 +34,4 @@
   {% include 'blocks/call_to_action.twig' with {block: posts_cta} %}
 
 {% endblock %}
+

@@ -2,18 +2,20 @@
 
 <section class="content_grid">
   <div class="constrict">
-    <div class="content_grid_wrapper">
-      {{ title.main(block.title, '', true) }}
-      <div class="content_grid_blocks">
-        {% for item in block.blocks %}
-          <div class="content_grid_blocks_item {{item.background_color}}">
-            <picture class="content_grid_blocks_item__visual">
-              {% include 'partial/img.twig' with { img: item.image, thumb: 'full' } %}
-            </picture>
-            <p>{{item.text}}</p>
+    {{ title.main(block.title, '', true) }}
+    <div class="content_grid_blocks">
+      {% for item in block.blocks %}
+        <div class="content_grid_blocks_row {% if loop.index is even %}content_grid_blocks_row--reverse{% endif %} {{ item.background_color }}">
+          <div class="content_grid_blocks_item">
+            {{ title.main(item.title, '', true) }}
+            <p class="content_grid_blocks_item_text">{{ item.text }}</p>
+            <a class="link" href="{{ item.link.url }}" target="{{ item.link.target }}">{{ item.link.title}}</a>
           </div>
-        {% endfor %}
-      </div>
+          <div class="content_grid_blocks_item_visual">
+            <img src="{{ item.image }}" alt="Icon">
+          </div>
+        </div>
+      {% endfor %}
     </div>
   </div>
 </section>

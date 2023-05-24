@@ -15,6 +15,32 @@
   }
 }
 
+/* Search Form */
+
+.search-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 70px;
+}
+
+.search-form {
+  width: 600px;
+  display: flex;
+  justify-content: center;
+}
+
+.search-input {
+  width: 660px; /* Adjust the width as needed */
+  border: 1px solid;
+  display: block;
+  padding: 9px 4px 9px 10px; /* Adjust the left padding as needed */
+  background-image: url('../../../../../../app/themes/timber/static/assets/img/search-icon.svg');
+  background-repeat: no-repeat;
+  background-position: right 10px center; /* Set the position of the search icon */
+  background-size: 16px; /* Adjust the size of the search icon */
+}
+
 @include below($tablet) {
   .archive-block {
     &__wrapper {

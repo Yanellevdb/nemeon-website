@@ -1,0 +1,18 @@
+{% import 'macros/titles.twig' as title %}
+
+
+<section class="image_block">
+  <div class="constrict">
+    <div class="image_block_wrapper">
+      <div class="image_block_cta">
+        {{ title.main(block.title, '', true) }}
+        <a href="{{block.button.url}}" class="btn black">{{block.button.title}}</a>
+      </div>
+      {% if block.image %}
+      <div class="image_block_image">
+          <img src="{{block.image}}" alt="Image">
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

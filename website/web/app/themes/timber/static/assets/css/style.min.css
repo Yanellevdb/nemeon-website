@@ -41,13 +41,13 @@
   font-family: "Riforma LL";
   font-weight: 300;
   font-style: normal;
-  src: url("./static/fonts/riforma-ll/riforma-ll-light.woff2") format("woff2"), url("./static/fonts/riforma-ll/riforma-ll-light.woff") format("woff"); }
+  src: url("../fonts/riforma-ll/riforma-ll-light.woff2") format("woff2"), url("../fonts/riforma-ll/riforma-ll-light.woff") format("woff"); }
 
 @font-face {
   font-family: "Riforma LL";
   font-weight: 400;
   font-style: normal;
-  src: url("./static/fonts/riforma-ll/riforma-ll-regular.woff2") format("woff2"), url("./static/fonts/riforma-ll/riforma-ll-regular.woff") format("woff"); }
+  src: url("../fonts/riforma-ll/riforma-ll-regular.woff2") format("woff2"), url("../fonts/riforma-ll/riforma-ll-regular.woff") format("woff"); }
 
 html {
   box-sizing: border-box;
@@ -580,6 +580,32 @@ h3 {
     width: 19.6875rem;
     height: 19.6875rem; }
 
+/* Search Form */
+.search-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 70px; }
+
+.search-form {
+  width: 600px;
+  display: flex;
+  justify-content: center; }
+
+.search-input {
+  width: 660px;
+  /* Adjust the width as needed */
+  border: 1px solid;
+  display: block;
+  padding: 9px 4px 9px 10px;
+  /* Adjust the left padding as needed */
+  background-image: url("../../../../../../app/themes/timber/static/assets/img/search-icon.svg");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  /* Set the position of the search icon */
+  background-size: 16px;
+  /* Adjust the size of the search icon */ }
+
 @media screen and (max-width: 768px) {
   .archive-block__wrapper .article-teaser {
     grid-template-columns: 1fr; }
@@ -829,45 +855,39 @@ a.underline.cta_link {
     .contact__form .wpcf7__inputs .menu {
       grid-column: span 1; } }
 
-.content_grid_wrapper {
-  margin-top: 3.125rem; }
-  .content_grid_wrapper > .title {
-    margin-bottom: 1.9375rem; }
-
 .content_grid_blocks {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1.875rem; }
-  .content_grid_blocks_item {
-    display: grid;
-    grid-template-columns: 12.5rem 1fr;
-    gap: 1.875rem;
-    align-items: center; }
-    .content_grid_blocks_item p {
-      margin: 0; }
-    .content_grid_blocks_item__visual {
-      width: 12.5rem;
-      height: 12.5rem;
-      position: relative; }
-      .content_grid_blocks_item__visual img {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        object-fit: cover; }
-    .content_grid_blocks_item .title {
-      color: #000; }
+  display: flex;
+  flex-direction: column;
+  gap: 0px; }
 
-@media screen and (max-width: 1100px) {
-  .content_grid_blocks {
-    grid-template-columns: 1fr; } }
+.link {
+  padding-top: 30px; }
 
-@media screen and (max-width: 768px) {
-  .content_grid_blocks_item {
-    grid-template-columns: 1fr;
-    gap: 0.9375rem; }
-    .content_grid_blocks_item__visual {
+.content_grid_blocks_item {
+  display: flex;
+  flex-direction: row;
+  gap: 0px; }
+
+.content_grid_blocks_row {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: 100%;
+  height: 100%; }
+  .content_grid_blocks_row--reverse {
+    flex-direction: row-reverse; }
+  .content_grid_blocks_row .content_grid_blocks_item {
+    flex: 1;
+    flex-direction: column;
+    margin: 0;
+    padding: 80px;
+    align-items: flex-start;
+    width: 50%; }
+  .content_grid_blocks_row .content_grid_blocks_item_visual {
+    width: 50%; }
+    .content_grid_blocks_row .content_grid_blocks_item_visual img {
       width: 100%;
-      height: 18.75rem; } }
+      height: 100%; }
 
 #cookie-notice {
   position: fixed;
@@ -1224,7 +1244,7 @@ html.scroll .header-text-color-white .header {
   max-width: 49.375rem; }
   .hero_small_content h1,
   .hero_small_content .h1 {
-    line-height: 0; }
+    line-height: 1; }
   .hero_small_content h3 {
     color: inherit; }
 
@@ -1287,6 +1307,24 @@ html.scroll .header-text-color-white .header {
 @media screen and (max-width: 1100px) {
   .icon_block_columns_wrapper .blocks {
     grid-auto-flow: row; } }
+
+.image_block_cta {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline; }
+
+.image_block_image {
+  position: relative; }
+
+.image_block_image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding-top: 35px; }
+
+.image_block {
+  padding: 100px; }
 
 .job_content_wrapper {
   display: grid;

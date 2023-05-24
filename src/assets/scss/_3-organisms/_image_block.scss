@@ -1,0 +1,21 @@
+.image_block_cta {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.image_block_image {
+  position: relative;
+}
+
+.image_block_image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding-top: 35px;
+}
+
+.image_block {
+  padding: 100px;
+}
