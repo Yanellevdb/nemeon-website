@@ -3,28 +3,70 @@
 <section class="pricing">
   <div class="constrict">
     <div class="pricing_wrapper">
-      {{ title.main(block.title, '', true) }}
-      <div class="pricing_blocks">
+     
+      <div class="block-title">{{ title.main(block.title, '', true) }}</div>
+      
+      <div class="tabs-nav">
         {% for item in block.blocks %}
-          <div class="pricing_blocks_item {{item.background}}">
-            <figure class="pricing_blocks_item__visual">
-              {% include 'partial/img.twig' with { img: item.image, thumb: 'full' } %}
-            </figure>
-            <h3 class="title">{{item.title}}</h3>
-            <div class="pricing_blocks_item_prices">
-              {% for price in item.prices %}
-                <div class="pricing_blocks_item_prices_item">
-                  {% if price.text %}
-                    <p>{{price.text}}</p>
-                  {% endif %}
-                  <p>{{price.price}}</p>
-                </div>
-              {% endfor %}
-            </div>
-          </div>
+          <button class="tabs btn grey" onclick="openTab(event, 'tab-{{ loop.index0 }}')">{{ item.title }}</button>
         {% endfor %}
       </div>
-      <p>{{block.subtext}}</p>
+
+      {% for item in block.blocks %}
+        <div id="tab-{{ loop.index0 }}" class="block tab-content">
+          <h2>{{ item.title }}</h2>
+          <p>{{ item.description }}</p>
+
+          <div class="prices">
+            {% for tab in item.tab %}
+              <div class="pricing_blocks_item {{ tab.background }}">
+                {% if tab.most_popular %}
+                  <div class="popularity">
+                  <h6 class="most-popular">Most Popular!</h6>
+                  </div>
+                {% endif %}
+                <div class="title-tab">
+                  <figure class="pricing_blocks_item__visual">
+                    {% include 'partial/img.twig' with { img: tab.image, thumb: 'full', width: '30px' } %}
+                  </figure>
+                  <h4>{{ tab.title }}</h4>
+                </div>
+                <div class="description-tab">
+                  {% include 'partial/wysiwyg.twig' with { text: tab.description } %}
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      {% endfor %}
+
     </div>
   </div>
 </section>
+
+
+<script>
+  function openTab(evt, tabId) {
+  // Get all tab content elements
+  var tabContents = document.getElementsByClassName("tab-content");
+
+  // Hide all tab content
+  for (var i = 0; i < tabContents.length; i++) {
+    tabContents[i].style.display = "none";
+  }
+
+  // Remove "active" class from all tab buttons
+  var tabButtons = document.getElementsByClassName("tabs");
+  for (var i = 0; i < tabButtons.length; i++) {
+    tabButtons[i].classList.remove("active");
+  }
+
+  // Show the selected tab content and mark the button as active
+  document.getElementById(tabId).style.display = "block";
+  evt.currentTarget.classList.add("active");
+}
+
+// Select the first tab by default
+document.getElementsByClassName("tabs")[0].click();
+
+</script>

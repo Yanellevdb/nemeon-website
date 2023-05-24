@@ -22,7 +22,7 @@
             {% endif %}
           </div>
           <div class="service_content">
-            <h3>{{ service.title }}</h3>
+            <h3 {% if block.background_color == 'bg-dark-grey' or block.background_color == 'bg-green' %} style="color: black;"{% endif %}>{{ service.title }}</h3>
             <p>{{ service.text }}</p>
           </div>
         </div>
