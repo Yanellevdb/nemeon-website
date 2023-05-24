@@ -17,6 +17,8 @@
 $context          	= Timber::context();
 $context['posts'] 	= new Timber\PostQuery();
 $context['post_count'] = $wp_query->found_posts;
+$context['categories'] = Timber::get_terms('category');
+
 
 $context['posts_title'] = get_field('title', 'posts_page');
 $context['posts_subtext'] = get_field('subtext', 'posts_page');

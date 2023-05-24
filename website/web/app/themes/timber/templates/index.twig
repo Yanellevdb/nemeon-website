@@ -7,6 +7,9 @@
   {% include 'blocks/hero_small.twig' with { block: {title: {size: 'h1', content: posts_title}, subtext: posts_subtext, background: 'bg-dark-grey'}}%}
   {# {{ parent() }} #}
 
+
+
+
   <section class="archive-block">
     <div class="constrict">
 
@@ -16,6 +19,15 @@
     <input type="text"  name="s" placeholder="Enter to search..." class="search-input"> 
     </form>
     </div>
+    
+<div class="category-filter">
+    <ul>
+        {% for category in categories %}
+            <li><a href="{{ category.link }}">{{ category.name }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+
 
       <div class="archive-block__wrapper" id="posts">
         {% for post in posts %}

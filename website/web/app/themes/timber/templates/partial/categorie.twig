@@ -1,0 +1,7 @@
+<div class="category-filter">
+    <ul>
+        {% for category in timber.get_terms('category') %}
+            <li><a href="{{ category.link }}">{{ category.name }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
