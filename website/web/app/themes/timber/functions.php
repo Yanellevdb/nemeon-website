@@ -125,6 +125,9 @@ class StarterSite extends Timber\Site
 
 
 
+
+
+
     public function timber_body_classes($classes)
     {
         global $post;
@@ -474,7 +477,20 @@ function custom_mime_types($mimes)
 add_filter('upload_mimes', 'custom_mime_types');
 
 
+function filter_blog_posts()
+{
+    $category = $_POST['category'];
 
+    // Perform necessary filtering logic based on the selected category
+    // Retrieve the filtered blog posts using WP_Query or Timber
+
+    // Render the filtered blog posts using a separate Twig template
+    Timber::render('archive.twig', $context);
+
+    wp_die(); // Always include this at the end of an AJAX callback
+}
+add_action('wp_ajax_filter_blog_posts', 'filter_blog_posts');
+add_action('wp_ajax_nopriv_filter_blog_posts', 'filter_blog_posts');
 
 /*
 

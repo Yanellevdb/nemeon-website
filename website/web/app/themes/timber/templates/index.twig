@@ -19,18 +19,15 @@
     </div>
 
 <div class="category-filter">
-    <div class="category-box active">
+    <div class="category-box active" data-category="all">
         <a href="{{ site.url }}">All</a>
     </div>
     {% for category in categories %}
-        <div class="category-box{% if category.is_current %} active{% endif %}">
+        <div class="category-box" data-category="{{ category.slug }}">
             <a href="{{ category.link }}">{{ category.name }}</a>
         </div>
     {% endfor %}
 </div>
-
-
-
 
 
       <div class="archive-block__wrapper" id="posts">
