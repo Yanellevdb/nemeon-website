@@ -15,13 +15,21 @@
 
   &.grey {
     background-color: $nucleon-dark-grey;
-    color: $white;
+    color: $black;
     margin-right: rem(12);
 
     &:hover {
       color: $black;
       background-color: $nucleon-green;
     }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &.grey:active {
+    background-color: $nucleon-green;
   }
 
   &.black {
