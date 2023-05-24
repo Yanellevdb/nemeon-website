@@ -1525,7 +1525,8 @@ html.scroll .header-text-color-white .header {
 .posts_wrapper {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 3.75rem; }
+  grid-gap: 3.75rem;
+  align-items: stretch; }
   .posts_wrapper .post_column {
     margin-top: 9.375rem; }
     .posts_wrapper .post_column__title {
@@ -1551,7 +1552,8 @@ h3.article-teaser__title.title {
   grid-template-columns: minmax(12.5rem, auto) 1fr;
   grid-gap: 1.875rem;
   background-color: #f2f2f2;
-  padding: 2rem; }
+  padding: 2rem;
+  align-items: center; }
   .article-teaser__visual {
     width: 12.5rem;
     height: 12.5rem;
