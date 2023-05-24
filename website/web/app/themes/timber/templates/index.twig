@@ -4,9 +4,8 @@
 {% extends "_base/base.twig" %}
 
 {% block content %}
-  {% include 'blocks/hero_small.twig' with { block: {title: {size: 'h1', content: posts_title}, background:'bg-dark-grey'}}%}
+  {% include 'blocks/hero_small.twig' with { block: {title: {size: 'h1', content: posts_title}, subtext: posts_subtext, background: 'bg-dark-grey'}}%}
   {# {{ parent() }} #}
-
   <section class="archive-block">
     <div class="constrict">
       <div class="archive-block__wrapper" id="posts">
@@ -26,3 +25,4 @@
   {% include 'blocks/call_to_action.twig' with {block: posts_cta} %}
 
 {% endblock %}
+

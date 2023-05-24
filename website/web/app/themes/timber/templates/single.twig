@@ -2,8 +2,6 @@
 
 {% block content %}
   <div class="content-wrapper">
-
-
     <article class="post-type-{{ single_post.post_type }}" id="post-{{ single_post.ID }}">
       {% include 'blocks/hero_small.twig' with { block: {title: {size: 'h1', content: title}, background:'bg-dark-grey'}}%}
       {% if gated_content == true %}
