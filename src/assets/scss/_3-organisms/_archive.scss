@@ -41,6 +41,35 @@
   background-size: 16px; /* Adjust the size of the search icon */
 }
 
+/* Category filter */
+.category-filter {
+  a::after {
+    display: none;
+  }
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; /* Align items vertically */
+  padding-bottom: 50px;
+}
+
+.category-box {
+  background-color: #f2f2f2;
+  height: 50px;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+}
+.category-box.active {
+  background-color: black; /* Change the background color for active state */
+}
+.category-box.active a {
+  color: $nucleon-green; /* Adjust the text color for active state */
+}
+
 @include below($tablet) {
   .archive-block {
     &__wrapper {

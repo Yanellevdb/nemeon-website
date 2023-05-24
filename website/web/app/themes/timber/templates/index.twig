@@ -8,8 +8,6 @@
   {# {{ parent() }} #}
 
 
-
-
   <section class="archive-block">
     <div class="constrict">
 
@@ -19,14 +17,20 @@
     <input type="text"  name="s" placeholder="Enter to search..." class="search-input"> 
     </form>
     </div>
-    
+
 <div class="category-filter">
-    <ul>
-        {% for category in categories %}
-            <li><a href="{{ category.link }}">{{ category.name }}</a></li>
-        {% endfor %}
-    </ul>
+    <div class="category-box active">
+        <a href="{{ site.url }}">All</a>
+    </div>
+    {% for category in categories %}
+        <div class="category-box{% if category.is_current %} active{% endif %}">
+            <a href="{{ category.link }}">{{ category.name }}</a>
+        </div>
+    {% endfor %}
 </div>
+
+
+
 
 
       <div class="archive-block__wrapper" id="posts">
