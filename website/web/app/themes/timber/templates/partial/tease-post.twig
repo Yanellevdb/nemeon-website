@@ -4,12 +4,9 @@
   </figure>
   <div class="article-teaser__content">
     <h3 class="article-teaser__title title">{{post.title}}</h3>
-    {% if archive %}
+    
       <p class="excerpt">{{post.post_excerpt|excerpt(100)}}</p>
-    {% else %}
-      <p class="no-excerpt"></p>
-    {% endif %}
-
-    <a class="underline" href="{{post.link}}">{{ __('Read more', 'timber') }}</a>
+   
+    <a class="btn" style="background-color: grey;" href="{{post.link}}">{{ __('Read more', 'timber') }}</a>
   </div>
 </article>

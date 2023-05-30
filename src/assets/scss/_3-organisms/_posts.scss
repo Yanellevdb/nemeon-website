@@ -3,6 +3,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: rem(60);
+    align-items: stretch;
 
     .post_column {
       margin-top: rem(150);
@@ -43,6 +44,7 @@ h3.article-teaser__title.title {
   grid-gap: rem(30);
   background-color: $nucleon-grey;
   padding: 2rem;
+  align-items: center;
 
   &__visual {
     width: rem(200);
