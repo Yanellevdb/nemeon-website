@@ -144,6 +144,108 @@
                     "maxlength": ""
                 }
             ]
+        },
+        {
+            "key": "field_64760946f8670",
+            "label": "Background",
+            "name": "background",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 3,
+            "acfe_save_meta": 0,
+            "choices": {
+                "bg-dark-grey": "Dark Grey",
+                "bg-green": "Green",
+                "bg-black": "Black"
+            },
+            "default_value": "bg-green",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": "",
+            "allow_custom": 0,
+            "search_placeholder": ""
+        },
+        {
+            "key": "field_64760988f8671",
+            "label": "Location",
+            "name": "location",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 2,
+            "acfe_save_meta": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_64760992f8672",
+            "label": "Event date",
+            "name": "event_date",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 2,
+            "acfe_save_meta": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_64760b821fa48",
+            "label": "Button color",
+            "name": "button_color",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 3,
+            "acfe_save_meta": 0,
+            "choices": {
+                "bg-dark-grey": "Dark Grey",
+                "bg-green": "Green",
+                "bg-black": "Black"
+            },
+            "default_value": "bg-black",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": "",
+            "allow_custom": 0,
+            "search_placeholder": ""
         }
     ],
     "location": [
@@ -206,5 +308,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1684923345
+    "modified": 1685459265
 }
