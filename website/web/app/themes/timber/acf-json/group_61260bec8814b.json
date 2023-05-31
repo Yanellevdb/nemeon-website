@@ -2089,6 +2089,26 @@
                                     "wpml_cf_preferences": 2,
                                     "post_type": "",
                                     "taxonomy": ""
+                                },
+                                {
+                                    "key": "field_647717c057ce5",
+                                    "label": "On homepage",
+                                    "name": "on_homepage",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "",
+                                    "default_value": 0,
+                                    "ui": 0,
+                                    "wpml_cf_preferences": 1,
+                                    "ui_on_text": "",
+                                    "ui_off_text": ""
                                 }
                             ]
                         }
@@ -4466,6 +4486,13 @@
                 "operator": "!=",
                 "value": "3"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "events"
+            }
         ]
     ],
     "menu_order": 0,
@@ -4487,5 +4514,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1684851385
+    "modified": 1685539232
 }

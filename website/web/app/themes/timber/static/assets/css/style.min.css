@@ -1577,9 +1577,10 @@ h3.article-teaser__title.title {
   grid-template-columns: minmax(12.5rem, auto) 1fr;
   justify-items: end;
   grid-gap: 1.875rem;
-  align-items: center; }
+  align-items: center;
+  height: 400px; }
   .article-teaser-event__visual {
-    width: 21.5rem;
+    width: 32rem;
     height: -webkit-fill-available;
     position: relative; }
     .article-teaser-event__visual img {
