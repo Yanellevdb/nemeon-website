@@ -161,11 +161,11 @@
             "wpml_cf_preferences": 3,
             "acfe_save_meta": 0,
             "choices": {
-                "bg-dark-grey": "Dark Grey",
-                "bg-green": "Green",
-                "bg-black": "Black"
+                "#b2b2b2": "Dark Grey",
+                "#d6ff2e": "Green",
+                "black": "Black"
             },
-            "default_value": "bg-green",
+            "default_value": false,
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -233,11 +233,11 @@
             "wpml_cf_preferences": 3,
             "acfe_save_meta": 0,
             "choices": {
-                "bg-dark-grey": "Dark Grey",
-                "bg-green": "Green",
-                "bg-black": "Black"
+                "#b2b2b2": "Dark Grey",
+                "#d6ff2e": "Green",
+                "black": "Black"
             },
-            "default_value": "bg-black",
+            "default_value": false,
             "allow_null": 0,
             "multiple": 0,
             "ui": 0,
@@ -308,5 +308,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1685459265
+    "modified": 1685521566
 }

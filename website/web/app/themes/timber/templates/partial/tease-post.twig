@@ -1,10 +1,10 @@
 {% if post.post_type == 'events' %}
 
-  <article class="article-teaser-event" id="post-{{ post.ID }}">
-    <div class="article-teaser-event__content style="background-color:{{archive_options.background}};">
+  <article class="article-teaser-event" style="background-color:{{post.background}};" id="post-{{ post.ID }}">
+    <div class="article-teaser-event__content">
       <h3 class="article-teaser__title title">{{post.title}}</h3>
       <p class="excerpt">{{post.post_excerpt|excerpt(100)}}</p>
-      <a class="btn" style="background-color:{{block.button_color}}" href="{{post.link}}">{{ __('Read more', 'timber') }}</a>
+      <a class="btn" style="background-color:{{post.button_color}}; color: {{post.button_color == 'black' ? 'white' : 'black'}}" href="{{post.link}}">{{ __('More information', 'timber') }}</a>
       <div>
         <div class="article-teaser-event__icon">
           <svg fill="#000000" width="20px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
