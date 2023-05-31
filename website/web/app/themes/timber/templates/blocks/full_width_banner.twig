@@ -1,0 +1,21 @@
+{% import 'macros/titles.twig' as title %}
+
+<section class="content_grid">
+  <div class="constrict">
+    {{ title.main(block.title, '', true) }}
+    <div class="content_grid_blocks">
+      {% for item in block.blocks %}
+        <div class="content_grid_blocks_row {% if loop.index is even %}content_grid_blocks_row--reverse{% endif %} {{ item.background_color }}">
+          <div class="content_grid_blocks_item">
+            {{ title.main(item.title, '', true) }}
+            <p class="content_grid_blocks_item_text">{{ item.text }}</p>
+            <a class="link" href="{{ item.link.url }}" target="{{ item.link.target }}">{{ item.link.title}}</a>
+          </div>
+          <div class="content_grid_blocks_item_visual">
+            <img src="{{ item.image }}" alt="Icon">
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -22,7 +22,14 @@
           </button>
         </div>
       {% endif %}
+      <div>
+      <h1>test</h1>
 
+        {% include 'blocks/steps.twig' with {block: jobs_steps} %}
+
+      {% include 'blocks/content_grid.twig' with {block: jobs_banner} %}
+
+      </div>
     </div>
   </section>
   {% include 'blocks/call_to_action.twig' with {block: jobs_cta} %}
