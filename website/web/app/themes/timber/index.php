@@ -15,10 +15,17 @@
  */
 
 $context          	= Timber::context();
-$context['posts'] 	= new Timber\PostQuery();
+$posts_per_page = 6;
+$page = (get_query_var('paged')) ? get_query_var('paged') : 1; // Current page number
+$args = array(
+	'posts_per_page' => $posts_per_page,
+	'paged' => $page
+);
+
+$context['posts'] 	= new Timber\PostQuery($args);
 $context['post_count'] = $wp_query->found_posts;
 $context['categories'] = Timber::get_terms('category');
-
+$context['current_category'] = single_cat_title('', false); // Assuming you want to use the current category title as the value
 
 $context['posts_title'] = get_field('title', 'posts_page');
 $context['posts_subtext'] = get_field('subtext', 'posts_page');

@@ -1,41 +1,38 @@
-{# This file demonstrates using most of the index.twig template and modifying
-   just a small part. See `search.twig` for an example of another approach #}
-
 {% extends "_base/base.twig" %}
 
 {% block content %}
   {% include 'blocks/hero_small.twig' with { block: {title: {size: 'h1', content: posts_title}, subtext: posts_subtext, background: 'bg-dark-grey'}}%}
   {# {{ parent() }} #}
 
-
   <section class="archive-block">
     <div class="constrict">
+      <div class="search-block">
+        <h2>Are you looking for something specific?</h2>
+        
 
-    <div class="search-block">
-    <h2> Are you looking for something specific? </h2>
-    <form action="{{ site.url }}/" class="search-form">
-    <input type="text"  name="s" placeholder="Enter to search..." class="search-input"> 
-    </form>
-    </div>
+        <form action="{{ site.url }}/" class="search-form">
+          <input type="text" name="s" placeholder="Enter to search..." class="search-input">
+        </form>
+      </div>
 
-<div class="category-filter">
-  <div class="category-box active" data-category="all">
-    <a href="{{ site.url }}">All</a>
-  </div>
+      <div class="category-filter">
+  <a href="{{ site.url }}/news" class="category-box {% if current_category is null %}active{% endif %}" data-category="all">
+    All
+  </a>
   {% for category in categories %}
-    <div class="category-box" data-category="{{ category.slug }}">
-      <a href="{{ category.link }}">{{ category.name }}</a>
-    </div>
+
+    <a href="{{ category.link }}" class="category-box {% if current_category == category.name %}active{% endif %}" data-category="{{ category.slug }}">
+      {{ category.name }}
+    </a>
   {% endfor %}
 </div>
-
-
 
       <div class="archive-block__wrapper" id="posts">
         {% for post in posts %}
           {% include ['partial/tease-post.twig', 'tease.twig'] with {archive: true} %}
         {% endfor %}
       </div>
+
       {% if post_count > post_per_page %}
         <div class="loadmore-btn-wrap">
           <button class="loadmore-btn btn" id="loadmore">
@@ -45,10 +42,7 @@
       {% endif %}
     </div>
   </section>
+
   {% include 'blocks/call_to_action.twig' with {block: posts_cta} %}
 
 {% endblock %}
-
-
-
-

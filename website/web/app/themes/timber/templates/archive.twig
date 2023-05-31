@@ -4,6 +4,15 @@
 {% extends "index.twig" %}
 
 {% block content %}
-  <h3>This is my archive</h3>
   {{ parent() }}
+
+  {% if post_count > post_per_page %}
+    <div class="loadmore-btn-wrap">
+      <button class="loadmore-btn btn" id="loadmore">
+        <span>{{ __('Load more', 'timber') }}</span>
+      </button>
+    </div>
+  {% endif %}
 {% endblock %}
+
+

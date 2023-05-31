@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying Archive pages.
  *
@@ -14,28 +15,38 @@
  * @since   Timber 0.2
  */
 
-$templates = array( 'archive.twig', 'index.twig' );
+$context          	= Timber::context();
+$posts_per_page = 6;
+$page = (get_query_var('paged')) ? get_query_var('paged') : 1; // Huidig paginanummer
+$args = array(
+	'posts_per_page' => $posts_per_page,
+	'paged' => $page
+);
 
-$context = Timber::context();
-
-$context['title'] = 'Archive';
-if ( is_day() ) {
-	$context['title'] = 'Archive: ' . get_the_date( 'D M Y' );
-} elseif ( is_month() ) {
-	$context['title'] = 'Archive: ' . get_the_date( 'M Y' );
-} elseif ( is_year() ) {
-	$context['title'] = 'Archive: ' . get_the_date( 'Y' );
-} elseif ( is_tag() ) {
-	$context['title'] = single_tag_title( '', false );
-} elseif ( is_category() ) {
-	$context['title'] = single_cat_title( '', false );
-	array_unshift( $templates, 'archive-' . get_query_var( 'cat' ) . '.twig' );
-} elseif ( is_post_type_archive() ) {
-	$context['title'] = post_type_archive_title( '', false );
-	array_unshift( $templates, 'archive-' . get_post_type() . '.twig' );
-}
-
-$context['posts'] = new Timber\PostQuery();
+$context['posts'] 	= new Timber\PostQuery($args);
 $context['post_count'] = $wp_query->found_posts;
 
-Timber::render( $templates, $context );
+$templates = array('archive.twig', 'index.twig');
+
+$context['title'] = 'Archive';
+if (is_day()) {
+	$context['title'] = 'Archive: ' . get_the_date('D M Y');
+} elseif (is_month()) {
+	$context['title'] = 'Archive: ' . get_the_date('M Y');
+} elseif (is_year()) {
+	$context['title'] = 'Archive: ' . get_the_date('Y');
+} elseif (is_tag()) {
+	$context['title'] = single_tag_title('', false);
+} elseif (is_category()) {
+	$context['title'] = single_cat_title('', false);
+	array_unshift($templates, 'archive-' . get_query_var('cat') . '.twig');
+} elseif (is_post_type_archive()) {
+	$context['title'] = post_type_archive_title('', false);
+	array_unshift($templates, 'archive-' . get_post_type() . '.twig');
+}
+
+$context['categories'] = Timber::get_terms('category');
+$context['current_category'] = single_cat_title('', false); // Aannemende dat je de huidige categorietitel als waarde wilt gebruiken
+$context['post_per_page'] = $posts_per_page; // Toevoegen van 'post_per_page' variabele aan de context
+
+Timber::render($templates, $context);

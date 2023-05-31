@@ -3,10 +3,13 @@
     {% include 'partial/img.twig' with { img: post.thumbnail.id, thumb: 'full' } %}
   </figure>
   <div class="article-teaser__content">
-    <h3 class="article-teaser__title title">{{post.title}}</h3>
-    
-      <p class="excerpt">{{post.post_excerpt|excerpt(100)}}</p>
-   
-    <a class="btn" style="background-color: grey;" href="{{post.link}}">{{ __('Read more', 'timber') }}</a>
+    <h3 class="article-teaser__title title">{{ post.title }}</h3>
+    {% for term in post.terms('category') %}
+      <a class="category" href="{{ term.link }}" data-category="{{ term.slug }}">
+        {{ term.name }}
+      </a>
+    {% endfor %}
+    <p class="excerpt">{{ post.post_excerpt|excerpt(200) }}</p>
+    <a class="btn" style="background-color: grey;" href="{{ post.link }}">{{ __('Read more', 'timber') }}</a>
   </div>
 </article>

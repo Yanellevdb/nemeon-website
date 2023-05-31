@@ -12,9 +12,9 @@
       </h3>
       <div class="search-teaser__excerpt">
         {% if article.post_excerpt %}
-          {{ article.post_excerpt|excerpt(30) }}
+          {{ article.post_excerpt|excerpt(100) }}
         {% else %}
-          {{ article.post_content|excerpt(30) }}
+          {{ article.post_content|excerpt(100) }}
         {% endif %}
       </div>
     </div>

@@ -2,17 +2,42 @@
   .constrict {
     max-width: $desktop-md;
   }
-  &__wrapper {
-    display: grid;
-    grid-gap: rem(60);
 
-    .article-teaser {
-      &__visual {
-        width: rem(315);
-        height: rem(315);
-      }
-    }
+  .archive-block__wrapper {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 377px);
+    grid-template-rows: 3;
+    justify-content: center;
   }
+
+  .article-teaser {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+a.category {
+  font-size: 14px;
+}
+
+a.category:hover {
+  color: grey;
+}
+
+a.category::after {
+  display: none;
+}
+
+.archive-block .article-teaser {
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+}
+
+.article-teaser__visual img {
+  min-width: 100%;
+  min-height: 200px;
 }
 
 /* Search Form */
@@ -63,11 +88,12 @@
   align-items: center; /* Center content vertically */
   justify-content: center; /* Center content horizontally */
 }
-.category-box.active {
-  background-color: black; /* Change the background color for active state */
-}
+
+.category-box:hover,
+.category-box.active,
 .category-box.active a {
-  color: $nucleon-green; /* Adjust the text color for active state */
+  background-color: black;
+  color: $nucleon-green;
 }
 
 @include below($tablet) {

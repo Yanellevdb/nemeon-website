@@ -1,14 +1,18 @@
 {% extends "tease.twig" %}
 
 {% block content %}
-  <article class="article-teaser" id="post-{{ post.ID }}">
+  <article class="article-teaser" id="post-{{ post.ID }}" data-categories="{{ post.categories|join(',') }}">
+  {{ dump(post.categories) }}
     <figure class="article-teaser__visual">
       {% include 'partial/img.twig' with { img: post.thumbnail.id, thumb: 'full' } %}
     </figure>
     <div class="article-teaser__content">
-      <h3 class="article-teaser__title title">{{post.title}}</h3>
-      <p>{{post.excerpt}}</p>
-      <a class="btn nucleon-dark-grey test" href="{{post.link}}">{{ __('Read more', 'timber') }}</a>
+      <h3 class="article-teaser__title title">{{ post.title }}</h3>
+       <a class="category" href="{{ category.link }}"  data-category="{{ category.slug }}">
+
+           <p class="excerpt">{{post.post_excerpt|excerpt(200)}}</p>
+
+      <a class="btn nucleon-dark-grey test" href="{{ post.link }}">{{ __('Read more', 'timber') }}</a>
     </div>
   </article>
 {% endblock %}
